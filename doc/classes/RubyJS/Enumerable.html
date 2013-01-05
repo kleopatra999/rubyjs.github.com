@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
+  <script src='../../assets/codo.js'></script>
+  <script src='../../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>RubyJS</span>
+    &raquo;
+    <span class='title'>Enumerable</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../../class_list.html'>Classes</a>
+      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../../file_list.html'>Files</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        RubyJS.Enumerable
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib/corelib/enumerable.coffee</td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>Enumerable is a module of iterator methods that all rely on #each for iterating. Classes that include Enumerable are Enumerator, Range, Array. However for performance reasons they are typically re-implemented in them to avoid the extra method calls through #each. </p> 
+</div>
+<div class='tags'>
+</div>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#is_enumerable-instance'>
+        - (void) <strong>is_enumerable</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#all-instance'>
+        - (void) <strong>all</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Passes each element of the collection to the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#any-instance'>
+        - (void) <strong>any</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Passes each element of the collection to the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#collect_concat-instance'>
+        - (void) <strong>collect_concat</strong>(block = null)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new array with the concatenated results of running block once for every element in enum.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#count-instance'>
+        - (void) <strong>count</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the number of items in enum, where size is called if it responds to it, otherwise the items are counted through enumeration.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#cycle-instance'>
+        - (void) <strong>cycle</strong>(n, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Calls block for each element of enum repeatedly n times or forever if none or nil is given.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drop-instance'>
+        - (void) <strong>drop</strong>(n)
+      </a>
+    </span>
+    <span class='desc'>
+      Drops first n elements from enum, and returns rest elements in an array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#drop_while-instance'>
+        - (void) <strong>drop_while</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Drops elements up to, but not including, the first element for which the block returns nil or false and returns an array containing the remaining elements.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_cons-instance'>
+        - (void) <strong>each_cons</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Iterates the given block for each array of consecutive <n> elements.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_entry-instance'>
+        - (void) <strong>each_entry</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Calls block once for each element in self, passing that element as a parameter, converting multiple values from yield to an array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_slice-instance'>
+        - (void) <strong>each_slice</strong>(n, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Iterates the given block for each slice of <n> elements.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_with_index-instance'>
+        - (void) <strong>each_with_index</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Calls block with two arguments, the item and its index, for each item in enum.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_with_object-instance'>
+        - (void) <strong>each_with_object</strong>(obj, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Iterates the given block for each element with an arbitrary object given, and returns the initially given object.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#find-instance'>
+        - (void) <strong>find</strong>(ifnone, block = null)
+      </a>
+    </span>
+    <span class='desc'>
+      Passes each entry in enum to block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#find_all-instance'>
+        - (void) <strong>find_all</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an array containing all elements of enum for which block is not false (see also Enumerable#reject).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#find_index-instance'>
+        - (void) <strong>find_index</strong>(value)
+      </a>
+    </span>
+    <span class='desc'>
+      Compares each entry in enum with value or passes to block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#first-instance'>
+        - (void) <strong>first</strong>(n = null)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the first element, or the first n elements, of the enumerable.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#include-instance'>
+        - (void) <strong>include</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if any member of enum equals obj.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#inject-instance'>
+        - (void) <strong>inject</strong>(init, sym, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Combines all elements of enum by applying a binary operation, specified by a block or a symbol that names a method or operator.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#iterator-instance'>
+        - (void) <strong>iterator</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#grep-instance'>
+        - (void) <strong>grep</strong>(pattern, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an array of every element in enum for which Pattern === element.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#group_by-instance'>
+        - (void) <strong>group_by</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a hash, which keys are evaluated result from the block, and values are arrays of elements in enum corresponding to the key.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#map-instance'>
+        - (void) <strong>map</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new array with the results of running block once for every element in enum.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#max-instance'>
+        - (void) <strong>max</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the object in enum with the maximum value.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#max_by-instance'>
+        - (void) <strong>max_by</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the object in enum that gives the maximum value from the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#min-instance'>
+        - (void) <strong>min</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the object in enum with the minimum value.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#min_by-instance'>
+        - (void) <strong>min_by</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the object in enum that gives the minimum value from the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#minmax-instance'>
+        - (void) <strong>minmax</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns two elements array which contains the minimum and the maximum value in the enumerable.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#minmax_by-instance'>
+        - (void) <strong>minmax_by</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#none-instance'>
+        - (void) <strong>none</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Passes each element of the collection to the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#one-instance'>
+        - (void) <strong>one</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Passes each element of the collection to the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#partition-instance'>
+        - (void) <strong>partition</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reject-instance'>
+        - (void) <strong>reject</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reverse_each-instance'>
+        - (void) <strong>reverse_each</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#slice_before-instance'>
+        - (void) <strong>slice_before</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sort-instance'>
+        - (void) <strong>sort</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sort_by-instance'>
+        - (void) <strong>sort_by</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#take-instance'>
+        - (void) <strong>take</strong>(n)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#take_while-instance'>
+        - (void) <strong>take_while</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_a-instance'>
+        - (void) <strong>to_a</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_enum-instance'>
+        - (void) <strong>to_enum</strong>(iter = "each", args...)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#zip-instance'>
+        - (void) <strong>zip</strong>(others...)
+      </a>
+    </span>
+    <span class='desc'>
+      Takes one element from enum and merges corresponding elements from each args.
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='is_enumerable-instance'>
+      - (void) <strong>is_enumerable</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='all-instance'>
+      - (void) <strong>all</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Passes each element of the collection to the given block. The method returns true if the block never returns false or nil. If the block is not given, Ruby adds an implicit block of {|obj| obj} (that is all? will return true only if none of the collection members are false or nil.) </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.w(&#39;ant bear cat&#39;).all (word) -&gt; word.length &gt;= 3   # =&gt; true
+  R.w(&#39;ant bear cat&#39;).all (word) -&gt; word.length &gt;= 4   # =&gt; false
+  R([ null, true, 99 ]).all()                          # =&gt; false</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='any-instance'>
+      - (void) <strong>any</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Passes each element of the collection to the given block. The method returns true if the block ever returns a value other than false or nil. If the block is not given, Ruby adds an implicit block of {|obj| obj} (that is any? will return true if at least one of the collection members is not false or nil. </p> <pre><code>R.w(&#39;ant bear cat&#39;).any (word) -&gt; word.length &gt;= 3   # =&gt; true R.w(&#39;ant bear cat&#39;).any (word) -&gt; word.length &gt;= 4   # =&gt; true R([ null, true, 99 ]).any()                          # =&gt; true</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='collect_concat-instance'>
+      - (void) <strong>collect_concat</strong>(block = null)
+    </p>
+    <div class='docstring'>
+  <p>Returns a new array with the concatenated results of running block once for every element in enum. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>@alias #flat_map </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'> R([[1,2],[3,4]]).flat_map (i) -&gt; i   #=&gt; [1, 2, 3, 4]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='count-instance'>
+      - (void) <strong>count</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns the number of items in enum, where size is called if it responds to it, otherwise the items are counted through enumeration. If an argument is given, counts the number of items in enum, for which equals to item. If a block is given, counts the number of elements yielding a true value. </p> <p>@execute     ary = R([1, 2, 4, 2])     ary.count()                #=&gt; 4     ary.count(2)               #=&gt; 2     ary.count (x) -&gt; x%2 == 0  #=&gt; 3 </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='cycle-instance'>
+      - (void) <strong>cycle</strong>(n, block)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not rescue StopIteration
+  </div>
+  <p>Calls block for each element of enum repeatedly n times or forever if none or nil is given. If a non-positive number is given or the collection is empty, does nothing. Returns nil if the loop has finished without getting interrupted. </p> <h1>cycle saves elements in an internal array so changes to enum after the</h1> <h1>first pass have no effect.</h1> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([&quot;a&quot;, &quot;b&quot;, &quot;c&quot;])
+  a.cycle (x) -&gt; R.puts x      # print, a, b, c, a, b, c,.. forever.
+  a.cycle(2) (x) -&gt; R.puts x   # print, a, b, c, a, b, c.</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drop-instance'>
+      - (void) <strong>drop</strong>(n)
+    </p>
+    <div class='docstring'>
+  <p>Drops first n elements from enum, and returns rest elements in an array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([1, 2, 3, 4, 5, 0])
+  a.drop(3)             #=&gt; [4, 5, 0]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='drop_while-instance'>
+      - (void) <strong>drop_while</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Drops elements up to, but not including, the first element for which the block returns nil or false and returns an array containing the remaining elements. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([1, 2, 3, 4, 5, 0])
+  a.drop_while (i) -&gt; i &lt; 3    #=&gt; [3, 4, 5, 0]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_cons-instance'>
+      - (void) <strong>each_cons</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Iterates the given block for each array of consecutive <n> elements. If no block is given, returns an enumerator. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>   R.rng(1,6).each_cons 3, (a) -&gt; R.puts a
+   # output:
+   # [1, 2, 3]
+   # [2, 3, 4]
+   # [3, 4, 5]
+   # [4, 5, 6]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_entry-instance'>
+      - (void) <strong>each_entry</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Calls block once for each element in self, passing that element as a parameter, converting multiple values from yield to an array. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_slice-instance'>
+      - (void) <strong>each_slice</strong>(n, block)
+    </p>
+    <div class='docstring'>
+  <p>Iterates the given block for each slice of <n> elements. If no block is given, returns an enumerator. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  (1..10).each_slice(3) {|a| p a}
+  # outputs below
+  [1, 2, 3]
+  [4, 5, 6]
+  [7, 8, 9]
+  [10]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_with_index-instance'>
+      - (void) <strong>each_with_index</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Calls block with two arguments, the item and its index, for each item in enum. Given arguments are passed through to each(). </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  hsh = {}
+  R.w(&#39;cat dog wombat&#39;).each_with_index (item, index) -&gt;
+    hsh[item] = index
+  hsh   #=&gt; {&quot;cat&quot;=&gt;0, &quot;dog&quot;=&gt;1, &quot;wombat&quot;=&gt;2}</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_with_object-instance'>
+      - (void) <strong>each_with_object</strong>(obj, block)
+    </p>
+    <div class='docstring'>
+  <p>Iterates the given block for each element with an arbitrary object given, and returns the initially given object. </p> <p>If no block is given, returns an enumerator. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  evens = R.rng(1,10).each_with_object [], (i, a) -&gt; a.push(i*2)
+  #=&gt; [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='find-instance'>
+      - (void) <strong>find</strong>(ifnone, block = null)
+    </p>
+    <div class='docstring'>
+  <p>Passes each entry in enum to block. Returns the first for which block is not false. If no object matches, calls ifnone and returns its result when it is specified, or returns nil otherwise. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>@alias #detect </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.rng(1, 10 ).detect (i) -&gt; i % 5 == 0 and i % 7 == 0   #=&gt; nil
+  R.rng(1, 100).detect (i) -&gt; i % 5 == 0 and i % 7 == 0   #=&gt; 35</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='find_all-instance'>
+      - (void) <strong>find_all</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns an array containing all elements of enum for which block is not false (see also Enumerable#reject). </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.rng(1,10).find_all (i) -&gt;  i % 3 == 0    #=&gt; [3, 6, 9]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='find_index-instance'>
+      - (void) <strong>find_index</strong>(value)
+    </p>
+    <div class='docstring'>
+  <p>Compares each entry in enum with value or passes to block. Returns the index for the first for which the evaluated value is non-false. If no object matches, returns nil </p> <p>If neither block nor argument is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.rng(1,10).find_index  (i) -&gt; i % 5 == 0 and i % 7 == 0   #=&gt; nil
+  R.rng(1,100).find_index (i) -&gt; i % 5 == 0 and i % 7 == 0   #=&gt; 34
+  R.rng(1,100).find_index(50)                                #=&gt; 49</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='first-instance'>
+      - (void) <strong>first</strong>(n = null)
+    </p>
+    <div class='docstring'>
+  <p>Returns the first element, or the first n elements, of the enumerable. If the enumerable is empty, the first form returns nil, and the second form returns an empty array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.w(&#39;foo bar baz&#39;).first()   #=&gt; &quot;foo&quot;
+  R.w(&#39;foo bar baz&#39;).first(2)  #=&gt; [&quot;foo&quot;, &quot;bar&quot;]
+  R.w(&#39;foo bar baz&#39;).first(10) #=&gt; [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;]
+  R([]).first()                  #=&gt; null</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='include-instance'>
+      - (void) <strong>include</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Returns true if any member of enum equals obj. Equality is tested using ==. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='inject-instance'>
+      - (void) <strong>inject</strong>(init, sym, block)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    implement inject('+')
+  </div>
+  <p>Combines all elements of enum by applying a binary operation, specified by a block or a symbol that names a method or operator. </p> <p>If you specify a block, then for each element in enum the block is passed an accumulator value (memo) and the element. If you specify a symbol instead, then each element in the collection will be passed to the named method of memo. In either case, the result becomes the new value for memo. At the end of the iteration, the final value of memo is the return value for the method. </p> <p>If you do not explicitly specify an initial value for memo, then uses the first element of collection is used as the initial value of memo. </p> <pre><code># Sum some numbers # R.rng(5, 10).reduce(:+)                            #=&gt; 45 # Same using a block and inject R.rng(5, 10).inject {|sum, n| sum + n }            #=&gt; 45 # Multiply some numbers R.rng(5, 10).reduce(1, :*)                         #=&gt; 151200 # Same using a block R.rng(5, 10).inject(1) {|product, n| product * n } #=&gt; 151200 # find the longest word longest = R.w(&#39;cat sheep bear&#39;).inject (memo,word) -&gt;    if memo.length &gt; word.length then memo else word # longest                                       #=&gt; &quot;sheep&quot;</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='iterator-instance'>
+      - (void) <strong>iterator</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='grep-instance'>
+      - (void) <strong>grep</strong>(pattern, block)
+    </p>
+    <div class='docstring'>
+  <p>Returns an array of every element in enum for which Pattern === element. If the optional block is supplied, each matching element is passed to it, and the block’s result is stored in the output array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.rng(1, 100).grep R.rng(38,44)   #=&gt; [38, 39, 40, 41, 42, 43, 44]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='group_by-instance'>
+      - (void) <strong>group_by</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns a hash, which keys are evaluated result from the block, and values are arrays of elements in enum corresponding to the key. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>   R.rng(1, 6).group_by (i) -&gt; i%3
+   #=&gt; {0=&gt;[3, 6], 1=&gt;[1, 4], 2=&gt;[2, 5]}</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='map-instance'>
+      - (void) <strong>map</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns a new array with the results of running block once for every element in enum. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>   en = R([&#39;a&#39;]).each_with_index() #=&gt; [&#39;a&#39;, 0]    en.map (x) -&gt;   # x: &#39;a&#39;    en.map (x,i) -&gt; # x: &#39;a&#39;, i: 0    en.map (x...) -&gt; # x: [&#39;a&#39;, 0] </p> <p>@alias #collect </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.rng(1, 4).collect (i) -&gt; i*i   #=&gt; [1, 4, 9, 16]
+  R.rng(1, 4).collect -&gt; &quot;cat&quot;     #=&gt; [&quot;cat&quot;, &quot;cat&quot;, &quot;cat&quot;, &quot;cat&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='max-instance'>
+      - (void) <strong>max</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns the object in enum with the maximum value. The first form assumes all objects implement Comparable; the second uses the block to return a &lt;=&gt; b. </p> <p>@return     a = R.w(&#39;albatross dog horse&#39;)     a.max()                                #=&gt; &quot;horse&quot; </p> <pre><code># Not recommended at the moment: a.max (a,b) -&gt; R(a.length)[&#39;&lt;=&gt;&#39;] b.length }   #=&gt; &quot;albatross&quot;</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='max_by-instance'>
+      - (void) <strong>max_by</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns the object in enum that gives the maximum value from the given block. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R.w(&#39;albatross dog horse&#39;)
+  a.max_by (x) -&gt; x.length    #=&gt; &quot;albatross&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='min-instance'>
+      - (void) <strong>min</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns the object in enum with the minimum value. The first form assumes all objects implement Comparable; the second uses the block to return a &lt;=&gt; b. </p> <pre><code>a = R.w(&#39;albatross dog horse&#39;) a.min()                                  #=&gt; &quot;albatross&quot; # Not recommended at the moment: a.min (a,b) -&gt; R(a.length)[&#39;&lt;=&gt;&#39;] b.length }   #=&gt; &quot;dog&quot;</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='min_by-instance'>
+      - (void) <strong>min_by</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns the object in enum that gives the minimum value from the given block. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R.w(&#39;albatross dog horse&#39;)
+  a.min_by (x) -&gt; x.length   #=&gt; &quot;dog&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='minmax-instance'>
+      - (void) <strong>minmax</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Returns two elements array which contains the minimum and the maximum value in the enumerable. The first form assumes all objects implement Comparable; the second uses the block to return a &lt;=&gt; b. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R.w(&#39;albatross dog horse&#39;)
+  a.minmax()                                  #=&gt; [&quot;albatross&quot;, &quot;horse&quot;]
+  a.minmax (a,b) -&gt; a.length &lt;=&gt; b.length }   #=&gt; [&quot;dog&quot;, &quot;albatross&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='minmax_by-instance'>
+      - (void) <strong>minmax_by</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='none-instance'>
+      - (void) <strong>none</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Passes each element of the collection to the given block. The method returns true if the block never returns true for all elements. If the block is not given, none? will return true only if none of the collection members is true. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.w(&#39;ant bear cat&#39;).none (word) -&gt; word.length == 5   # =&gt; true
+  R.w(&#39;ant bear cat&#39;).none (word) -&gt; word.length &gt;= 4   # =&gt; false
+  R([]).none()                                          # =&gt; true
+  R([nil]).none()                                       # =&gt; true
+  R([nil,false]).none()                                 # =&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='one-instance'>
+      - (void) <strong>one</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Passes each element of the collection to the given block. The method returns true if the block returns true exactly once. If the block is not given, one? will return true only if exactly one of the collection members is true. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.w(&#39;ant bear cat&#39;).one (word) -&gt; word.length == 4   # =&gt; true
+  R.w(&#39;ant bear cat&#39;).one (word) -&gt; word.length &gt; 4    # =&gt; false
+  R.w(&#39;ant bear cat&#39;).one (word) -&gt; word.length &lt; 4    # =&gt; false
+  R([ nil, true, 99 ]).one()                           # =&gt; false
+  R([ nil, true, false ]).one()                        # =&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='partition-instance'>
+      - (void) <strong>partition</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reject-instance'>
+      - (void) <strong>reject</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reverse_each-instance'>
+      - (void) <strong>reverse_each</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='slice_before-instance'>
+      - (void) <strong>slice_before</strong>(args...)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sort-instance'>
+      - (void) <strong>sort</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sort_by-instance'>
+      - (void) <strong>sort_by</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='take-instance'>
+      - (void) <strong>take</strong>(n)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='take_while-instance'>
+      - (void) <strong>take_while</strong>(block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_a-instance'>
+      - (void) <strong>to_a</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_enum-instance'>
+      - (void) <strong>to_enum</strong>(iter = "each", args...)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='zip-instance'>
+      - (void) <strong>zip</strong>(others...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    recursive arrays Untested
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    uses #each to extract arguments' elements when #to_ary fails
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    dont yield R.Arrays
+  </div>
+  <p>Takes one element from enum and merges corresponding elements from each args. This generates a sequence of n-element arrays, where n is one more than the count of arguments. The length of the resulting sequence will be enum#size. If the size of any argument is less than enum#size, nil values are supplied. If a block is given, it is invoked for each output array, otherwise an array of arrays is returned. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ 4, 5, 6 ])
+  b = R([ 7, 8, 9 ])
+  R([1,2,3]).zip(a, b)      #=&gt; [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+  R([1,2]  ).zip(a,b)       #=&gt; [[1, 4, 7], [2, 5, 8]]
+  a.zip([1,2],[8])           #=&gt; [[4, 1, 8], [5, 2, nil], [6, nil, nil]]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v0.9.1
+  (Node.js v0.8.4).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

@@ -1,0 +1,273 @@
+---
+layout: bounce
+title: Getting Started with RubyJS
+---
+
+
+<div id="header">
+  <div class="container">
+    <div class="row">
+    <div class="span12">
+      <h1>Getting Started with RubyJS</h1>
+    </div>
+  </div>
+  </div>
+</div>
+
+
+
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+
+        <h2>Get ruby.js</h2>
+        <p>
+          Get the files at the
+          <a href="https://github.com/rubyjs/core-lib">RubyJS core-lib repository</a>. And include the minified ruby.min.js file in your site.
+        </p>
+
+{% highlight html %}
+<script src="/javascripts/ruby.min.js"></script>
+<script>
+var str = R("hello world");
+alert(str.capitalize());
+</script>
+{% endhighlight %}
+
+        <h3>Try RubyJS in your browser</h3>
+        <p>
+          RubyJS is included on this page, so just open your JavaScript console.
+        </p>
+
+        <h3>With Rails</h3>
+        <p>
+          There's a Rails <a href="https://github.com/rubyjs/rubyjs-rails" target="_blank">asset-pipeline gem for RubyJS</a>.
+        </p>
+{% highlight ruby %}
+# in Gemfile
+gem 'rubyjs-rails'
+# In your application.js manifest:
+//= require ruby
+{% endhighlight %}
+        </p>
+
+        <h3>NPM Module</h3>
+        <p>
+          RubyJS can be installed as an npm module.
+        </p>
+{% highlight bash %}
+$ npm install rubyjs
+{% endhighlight %}
+        <p>
+          Then simply require rubyjs which will add the R and RubyJS to the global object.
+        </p>
+{% highlight javascript %}
+require('rubyjs');
+R.puts("hello");
+{% endhighlight %}
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="span8">
+
+        <h2>R(obj) method</h2>
+        <p>
+          R(obj) typecasts and returns its argument into a corresponding RubyJS object.
+        </p>
+
+{% highlight javascript %}
+
+R(1)                 // => RubyJS.Fixnum
+R("foo")             // => RubyJS.String
+R([1,15,8])          // => RubyJS.Array
+
+{% endhighlight %}
+
+        <p>
+          Call any of the implemented RubyJS methods on the returned object.
+        </p>
+
+{% highlight javascript %}
+
+R(1).even()            // => false
+R(123.456).round(-1)   // => 120
+R("foo").capitalize()  // => "Foo"
+R([1,15,8]).size()     // => 3
+
+{% endhighlight %}
+
+        <h3>Chainable</h3>
+        <p>
+          RubyJS methods return RubyJS object. So they are inherently chainable.
+        </p>
+
+{% highlight javascript %}
+
+R(123.456).round(-1).even()      // => true
+R("foo").capitalize().center(5)  // => " Foo "
+R([1,15,8]).size().odd()         // => true
+
+{% endhighlight %}
+
+
+        <h3>Native objects</h3>
+        <p>
+          RubyJS classes are wrappers around Javascrip native objects or primitives. Access the underlying object with to_native().
+        </p>
+
+{% highlight javascript %}
+
+R("title").capitalize().to_native() // 'Title'
+// to_native(true) recursively unboxes array
+R([1,2,R(3)]).to_native(true)       // [1,2,3]
+
+{% endhighlight %}
+
+
+        <h3>Recursive chaining</h3>
+        <p>
+          By default the members of an Array are not typecasted. You can do so by passing true to R( ) or new R.Array().
+        </p>
+
+{% highlight javascript %}
+
+R([1]      ).get(0).odd()  // TypeError: Object 1 has no method 'odd'
+R([1], true).get(0).odd()  // true
+new R.Array([1,2], true)   // has the same effect
+
+{% endhighlight %}
+
+        <p>
+          to_native(true) typecasts recursively to native JS objects
+        </p>
+
+{% highlight javascript %}
+
+arr = R([1,2,3], true)
+arr.set(1, R(['foo'])
+arr.to_native(true)    // => [1,['foo'],3]
+
+{% endhighlight %}
+
+      </div>
+
+      <div class="span4">
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="span8">
+        <h2>Blocks and Iterators </h2>
+        <h3>Basics</h3>
+        <p>
+          RubyJS supports Ruby Enumerator. Blocks are handled with JavaScript functions.
+        </p>
+{% highlight javascript %}
+
+R(['a', 'b']).each(function (w) { console.log(w) })
+
+R(1).upto(5, function (i) { console.log(i) })
+
+{% endhighlight %}
+
+        <h3>Symbol to Proc</h3>
+        <p>
+          <code>R.proc(method_name)</code> provides the same functionality as Ruby Symbol#to_proc, just in a more JavaScript way of doing things. You can pass additional arguments to the method call.
+        </p>
+
+{% highlight javascript %}
+
+R.w('foo bar').map(function (w) { return w.capitalize() });
+R.w('foo bar').map(R.proc('capitalize'));
+R.w('foo bar').map(R.proc('ljust', 20));
+
+{% endhighlight %}
+
+        <h3>Enumerator</h3>
+        <p>
+          Methods accepting a block return an Enumerator when not given a block to execute. Enumerator includes all the methods of the Enumerable mixin.
+        </p>
+
+{% highlight javascript %}
+
+en = R(['a', 'b']).each()  // RubyJS.Enumerator
+en.each_with_index(function (w,i) {
+  console.log("#{w} #{i}")
+})
+
+R(1).upto(5).to_a() // [1,2,3,4,5] (RubyJS.Array)
+
+{% endhighlight %}
+
+        <h3>Block arguments not typecasted</h3>
+        <p>
+          Enumerable adapt to the arity of the block.
+        </p>
+
+{% highlight javascript %}
+
+points = R([[1,-5], [2,4]])
+points.each(function (arr) {
+  // arr: [1, -5]
+  // arr: [2, 4]
+})
+points.each(function (x,y) {
+  // x: 1, y: -5
+  // x: 2, y: 5
+})
+
+{% endhighlight %}
+
+        <h3>Chaining iterators</h3>
+        <p>
+          Enumerators also allow iterators to be chained. Although it is recommended for performance and clarity uses not to.
+        </p>
+{% highlight javascript %}
+
+points = R(['cat', 'dog'])
+points.each_with_index().each(function (arr) {
+  // arr: ['cat', 0]
+  // arr: ['dog', 1]
+})
+
+{% endhighlight %}
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="span8">
+        <h2>Ruby/JavaScript mapping</h2>
+        <h3>Constructors</h3>
+        <p>
+          An alternative to creating objects with R() is to call their constructors directly. Use JavaScript style constructors (new R.String() ) when you know the type for performance. The Ruby style (R.String.new) implements the behaviour of Ruby.
+        </p>
+
+{% highlight javascript %}
+
+// ::new has the same behaviour as its ruby equivalent.
+R.String.new('foo')
+// Javascript style instantiation is optimized for speed.
+new R.String('foo')
+
+{% endhighlight %}
+
+        <h3>Naming/Aliases</h3>
+        <p>
+          Ruby allows special characters in its method names. Following rules apply:
+        </p>
+        <ul>
+          <li>Question marks are omitted. include?() -> include()</li>
+          <li>Bang methods: capitalize!() -> capitalize_bang()</li>
+          <li>+, -, ** have aliases, or can be called directly str['+'](other)</li>
+        </ul>
+        <p>
+          See the <a href="/doc/index.html">API documentation</a> for details.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,2393 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
+  <script src='../../assets/codo.js'></script>
+  <script src='../../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>RubyJS</span>
+    &raquo;
+    <span class='title'>String</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../../class_list.html'>Classes</a>
+      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../../file_list.html'>Files</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        RubyJS.String
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib/corelib/string.coffee</td>
+        </tr>
+        <tr>
+          <td>Inherits:</td>
+          <td>
+            <a href='../../classes/RubyJS/Object.html'>RubyJS.Object</a>
+          </td>
+        </tr>
+      </table>
+      <h2>Class Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#fromCharCode-class'>
+        + (void) <strong>fromCharCode</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#new-class'>
+        + (void) <strong>new</strong>(str = '')
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#isString-class'>
+        + (void) <strong>isString</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#try_convert-class'>
+        + (void) <strong>try_convert</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#string_native-class'>
+        + (void) <strong>string_native</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+        - (void) <strong>constructor</strong>(primitive = "")
+      </a>
+    </span>
+    <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#is_string-instance'>
+        - (void) <strong>is_string</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_native-instance'>
+        - (void) <strong>to_native</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#valueOf-instance'>
+        - (void) <strong>valueOf</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#toString-instance'>
+        - (void) <strong>toString</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#unbox-instance'>
+        - (void) <strong>unbox</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#initialize_copy-instance'>
+        - (void) <strong>initialize_copy</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#clone-instance'>
+        - (void) <strong>clone</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'%'-instance'>
+        - (void) <strong>'%'</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'*'-instance'>
+        - (void) <strong>'*'</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'+'-instance'>
+        - (void) <strong>'+'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'<=>'-instance'>
+        - (void) <strong>'<=>'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'=='-instance'>
+        - (void) <strong>'=='</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'<<'-instance'>
+        - (void) <strong>'<<'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'=~'-instance'>
+        - (void) <strong>'=~'</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#capitalize-instance'>
+        - (void) <strong>capitalize</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a copy of str with the first character converted to uppercase and the remainder to lowercase.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#capitalize_bang-instance'>
+        - (void) <strong>capitalize_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Modifies str by converting the first character to uppercase and the remainder to lowercase.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#casecmp-instance'>
+        - (void) <strong>casecmp</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Case-insensitive version of String#<=>.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#center-instance'>
+        - (void) <strong>center</strong>(length, padString = ' ')
+      </a>
+    </span>
+    <span class='desc'>
+      If integer is greater than the length of str, returns a new String of length integer with str centered and padded with padstr; otherwise, returns str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#chars-instance'>
+        - (void) <strong>chars</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Passes each character in str to the given block, or returns an enumerator if no block is given.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#chomp-instance'>
+        - (void) <strong>chomp</strong>(sep = null)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new String with the given record separator removed from the end of str (if present).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#chomp_bang-instance'>
+        - (void) <strong>chomp_bang</strong>(sep = null)
+      </a>
+    </span>
+    <span class='desc'>
+      Modifies str in place as described for String#chomp, returning str, or nil if no modifications were made.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#chop-instance'>
+        - (void) <strong>chop</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new String with the last character removed.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#chr-instance'>
+        - (void) <strong>chr</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a one-character string at the beginning of the string.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#clear-instance'>
+        - (void) <strong>clear</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#count-instance'>
+        - (void) <strong>count</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Each other_str parameter defines a set of characters to count.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete-instance'>
+        - (void) <strong>delete</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a copy of str with all characters in the intersection of its arguments deleted.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete_bang-instance'>
+        - (void) <strong>delete_bang</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Performs a delete operation in place, returning str, or nil if str was not modified.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#downcase-instance'>
+        - (void) <strong>downcase</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#downcase_bang-instance'>
+        - (void) <strong>downcase_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#dump-instance'>
+        - (void) <strong>dump</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Produces a version of str with all nonprinting characters replaced by \nnn notation and all special characters escaped.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#dup-instance'>
+        - (void) <strong>dup</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_line-instance'>
+        - (void) <strong>each_line</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Splits str using the supplied parameter as the record separator ($/ by default), passing each substring in turn to the supplied block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#empty-instance'>
+        - (void) <strong>empty</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if str has a length of zero.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#end_with-instance'>
+        - (void) <strong>end_with</strong>(needles...)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if str ends with one of the suffixes given.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#eql-instance'>
+        - (void) <strong>eql</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Two strings are equal if they have the same length and content.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#get-instance'>
+        - (void) <strong>get</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#set-instance'>
+        - (void) <strong>set</strong>(idx, other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#gsub-instance'>
+        - (void) <strong>gsub</strong>(pattern, replacement)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a copy of str with the all occurrences of pattern substituted for the second argument.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#include-instance'>
+        - (void) <strong>include</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if str contains the given string or character.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#index-instance'>
+        - (void) <strong>index</strong>(needle, offset)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the index of the first occurrence of the given substring or pattern (regexp) in str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#insert-instance'>
+        - (void) <strong>insert</strong>(idx, other)
+      </a>
+    </span>
+    <span class='desc'>
+      Inserts other_str before the character at the given index, modifying str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#inspect-instance'>
+        - (void) <strong>inspect</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a printable version of str, surrounded by quote marks, with special characters escaped.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#ljust-instance'>
+        - (void) <strong>ljust</strong>(width, padString = " ")
+      </a>
+    </span>
+    <span class='desc'>
+      If integer is greater than the length of str, returns a new String of length integer with str left justified and padded with padstr; otherwise, returns str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#lstrip-instance'>
+        - (void) <strong>lstrip</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#lstrip_bang-instance'>
+        - (void) <strong>lstrip_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Removes leading whitespace from str, returning nil if no change was made.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#match-instance'>
+        - (void) <strong>match</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Converts pattern to a Regexp (if it isn’t already one), then invokes its match method on str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#partition-instance'>
+        - (void) <strong>partition</strong>(pattern)
+      </a>
+    </span>
+    <span class='desc'>
+      Searches sep or pattern (regexp) in the string and returns the part before it, the match, and the part after it.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#prepend-instance'>
+        - (void) <strong>prepend</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Prepend the given string to str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#replace-instance'>
+        - (void) <strong>replace</strong>(val)
+      </a>
+    </span>
+    <span class='desc'>
+      Replaces the contents and taintedness of str with the corresponding values in other_str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reverse-instance'>
+        - (void) <strong>reverse</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new string with the characters from str in reverse order.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reverse_bang-instance'>
+        - (void) <strong>reverse_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Reverses str in place.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rindex-instance'>
+        - (void) <strong>rindex</strong>(needle, offset)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the index of the last occurrence of the given substring or pattern (regexp) in str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rjust-instance'>
+        - (void) <strong>rjust</strong>(width, padString = " ")
+      </a>
+    </span>
+    <span class='desc'>
+      If integer is greater than the length of str, returns a new String of length integer with str right justified and padded with padstr; otherwise, returns str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rpartition-instance'>
+        - (void) <strong>rpartition</strong>(pattern)
+      </a>
+    </span>
+    <span class='desc'>
+      Searches sep or pattern (regexp) in the string from the end of the string, and returns the part before it, the match, and the part after it.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rstrip-instance'>
+        - (void) <strong>rstrip</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rstrip_bang-instance'>
+        - (void) <strong>rstrip_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Removes trailing whitespace from str, returning nil if no change was made.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#scan-instance'>
+        - (void) <strong>scan</strong>(pattern, block = null)
+      </a>
+    </span>
+    <span class='desc'>
+      Both forms iterate through str, matching the pattern (which may be a Regexp or a String).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#size-instance'>
+        - (void) <strong>size</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#slice-instance'>
+        - (void) <strong>slice</strong>(index, other)
+      </a>
+    </span>
+    <span class='desc'>
+      Element Reference—If passed a single Fixnum, returns a substring of one character at that position.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#split-instance'>
+        - (void) <strong>split</strong>(pattern = " ", limit)
+      </a>
+    </span>
+    <span class='desc'>
+      Divides str into substrings based on a delimiter, returning an array of these substrings.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#squeeze_bang-instance'>
+        - (void) <strong>squeeze_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#squeeze-instance'>
+        - (void) <strong>squeeze</strong>(pattern...)
+      </a>
+    </span>
+    <span class='desc'>
+      Builds a set of characters from the other_str parameter(s) using the procedure described for String#count.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#start_with-instance'>
+        - (void) <strong>start_with</strong>(needles...)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if str starts with one of the prefixes given.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#strip-instance'>
+        - (void) <strong>strip</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#strip_bang-instance'>
+        - (void) <strong>strip_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sub-instance'>
+        - (void) <strong>sub</strong>(pattern, replacement)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a copy of str with the first occurrence of pattern substituted for the second argument.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sub_bang-instance'>
+        - (void) <strong>sub_bang</strong>(pattern, replacement)
+      </a>
+    </span>
+    <span class='desc'>
+      Performs the substitutions of String#sub in place, returning str, or nil if no substitutions were performed.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#succ-instance'>
+        - (void) <strong>succ</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the successor to str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#succ_bang-instance'>
+        - (void) <strong>succ_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Equivalent to String#succ, but modifies the receiver in place.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#swapcase-instance'>
+        - (void) <strong>swapcase</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#swapcase_bang-instance'>
+        - (void) <strong>swapcase_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_a-instance'>
+        - (void) <strong>to_a</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#valid_float-instance'>
+        - (void) <strong>valid_float</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_f-instance'>
+        - (void) <strong>to_f</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the result of interpreting leading characters in str as a floating point number.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_i-instance'>
+        - (void) <strong>to_i</strong>(base)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the result of interpreting leading characters in str as an integer base base (between 2 and 36).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_s-instance'>
+        - (void) <strong>to_s</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the receiver.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#tr-instance'>
+        - (void) <strong>tr</strong>(from_str, to_str)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a copy of str with the characters in from_str replaced by the corresponding characters in #to_str.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#tr_bang-instance'>
+        - (void) <strong>tr_bang</strong>(from_str, to_str)
+      </a>
+    </span>
+    <span class='desc'>
+      Translates str in place, using the same rules as `String#tr`.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#tr_s-instance'>
+        - (void) <strong>tr_s</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Processes a copy of str as described under String#tr, then removes duplicate characters in regions that were affected by the translation.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#upcase-instance'>
+        - (void) <strong>upcase</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#upcase_bang-instance'>
+        - (void) <strong>upcase_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#upto-instance'>
+        - (void) <strong>upto</strong>(stop, exclusive, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Iterates through successive values, starting at str and ending at other_str inclusive, passing each value in turn to the block.
+    </span>
+  </li>
+</ul>
+      <h2>
+        <small>Inherited Method Summary</small>
+      </h2>
+      <h3 class='inherited'>
+        Methods inherited from
+        <a href='../../classes/RubyJS/Object.html'>RubyJS.Object</a>
+      </h3>
+      <p class='inherited'>
+                <a href='../../classes/RubyJS/Object.html#include-class'>.include</a>,
+                <a href='../../classes/RubyJS/Object.html#__add_default_aliases__-class'>.__add_default_aliases__</a>,
+                <a href='../../classes/RubyJS/Object.html#send-instance'>#send</a>,
+                <a href='../../classes/RubyJS/Object.html#respond_to-instance'>#respond_to</a>,
+                <a href='../../classes/RubyJS/Object.html#to_enum-instance'>#to_enum</a>,
+        <a href='../../classes/RubyJS/Object.html#tap-instance'>#tap</a>
+      </p>
+      <h2>Class Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='fromCharCode-class'>
+      + (void) <strong>fromCharCode</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='new-class'>
+      + (void) <strong>new</strong>(str = '')
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    make .new subclasseable
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    follow
+  </div>
+  
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='isString-class'>
+      + (void) <strong>isString</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='try_convert-class'>
+      + (void) <strong>try_convert</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='string_native-class'>
+      + (void) <strong>string_native</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+</div>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-instance'>
+      - (void) <strong>constructor</strong>(primitive = "")
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='is_string-instance'>
+      - (void) <strong>is_string</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_native-instance'>
+      - (void) <strong>to_native</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='valueOf-instance'>
+      - (void) <strong>valueOf</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='toString-instance'>
+      - (void) <strong>toString</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='unbox-instance'>
+      - (void) <strong>unbox</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='initialize_copy-instance'>
+      - (void) <strong>initialize_copy</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='clone-instance'>
+      - (void) <strong>clone</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''%'-instance'>
+      - (void) <strong>'%'</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''*'-instance'>
+      - (void) <strong>'*'</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''+'-instance'>
+      - (void) <strong>'+'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''<=>'-instance'>
+      - (void) <strong>'<=>'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''=='-instance'>
+      - (void) <strong>'=='</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''<<'-instance'>
+      - (void) <strong>'<<'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''=~'-instance'>
+      - (void) <strong>'=~'</strong>(args...)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='capitalize-instance'>
+      - (void) <strong>capitalize</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Differs from JS toUpperCase in that it does not uppercase special characters ä, ö, etc
+  </div>
+  <p>Returns a copy of str with the first character converted to uppercase and the remainder to lowercase. Note: case conversion is effective only in ASCII region. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).capitalize()    # =&gt; &quot;Hello&quot;
+  R(&quot;HELLO&quot;).capitalize()    # =&gt; &quot;Hello&quot;
+  R(&quot;äöü&quot;).capitalize()      # =&gt; &quot;äöü&quot;
+  R(&quot;123ABC&quot;).capitalize()   # =&gt; &quot;123abc&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='capitalize_bang-instance'>
+      - (void) <strong>capitalize_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Modifies str by converting the first character to uppercase and the remainder to lowercase. Returns nil if no changes are made. Note: case conversion is effective only in ASCII region. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'> str = R(&#39;hello&#39;)
+ str.capitalize_bang()         # =&gt; &quot;Hello&quot;
+ str                           # =&gt; &quot;Hello&quot;</code></pre>
+    <h4>
+      Already capitalized
+    </h4>
+    <pre><code class='coffee'> str = R(&quot;Already capitals&quot;)
+ str.capitalize_bang()         # =&gt; null
+ str                           # =&gt; &quot;Already capitals&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='casecmp-instance'>
+      - (void) <strong>casecmp</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Case-insensitive version of String#&lt;=&gt;. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;abcdef&quot;).casecmp(&quot;abcde&quot;)     #=&gt; 1
+  R(&quot;aBcDeF&quot;).casecmp(&quot;abcdef&quot;)    #=&gt; 0
+  R(&quot;abcdef&quot;).casecmp(&quot;abcdefg&quot;)   #=&gt; -1
+  R(&quot;abcdef&quot;).casecmp(&quot;ABCDEF&quot;)    #=&gt; 0</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='center-instance'>
+      - (void) <strong>center</strong>(length, padString = ' ')
+    </p>
+    <div class='docstring'>
+  <p>If integer is greater than the length of str, returns a new String of length integer with str centered and padded with padstr; otherwise, returns str. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).center(4)         # =&gt; &quot;hello&quot;
+  R(&quot;hello&quot;).center(20)        # =&gt; &quot;       hello        &quot;
+  R(&quot;hello&quot;).center(20, &#39;123&#39;) # =&gt; &quot;1231231hello12312312&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='chars-instance'>
+      - (void) <strong>chars</strong>(block)
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Does *not* typecast chars to R.Strings.
+  </div>
+  <p>Passes each character in str to the given block, or returns an enumerator if no block is given. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).each_char (c) -&gt; R.puts(c + &#39; &#39;)
+  # out: h e l l o</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='chomp-instance'>
+      - (void) <strong>chomp</strong>(sep = null)
+    </p>
+    <div class='docstring'>
+  <p>Returns a new String with the given record separator removed from the end of str (if present). If $/ has not been changed from the default Ruby record separator, then chomp also removes carriage return characters (that is it will remove \n, \r, and \r\n). </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).chomp()            # =&gt; &quot;hello&quot;
+  R(&quot;hello\n&quot;).chomp()          # =&gt; &quot;hello&quot;
+  R(&quot;hello\r\n&quot;).chomp()        # =&gt; &quot;hello&quot;
+  R(&quot;hello\n\r&quot;).chomp()        # =&gt; &quot;hello\n&quot;
+  R(&quot;hello\r&quot;).chomp()          # =&gt; &quot;hello&quot;
+  R(&quot;hello \n there&quot;).chomp()   # =&gt; &quot;hello \n there&quot;
+  R(&quot;hello&quot;).chomp(&quot;llo&quot;)       # =&gt; &quot;he&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='chomp_bang-instance'>
+      - (void) <strong>chomp_bang</strong>(sep = null)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    finish specs
+  </div>
+  <p>Modifies str in place as described for String#chomp, returning str, or nil if no modifications were made.  # </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='chop-instance'>
+      - (void) <strong>chop</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a new String with the last character removed. If the string ends with \r\n, both characters are removed. Applying chop to an empty string returns an empty string. String#chomp is often a safer alternative, as it leaves the string unchanged if it doesn’t end in a record separator. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;string\r\n&quot;).chop()   # =&gt; &quot;string&quot;
+  R(&quot;string\n\r&quot;).chop()   # =&gt; &quot;string\n&quot;
+  R(&quot;string\n&quot;).chop()     # =&gt; &quot;string&quot;
+  R(&quot;string&quot;).chop()       # =&gt; &quot;strin&quot;
+  R(&quot;x&quot;).chop().chop()     # =&gt; &quot;&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='chr-instance'>
+      - (void) <strong>chr</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a one-character string at the beginning of the string. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R(&quot;hello&quot;)
+  a.chr()                  # =&gt; &#39;h&#39;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='clear-instance'>
+      - (void) <strong>clear</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='count-instance'>
+      - (void) <strong>count</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    expect( s.count("A-a")).toEqual s.count("A-Z[\\]^_`a")
+  </div>
+  <p>Each other_str parameter defines a set of characters to count. The intersection of these sets defines the characters to count in str. Any other_str that starts with a caret (^) is negated. The sequence c1–c2 means all characters between c1 and c2. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R(&quot;hello world&quot;)
+  a.count &quot;lo&quot;            #=&gt; 5
+  a.count &quot;lo&quot;, &quot;o&quot;       #=&gt; 2
+  a.count &quot;hello&quot;, &quot;^l&quot;   #=&gt; 4
+  a.count &quot;ej-m&quot;          #=&gt; 4</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete-instance'>
+      - (void) <strong>delete</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    expect( R("ABCabc[]").delete("A-a") ).toEqual R("bc")
+  </div>
+  <p>Returns a copy of str with all characters in the intersection of its arguments deleted. Uses the same rules for building the set of characters as String#count. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).delete &quot;l&quot;,&quot;lo&quot;        #=&gt; &quot;heo&quot;
+  R(&quot;hello&quot;).delete &quot;lo&quot;            #=&gt; &quot;he&quot;
+  R(&quot;hello&quot;).delete &quot;aeiou&quot;, &quot;^e&quot;   #=&gt; &quot;hell&quot;
+  R(&quot;hello&quot;).delete &quot;ej-m&quot;          #=&gt; &quot;ho&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete_bang-instance'>
+      - (void) <strong>delete_bang</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Performs a delete operation in place, returning str, or nil if str was not modified. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='downcase-instance'>
+      - (void) <strong>downcase</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='downcase_bang-instance'>
+      - (void) <strong>downcase_bang</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='dump-instance'>
+      - (void) <strong>dump</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Produces a version of str with all nonprinting characters replaced by \nnn notation and all special characters escaped. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='dup-instance'>
+      - (void) <strong>dup</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_line-instance'>
+      - (void) <strong>each_line</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Splits str using the supplied parameter as the record separator ($/ by default), passing each substring in turn to the supplied block. If a zero- length record separator is supplied, the string is split into paragraphs delimited by multiple successive newlines. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'> print &quot;Example one\n&quot;
+ &quot;hello\nworld&quot;.each_line {|s| p s}
+ print &quot;Example two\n&quot;
+ &quot;hello\nworld&quot;.each_line(&#39;l&#39;) {|s| p s}
+ print &quot;Example three\n&quot;
+ &quot;hello\n\n\nworld&quot;.each_line(&#39;&#39;) {|s| p s}
+ # produces:
+ # Example one
+ # &quot;hello\n&quot;
+ # &quot;world&quot;
+ # Example two
+ # &quot;hel&quot;
+ # &quot;l&quot;
+ # &quot;o\nworl&quot;
+ # &quot;d&quot;
+ # Example three
+ # &quot;hello\n\n\n&quot;
+ # &quot;world&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='empty-instance'>
+      - (void) <strong>empty</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns true if str has a length of zero. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  &quot;hello&quot;.empty()   #=&gt; false
+  &quot;&quot;.empty()        #=&gt; true
+  &quot; &quot;.empty()       #=&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='end_with-instance'>
+      - (void) <strong>end_with</strong>(needles...)
+    </p>
+    <div class='docstring'>
+  <p>Returns true if str ends with one of the suffixes given. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='eql-instance'>
+      - (void) <strong>eql</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Two strings are equal if they have the same length and content. </p> <pre><code>R(&quot;foo&quot;).eql(&#39;foo&#39;)      # =&gt; true R(&quot;foo&quot;).eql(&#39;FOO&#39;)      # =&gt; false R(&quot;foo&quot;).eql(R(&#39;foo&#39;))   # =&gt; true</code></pre> <p>@return true/false </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='get-instance'>
+      - (void) <strong>get</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='set-instance'>
+      - (void) <strong>set</strong>(idx, other)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    idx with count. set(0, 2, "a"), aka [0,2] = 'a'
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    idx as Regexp
+  </div>
+  
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='gsub-instance'>
+      - (void) <strong>gsub</strong>(pattern, replacement)
+    </p>
+    <div class='docstring'>
+  <p>Returns a copy of str with the all occurrences of pattern substituted for the second argument. The pattern is typically a Regexp; if given as a String, any regular expression metacharacters it contains will be interpreted literally, e.g. &#39;\d&#39; will match a backlash followed by ‘d’, instead of a digit. </p> <p>If replacement is a String it will be substituted for the matched text. It may contain back-references to the pattern’s capture groups of the form \d, where d is a group number, or \k<n>, where n is a group name. If it is a double-quoted string, both back-references must be preceded by an additional backslash. However, within replacement the special match variables, such as &amp;$, will not refer to the current match. </p> <p>If the second argument is a Hash, and the matched text is one of its keys, the corresponding value is the replacement string. </p> <p>In the block form, the current match string is passed in as a parameter, and variables such as $1, $2, $`, $&amp;, and $&#39; will be set appropriately. The value returned by the block will be substituted for the match on each call. </p> <p>The result inherits any tainting in the original string or any supplied replacement string. </p> <p>When neither a block nor a second argument is supplied, an Enumerator is returned. </p> <p>TODO: add hash syntax, properly document supported features </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).gsub(%r[aeiou]/, &#39;*&#39;)                  #=&gt; &quot;h*ll*&quot;
+  R(&quot;hello&quot;).gsub(%r([aeiou])/, &#39;&lt;\1&gt;&#39;)             #=&gt; &quot;h&lt;e&gt;ll&lt;o&gt;&quot;
+  R(&quot;hello&quot;).gsub(%r./) {|s| s.ord.to_s + &#39; &#39;}      #=&gt; &quot;104 101 108 108 111 &quot;
+  # R(&quot;hello&quot;).gsub(%r(?&lt;foo&gt;[aeiou])/, &#39;{\k&lt;foo&gt;}&#39;)  #=&gt; &quot;h{e}ll{o}&quot;
+  R(&#39;hello&#39;).gsub(%r[eo]/, &#39;e&#39; =&gt; 3, &#39;o&#39; =&gt; &#39;*&#39;)    #=&gt; &quot;h3ll*&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='include-instance'>
+      - (void) <strong>include</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Returns true if str contains the given string or character. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).include &quot;lo&quot;   #=&gt; true
+  R(&quot;hello&quot;).include &quot;ol&quot;   #=&gt; false
+  R(&quot;hello&quot;).include hh     #=&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='index-instance'>
+      - (void) <strong>index</strong>(needle, offset)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #index(regexp)
+  </div>
+  <p>Returns the index of the first occurrence of the given substring or pattern (regexp) in str. Returns nil if not found. If the second parameter is present, it specifies the position in the string to begin the search. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).index(&#39;e&#39;)             #=&gt; 1
+  R(&quot;hello&quot;).index(&#39;lo&#39;)            #=&gt; 3
+  R(&quot;hello&quot;).index(&#39;a&#39;)             #=&gt; nil
+  R(&quot;hello&quot;).index(ee)              #=&gt; 1
+  R(&quot;hello&quot;).index(/[aeiou]/, -3)   #=&gt; 4</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='insert-instance'>
+      - (void) <strong>insert</strong>(idx, other)
+    </p>
+    <div class='docstring'>
+  <p>Inserts other_str before the character at the given index, modifying str. Negative indices count from the end of the string, and insert after the given character. The intent is insert aString so that it starts at the given index. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;abcd&quot;).insert(0, &#39;X&#39;)    # =&gt; &quot;Xabcd&quot;
+  R(&quot;abcd&quot;).insert(3, &#39;X&#39;)    # =&gt; &quot;abcXd&quot;
+  R(&quot;abcd&quot;).insert(4, &#39;X&#39;)    # =&gt; &quot;abcdX&quot;</code></pre>
+    <h4>
+      inserts after with negative counts
+    </h4>
+    <pre><code class='coffee'>  R(&quot;abcd&quot;).insert(-3, &#39;X&#39;)   # =&gt; &quot;abXcd&quot;
+  R(&quot;abcd&quot;).insert(-1, &#39;X&#39;)   # =&gt; &quot;abcdX&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='inspect-instance'>
+      - (void) <strong>inspect</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    For now just an alias to dump
+  </div>
+  <p>Returns a printable version of str, surrounded by quote marks, with special characters escaped. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  str = &quot;hello&quot;
+  str[3] = &quot;\b&quot;
+  str.inspect       #=&gt; &quot;\&quot;hel\\bo\&quot;&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='ljust-instance'>
+      - (void) <strong>ljust</strong>(width, padString = " ")
+    </p>
+    <div class='docstring'>
+  <p>If integer is greater than the length of str, returns a new String of length integer with str left justified and padded with padstr; otherwise, returns str. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).ljust(4)            #=&gt; &quot;hello&quot;
+  R(&quot;hello&quot;).ljust(20)           #=&gt; &quot;hello               &quot;
+  R(&quot;hello&quot;).ljust(20, &#39;1234&#39;)   #=&gt; &quot;hello123412341234123&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='lstrip-instance'>
+      - (void) <strong>lstrip</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='lstrip_bang-instance'>
+      - (void) <strong>lstrip_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Removes leading whitespace from str, returning nil if no change was made. See also String#rstrip! and String#strip!. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;  hello  &quot;).lstrip_bang()  #=&gt; &quot;hello  &quot;
+  R(&quot;hello&quot;).lstrip_bang()      #=&gt; nil</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='match-instance'>
+      - (void) <strong>match</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Converts pattern to a Regexp (if it isn’t already one), then invokes its match method on str. If the second parameter is present, it specifies the position in the string to begin the search. </p> <p>If a block is given, invoke the block with MatchData if match succeed, so that you can write </p> <p>The return value is a value from block execution in this case. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&#39;hello&#39;).match(&#39;(.)\1&#39;)      #=&gt; #&lt;MatchData &quot;ll&quot; 1:&quot;l&quot;&gt;
+  R(&#39;hello&#39;).match(&#39;(.)\1&#39;)[0]   #=&gt; &quot;ll&quot;
+  R(&#39;hello&#39;).match(/(.)\1/)[0]   #=&gt; &quot;ll&quot;
+  R(&#39;hello&#39;).match(&#39;xx&#39;)         #=&gt; nil</code></pre>
+    <h4>
+      with block:
+    </h4>
+    <pre><code class='coffee'>  str.match(pat) {|m| ...}
+  # instead of:
+  if m = str.match(pat)
+    ...
+  end</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='partition-instance'>
+      - (void) <strong>partition</strong>(pattern)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not yet accept regexp as pattern
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not yet affect R['$~']
+  </div>
+  <p>Searches sep or pattern (regexp) in the string and returns the part before it, the match, and the part after it. If it is not found, returns two empty strings and str. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).partition(&quot;l&quot;)         # =&gt; [&quot;he&quot;, &quot;l&quot;, &quot;lo&quot;]
+  R(&quot;hello&quot;).partition(&quot;x&quot;)         # =&gt; [&quot;hello&quot;, &quot;&quot;, &quot;&quot;]
+  R(&quot;hello&quot;).partition(/.l/)        # =&gt; [&quot;h&quot;, &quot;el&quot;, &quot;lo&quot;]</code></pre>
+    <h4>
+      headers
+    </h4>
+    <pre><code class='coffee'>  partition(sep) -&gt; [head, sep, tail]
+  partition(regexp) -&gt; [head, match, tail]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='prepend-instance'>
+      - (void) <strong>prepend</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Prepend the given string to str. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R(“world” )
+  a.prepend(“hello ”) #=&gt; “hello world”
+  a #=&gt; “hello world”</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='replace-instance'>
+      - (void) <strong>replace</strong>(val)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Does not copy taintedness
+  </div>
+  <p>Replaces the contents and taintedness of str with the corresponding values in other_str. </p> <pre><code>s = R(&quot;hello&quot;)            #=&gt; &quot;hello&quot; s.replace &quot;world&quot;         #=&gt; &quot;world&quot; s.replace R(&quot;world&quot;)      #=&gt; &quot;world&quot;</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reverse-instance'>
+      - (void) <strong>reverse</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a new string with the characters from str in reverse order. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;stressed&quot;).reverse()   #=&gt; &quot;desserts&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reverse_bang-instance'>
+      - (void) <strong>reverse_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Reverses str in place. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rindex-instance'>
+      - (void) <strong>rindex</strong>(needle, offset)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #rindex(/.../) does not add matches to R['$~'] as it should
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #rindex(needle, offset) does not use respond_to?(:to_int) for offset
+  </div>
+  <p>Returns the index of the last occurrence of the given substring or pattern (regexp) in str. Returns nil if not found. If the second parameter is present, it specifies the position in the string to end the search—characters beyond this point will not be considered. </p> <pre><code>  to convert it to_int.</code></pre> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).rindex(&#39;e&#39;)             #=&gt; 1
+  R(&quot;hello&quot;).rindex(&#39;l&#39;)             #=&gt; 3
+  R(&quot;hello&quot;).rindex(&#39;a&#39;)             #=&gt; nil
+  R(&quot;hello&quot;).rindex(ee)              #=&gt; 1
+  R(&quot;hello&quot;).rindex(/[aeiou]/, -2)   #=&gt; 1</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rjust-instance'>
+      - (void) <strong>rjust</strong>(width, padString = " ")
+    </p>
+    <div class='docstring'>
+  <p>If integer is greater than the length of str, returns a new String of length integer with str right justified and padded with padstr; otherwise, returns str. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).rjust(4)            #=&gt; &quot;hello&quot;
+  R(&quot;hello&quot;).rjust(20)           #=&gt; &quot;               hello&quot;
+  R(&quot;hello&quot;).rjust(20, &#39;1234&#39;)   #=&gt; &quot;123412341234123hello&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rpartition-instance'>
+      - (void) <strong>rpartition</strong>(pattern)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not yet accept regexp as pattern
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not yet affect R['$~']
+  </div>
+  <p>Searches sep or pattern (regexp) in the string from the end of the string, and returns the part before it, the match, and the part after it. If it is not found, returns two empty strings and str. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).rpartition(&quot;l&quot;)         #=&gt; [&quot;hel&quot;, &quot;l&quot;, &quot;o&quot;]
+  R(&quot;hello&quot;).rpartition(&quot;x&quot;)         #=&gt; [&quot;&quot;, &quot;&quot;, &quot;hello&quot;]</code></pre>
+    <h4>
+      edge cases
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).rpartition(&quot;x&quot;)         #=&gt; [&quot;&quot;, &quot;&quot;, &quot;hello&quot;]
+  R(&quot;hello&quot;).rpartition(&quot;hello&quot;)     #=&gt; [&quot;&quot;, &quot;hello&quot;, &quot;&quot;]</code></pre>
+    <h4>
+      todo:
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).rpartition(/.l/)        #=&gt; [&quot;he&quot;, &quot;ll&quot;, &quot;o&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rstrip-instance'>
+      - (void) <strong>rstrip</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rstrip_bang-instance'>
+      - (void) <strong>rstrip_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Removes trailing whitespace from str, returning nil if no change was made. See also String#lstrip! and String#strip!. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;  hello  &quot;).rstrip_bang()  #=&gt; &quot;  hello&quot;
+  R(&quot;hello&quot;).rstrip_bang()      #=&gt; nil</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='scan-instance'>
+      - (void) <strong>scan</strong>(pattern, block = null)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    some untested specs
+  </div>
+  <p>Both forms iterate through str, matching the pattern (which may be a Regexp or a String). For each match, a result is generated and either added to the result array or passed to the block. If the pattern contains no groups, each individual result consists of the matched string, $&amp;. If the pattern contains groups, each individual result is itself an array containing one entry per group. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R(&quot;cruel world&quot;)
+  a.scan(/\w+/)        #=&gt; [&quot;cruel&quot;, &quot;world&quot;]
+  a.scan(/.../)        #=&gt; [&quot;cru&quot;, &quot;el &quot;, &quot;wor&quot;]
+  a.scan(/(...)/)      #=&gt; [[&quot;cru&quot;], [&quot;el &quot;], [&quot;wor&quot;]]
+  a.scan(/(..)(..)/)   #=&gt; [[&quot;cr&quot;, &quot;ue&quot;], [&quot;l &quot;, &quot;wo&quot;]]
+  #And the block form:
+  a.scan(/\w+/, (w) -&gt; R.puts &quot;&lt;&lt;#{w}&gt;&gt; &quot;)
+  print &quot;\n&quot;
+  a.scan(/(.)(.)/, (x,y) -&gt; R.puts y, x )
+  print &quot;\n&quot;
+  # produces:
+  # &lt;&lt;cruel&gt;&gt; &lt;&lt;world&gt;&gt;
+  # rceu lowlr</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='size-instance'>
+      - (void) <strong>size</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='slice-instance'>
+      - (void) <strong>slice</strong>(index, other)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Implement support for ranges slice(R.Range.new(...))
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    regexp
+  </div>
+  <p>Element Reference—If passed a single Fixnum, returns a substring of one character at that position. If passed two Fixnum objects, returns a substring starting at the offset given by the first, and with a length given by the second. If passed a range, its beginning and end are interpreted as offsets delimiting the substring to be returned. In all three cases, if an offset is negative, it is counted from the end of str. Returns nil if the initial offset falls outside the string or the length is negative. </p> <p>If a Regexp is supplied, the matching portion of str is returned. If a numeric or name parameter follows the regular expression, that component of the MatchData is returned instead. If a String is given, that string is returned if it occurs in str. In both cases, nil is returned if there is no match. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R(&quot;hello there&quot;)
+  a.slice(1)                      #=&gt; &quot;e&quot;
+  a.slice(2, 3)                   #=&gt; &quot;llo&quot;
+  a.slice(R.rng(2, 3))            #=&gt; &quot;ll&quot;
+  a.slice(-3, 2)                  #=&gt; &quot;er&quot;
+  a.slice(R.rng(7, -2))           #=&gt; &quot;her&quot;
+  a.slice(R.rng(-4, -2))          #=&gt; &quot;her&quot;
+  a.slice(R.rng(-2, -4))          #=&gt; &quot;&quot;
+  a.slice(R.rng(12, -1))          #=&gt; null
+  a.slice(/[aeiou](.)\11//)       #=&gt; &quot;ell&quot;
+  a.slice(/[aeiou](.)\11//, 0)    #=&gt; &quot;ell&quot;
+  a.slice(/[aeiou](.)\11//, 1)    #=&gt; &quot;l&quot;
+  a.slice(/[aeiou](.)\11//, 2)    #=&gt; null
+  a.slice(&quot;lo&quot;)                   #=&gt; &quot;lo&quot;
+  a.slice(&quot;bye&quot;)                  #=&gt; null</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='split-instance'>
+      - (void) <strong>split</strong>(pattern = " ", limit)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    limit is not yet supported
+  </div>
+  <p>Divides str into substrings based on a delimiter, returning an array of these substrings. </p> <p>If pattern is a String, then its contents are used as the delimiter when splitting str. If pattern is a single space, str is split on whitespace, with leading whitespace and runs of contiguous whitespace characters ignored. </p> <p>If pattern is a Regexp, str is divided where the pattern matches. Whenever the pattern matches a zero-length string, str is split into individual characters. If pattern contains groups, the respective matches will be returned in the array as well. </p> <p>If pattern is omitted, the value of $; is used. If $; is nil (which is the default), str is split on whitespace as if ` ‘ were specified. </p> <p>If the limit parameter is omitted, trailing null fields are suppressed. If limit is a positive number, at most that number of fields will be returned (if limit is 1, the entire string is returned as the only entry in an array). If negative, there is no limit to the number of fields returned, and trailing null fields are not suppressed. </p> <pre><code>R(&quot;mellow yellow&quot;).split(&quot;ello&quot;)   #=&gt; [&quot;m&quot;, &quot;w y&quot;, &quot;w&quot;] R(&quot;1,2,,3,4,,&quot;).split(&#39;,&#39;)         #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3&quot;, &quot;4&quot;] # R(&quot;1,2,,3,4,,&quot;).split(&#39;,&#39;, 4)      #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3,4,,&quot;] # R(&quot;1,2,,3,4,,&quot;).split(&#39;,&#39;, -4)     #=&gt; [&quot;1&quot;, &quot;2&quot;, &quot;&quot;, &quot;3&quot;, &quot;4&quot;, &quot;&quot;, &quot;&quot;]</code></pre> <p>split(pattern=$;, [limit]) → anArray </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot; now&#39;s  the time&quot;).split()      #=&gt; [&quot;now&#39;s&quot;, &quot;the&quot;, &quot;time&quot;]
+  R(&quot; now&#39;s  the time&quot;).split(&#39; &#39;)   #=&gt; [&quot;now&#39;s&quot;, &quot;the&quot;, &quot;time&quot;]
+  R(&quot; now&#39;s  the time&quot;).split(/ /)   #=&gt; [&quot;&quot;, &quot;now&#39;s&quot;, &quot;&quot;, &quot;the&quot;, &quot;time&quot;]
+  R(&quot;1, 2.34,56, 7&quot;).split(%r{,\s*}) #=&gt; [&quot;1&quot;, &quot;2.34&quot;, &quot;56&quot;, &quot;7&quot;]
+  R(&quot;hello&quot;).split(//)               #=&gt; [&quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;]
+  # R(&quot;hello&quot;).split(//, 3)            #=&gt; [&quot;h&quot;, &quot;e&quot;, &quot;llo&quot;]
+  R(&quot;hi mom&quot;).split(%r{\s*})         #=&gt; [&quot;h&quot;, &quot;i&quot;, &quot;m&quot;, &quot;o&quot;, &quot;m&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='squeeze_bang-instance'>
+      - (void) <strong>squeeze_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Not yet implemented
+  </div>
+  
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='squeeze-instance'>
+      - (void) <strong>squeeze</strong>(pattern...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Fix A-a bug
+  </div>
+  <p>Builds a set of characters from the other_str parameter(s) using the procedure described for String#count. Returns a new string where runs of the same character that occur in this set are replaced by a single character. If no arguments are given, all runs of identical characters are replaced by a single character. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;yellow moon&quot;).squeeze()                #=&gt; &quot;yelow mon&quot;
+  R(&quot;  now   is  the&quot;).squeeze(&quot; &quot;)         #=&gt; &quot; now is the&quot;
+  R(&quot;putters shoot balls&quot;).squeeze(&quot;m-z&quot;)   #=&gt; &quot;puters shot balls&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='start_with-instance'>
+      - (void) <strong>start_with</strong>(needles...)
+    </p>
+    <div class='docstring'>
+  <p>Returns true if str starts with one of the prefixes given. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).start_with(&quot;hell&quot;)               #=&gt; true
+  # returns true if one of the prefixes matches.
+  R(&quot;hello&quot;).start_with(&quot;heaven&quot;, &quot;hell&quot;)     #=&gt; true
+  R(&quot;hello&quot;).start_with(&quot;heaven&quot;, &quot;paradise&quot;) #=&gt; false</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='strip-instance'>
+      - (void) <strong>strip</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='strip_bang-instance'>
+      - (void) <strong>strip_bang</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sub-instance'>
+      - (void) <strong>sub</strong>(pattern, replacement)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #sub does not yet add matches to R['$~'] as it should
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    String#sub with pattern and block
+  </div>
+  <p>Returns a copy of str with the first occurrence of pattern substituted for the second argument. The pattern is typically a Regexp; if given as a String, any regular expression metacharacters it contains will be interpreted literally, e.g. &#39;\d&#39; will match a backlash followed by ‘d’, instead of a digit. </p> <p>If replacement is a String it will be substituted for the matched text. It may contain back-references to the pattern’s capture groups of the form \d, where d is a group number, or \k<n>, where n is a group name. If it is a double-quoted string, both back-references must be preceded by an additional backslash. However, within replacement the special match variables, such as &amp;$, will not refer to the current match. </p> <p>If the second argument is a Hash, and the matched text is one of its keys, the corresponding value is the replacement string. </p> <p>In the block form, the current match string is passed in as a parameter, and variables such as $1, $2, $`, $&amp;, and $&#39; will be set appropriately. The value returned by the block will be substituted for the match on each call. </p> <p>The result inherits any tainting in the original string or any supplied replacement string. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).sub(/[aeiou]/, &#39;*&#39;)                  #=&gt; &quot;h*llo&quot;
+  R(&quot;hello&quot;).sub(/([aeiou])/, &#39;&lt;\1&gt;&#39;)             #=&gt; &quot;h&lt;e&gt;llo&quot;
+  R(&quot;hello&quot;).sub(/./, (s) -&gt; s.ord.to_s() + &#39; &#39; ) #=&gt; &quot;104 ello&quot;
+  # R(&quot;hello&quot;).sub(/(?&lt;foo&gt;[aeiou])/, &#39;*\k&lt;foo&gt;*&#39;)  #=&gt; &quot;h*e*llo&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sub_bang-instance'>
+      - (void) <strong>sub_bang</strong>(pattern, replacement)
+    </p>
+    <div class='docstring'>
+  <p>Performs the substitutions of String#sub in place, returning str, or nil if no substitutions were performed. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='succ-instance'>
+      - (void) <strong>succ</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the successor to str. The successor is calculated by incrementing characters starting from the rightmost alphanumeric (or the rightmost character if there are no alphanumerics) in the string. Incrementing a digit always results in another digit, and incrementing a letter results in another letter of the same case. Incrementing nonalphanumerics uses the underlying character set’s collating sequence. </p> <p>If the increment generates a “carry,” the character to the left of it is incremented. This process repeats until there is no carry, adding an additional character if necessary. </p> <p>@alias #next </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;abcd&quot;).succ()        #=&gt; &quot;abce&quot;
+  R(&quot;THX1138&quot;).succ()     #=&gt; &quot;THX1139&quot;
+  R(&quot;&lt;&lt;koala&gt;&gt;&quot;).succ()   #=&gt; &quot;&lt;&lt;koalb&gt;&gt;&quot;
+  R(&quot;1999zzz&quot;).succ()     #=&gt; &quot;2000aaa&quot;
+  R(&quot;ZZZ9999&quot;).succ()     #=&gt; &quot;AAAA0000&quot;
+  R(&quot;***&quot;).succ()         #=&gt; &quot;**+&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='succ_bang-instance'>
+      - (void) <strong>succ_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Equivalent to String#succ, but modifies the receiver in place. </p> <p>@alias #next_bang </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='swapcase-instance'>
+      - (void) <strong>swapcase</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='swapcase_bang-instance'>
+      - (void) <strong>swapcase_bang</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_a-instance'>
+      - (void) <strong>to_a</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='valid_float-instance'>
+      - (void) <strong>valid_float</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_f-instance'>
+      - (void) <strong>to_f</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Some exotic formats not yet fully supported.
+  </div>
+  <p>Returns the result of interpreting leading characters in str as a floating point number. Extraneous characters past the end of a valid number are ignored. If there is not a valid number at the start of str, 0.0 is returned. This method never raises an exception. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;123.45e1&quot;).to_f()        #=&gt; 1234.5
+  R(&quot;45.67 degrees&quot;).to_f()   #=&gt; 45.67
+  R(&quot;thx1138&quot;).to_f()         #=&gt; 0.0</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_i-instance'>
+      - (void) <strong>to_i</strong>(base)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #to_i(base) does not remove invalid characters:
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #to_i(0) does not auto-detect base
+  </div>
+  <p>Returns the result of interpreting leading characters in str as an integer base base (between 2 and 36). Extraneous characters past the end of a valid number are ignored. If there is not a valid number at the start of str, 0 is returned. This method never raises an exception when base is valid. </p> <pre><code>  - e.g: R(&quot;1012&quot;).to_i(2) should return 5, but due to 2 being invalid it retunrs 0 now.</code></pre> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;12345&quot;).to_i()           #=&gt; 12345
+  R(&quot;1_23_45&quot;).to_i()           #=&gt; 12345
+  R(&quot;99 red balloons&quot;).to_i() #=&gt; 99
+  R(&quot;0a&quot;).to_i()              #=&gt; 0
+  R(&quot;0a&quot;).to_i(16)            #=&gt; 10
+  R(&quot;hello&quot;).to_i()           #=&gt; 0
+  R(&quot;1100101&quot;).to_i(2)        #=&gt; 101
+  R(&quot;1100101&quot;).to_i(8)        #=&gt; 294977
+  R(&quot;1100101&quot;).to_i(10)       #=&gt; 1100101
+  R(&quot;1100101&quot;).to_i(16)       #=&gt; 17826049
+  # but:
+  R(&quot;_12345&quot;).to_i()          #=&gt; 0
+  # TODO:
+  R(&quot;0b10101&quot;).to_i(0)        #=&gt; 21
+  R(&quot;0b1010134&quot;).to_i(2)      #=&gt; 21</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_s-instance'>
+      - (void) <strong>to_s</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the receiver. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='tr-instance'>
+      - (void) <strong>tr</strong>(from_str, to_str)
+    </p>
+    <div class='docstring'>
+  <p>Returns a copy of str with the characters in from_str replaced by the corresponding characters in #to_str. If #to_str is shorter than from_str, it is padded with its last character in order to maintain the correspondence. </p> <pre><code>R(&quot;hello&quot;).tr(&#39;el&#39;, &#39;ip&#39;)      #=&gt; &quot;hippo&quot; R(&quot;hello&quot;).tr(&#39;aeiou&#39;, &#39;*&#39;)    #=&gt; &quot;h*ll*&quot;</code></pre> <p>Both strings may use the c1-c2 notation to denote ranges of characters, and from_str may start with a ^, which denotes all characters except those listed. </p> <pre><code>R(&quot;hello&quot;).tr(&#39;a-y&#39;, &#39;b-z&#39;)    #=&gt; &quot;ifmmp&quot; R(&quot;hello&quot;).tr(&#39;^aeiou&#39;, &#39;*&#39;)   #=&gt; &quot;*e**o&quot;</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='tr_bang-instance'>
+      - (void) <strong>tr_bang</strong>(from_str, to_str)
+    </p>
+    <div class='docstring'>
+  <p>Translates str in place, using the same rules as <code>String#tr</code>. Returns <code>str</code>, or <code>nil</code> if no changes were made. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='tr_s-instance'>
+      - (void) <strong>tr_s</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Implement
+  </div>
+  <p>Processes a copy of str as described under String#tr, then removes duplicate characters in regions that were affected by the translation. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;hello&quot;).tr_s(&#39;l&#39;, &#39;r&#39;)     #=&gt; &quot;hero&quot;
+  R(&quot;hello&quot;).tr_s(&#39;el&#39;, &#39;*&#39;)    #=&gt; &quot;h*o&quot;
+  R(&quot;hello&quot;).tr_s(&#39;el&#39;, &#39;hx&#39;)   #=&gt; &quot;hhxo&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='upcase-instance'>
+      - (void) <strong>upcase</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='upcase_bang-instance'>
+      - (void) <strong>upcase_bang</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='upto-instance'>
+      - (void) <strong>upto</strong>(stop, exclusive, block)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    R('a').upto('c').to_a() should return ['a', 'b', 'c'] (include 'c')
+  </div>
+  <p>Iterates through successive values, starting at str and ending at other_str inclusive, passing each value in turn to the block. The String#succ method is used to generate each value. If optional second argument exclusive is omitted or is false, the last value will be included; otherwise it will be excluded. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>If str and other_str contains only ascii numeric characters, both are recognized as decimal numbers. In addition, the width of string (e.g. leading zeros) is handled appropriately. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;a8&quot;).upto(&quot;b6&quot;, (s) -&gt; R.puts(s, &#39;&#39;))
+  # out: a8 a9 b0 b1 b2 b3 b4 b5 b6</code></pre>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(&quot;9&quot;).upto(&quot;11&quot;).to_a()   #=&gt; [&quot;9&quot;, &quot;10&quot;, &quot;11&quot;]
+  R(&quot;25&quot;).upto(&quot;5&quot;).to_a()   #=&gt; []
+  R(&quot;07&quot;).upto(&quot;11&quot;).to_a()  #=&gt; [&quot;07&quot;, &quot;08&quot;, &quot;09&quot;, &quot;10&quot;, &quot;11&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v0.9.1
+  (Node.js v0.8.4).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

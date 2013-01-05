@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
+  <script src='../../assets/codo.js'></script>
+  <script src='../../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>RubyJS</span>
+    &raquo;
+    <span class='title'>Kernel</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../../class_list.html'>Classes</a>
+      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../../file_list.html'>Files</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        RubyJS.Kernel
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib/corelib/kernel.coffee</td>
+        </tr>
+      </table>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#rubyjs-instance'>
+        - (void) <strong>rubyjs</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      A method to easily check whether an object is a RubyJS object with CoffeeScript.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#box-instance'>
+        - (void) <strong>box</strong>(obj, recursive, block)
+      </a>
+    </span>
+    <span class='desc'>
+      TODO: find a better name for box.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#w-instance'>
+        - (void) <strong>w</strong>(str)
+      </a>
+    </span>
+    <span class='desc'>
+      Equivalent to %w[] in Ruby Creates an R.Array of R.String for every word separated by space.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#r-instance'>
+        - (void) <strong>r</strong>(a, b, excluding)
+      </a>
+    </span>
+    <span class='desc'>
+      Shortcut for creating a R.Range.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#f-instance'>
+        - (void) <strong>f</strong>(flt)
+      </a>
+    </span>
+    <span class='desc'>
+      Shortcut for creating floats
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#l-instance'>
+        - (void) <strong>l</strong>(obj, recursive = false)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns primitive from an object, returns obj otherwise.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#catch_break-instance'>
+        - (void) <strong>catch_break</strong>(block, context = @undefined)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#$Array-instance'>
+        - (void) <strong>$Array</strong>(obj, recursive = false)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#$Array_r-instance'>
+        - (void) <strong>$Array_r</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      TODO: Remove from code
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#$Float-instance'>
+        - (void) <strong>$Float</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#$Integer-instance'>
+        - (void) <strong>$Integer</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#$String-instance'>
+        - (void) <strong>$String</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#$Range-instance'>
+        - (void) <strong>$Range</strong>(start, end, exclusive)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#puts-instance'>
+        - (void) <strong>puts</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rand-instance'>
+        - (void) <strong>rand</strong>(limit)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='rubyjs-instance'>
+      - (void) <strong>rubyjs</strong>()
+    </p>
+    <div class='docstring'>
+  <p>A method to easily check whether an object is a RubyJS object with CoffeeScript. </p> <pre><code>foo.rubyjs?</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='box-instance'>
+      - (void) <strong>box</strong>(obj, recursive, block)
+    </p>
+    <div class='docstring'>
+  <p>TODO: find a better name for box. TODO: handle the case when calling R(true, -&gt; ), R({}, -&gt; ) </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='w-instance'>
+      - (void) <strong>w</strong>(str)
+    </p>
+    <div class='docstring'>
+  <p>Equivalent to %w[] in Ruby </p> <p>Creates an R.Array of R.String for every word separated by space. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>   R.w(&#39;foo bar   baz&#39;) # =&gt; [&#39;foo&#39;, &#39;bar&#39;, &#39;baz&#39;]
+   R.w(&#39;foo\nbar&#39;)      # =&gt; [&#39;foo\nbar&#39;]
+   R.w(&#39;&#39;)              # =&gt; [&#39;&#39;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='r-instance'>
+      - (void) <strong>r</strong>(a, b, excluding)
+    </p>
+    <div class='docstring'>
+  <p>Shortcut for creating a R.Range. </p> <p>@alias #rng </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>   R.r(0,4)        # =&gt; (0..4)
+   R.r(0,4, true)  # =&gt; (0...4)</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='f-instance'>
+      - (void) <strong>f</strong>(flt)
+    </p>
+    <div class='docstring'>
+  <p>Shortcut for creating floats </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='l-instance'>
+      - (void) <strong>l</strong>(obj, recursive = false)
+    </p>
+    <div class='docstring'>
+  <p>Returns primitive from an object, returns obj otherwise. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>   str = R(&#39;rubyjs&#39;)
+   R.l(str)        # =&gt; &#39;rubyjs&#39;
+   R.l(&#39;js_str&#39;)   # =&gt; &#39;js_str&#39;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='catch_break-instance'>
+      - (void) <strong>catch_break</strong>(block, context = @undefined)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='$Array-instance'>
+      - (void) <strong>$Array</strong>(obj, recursive = false)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='$Array_r-instance'>
+      - (void) <strong>$Array_r</strong>(obj)
+    </p>
+    <div class='docstring'>
+  <p>TODO: Remove from code </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='$Float-instance'>
+      - (void) <strong>$Float</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='$Integer-instance'>
+      - (void) <strong>$Integer</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='$String-instance'>
+      - (void) <strong>$String</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='$Range-instance'>
+      - (void) <strong>$Range</strong>(start, end, exclusive)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='puts-instance'>
+      - (void) <strong>puts</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rand-instance'>
+      - (void) <strong>rand</strong>(limit)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v0.9.1
+  (Node.js v0.8.4).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

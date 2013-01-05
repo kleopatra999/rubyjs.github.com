@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='assets/codo.css' type='text/css'>
+  <script src='assets/codo.js'></script>
+  <script src='assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path=''></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>README.md</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='class_list.html'>Classes</a>
+      <a id='mixin_list_link' href='mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='method_list.html'>Methods</a>
+      <a id='file_list_link' href='file_list.html'>Files</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <nav class='toc'>
+        <p class='title'>
+          <a class='hide_toc' href='#'>
+            <strong>Table of Contents</strong>
+          </a>
+          <small>
+            (<a class='float_toc' href='#'>left</a>)
+          </small>
+        </p>
+      </nav>
+      <div id='filecontents'>
+        <h1>RubyJS</h1>
+<h2>Shortcuts</h2>
+<p>You can quickly search and jump through the documentation by using the fuzzy finder dialog:
+
+</p>
+<p>Open fuzzy finder dialog: <code>Ctrl-T</code>
+
+</p>
+<p>In frame mode you can toggle the list naviation frame on the left side:
+
+</p>
+<p>Toggle list view: <code>Ctrl-L</code>
+
+</p>
+<p>You can focus a list in frame mode or toggle a tab in frameless mode:
+
+</p>
+<ul>
+<li>Class list: <code>Ctrl-C</code><!-- - Mixin list: `Ctrl-I` -->
+<!-- - File list: `Ctrl-F` --></li>
+<li>Method list: <code>Ctrl-M</code></li>
+<li>Extras list: <code>Ctrl-E</code></li>
+</ul>
+<p>You can focus and blur the search input:
+
+</p>
+<ul>
+<li>Focus search input: `Ctrl-S</li>
+<li>Blur search input: <code>Esc</code></li>
+<li>In frameless mode you can close the list tab: <code>Esc</code></li>
+</ul>
+<h2>Namespace</h2>
+<p><code>RubyJS</code> is the official namespace of all classes and mixins. <code>R</code> is an alias to <code>RubyJS</code>. In the documentation both versions are used interchangeably.
+
+</p>
+<pre><code>RubyJS(&#39;foo&#39;)
+RubyJS.String
+RubyJS.Array
+// Equivalent to:
+R(&#39;foo&#39;)
+R.String
+R.Array</code></pre>
+<p><code>R</code> additionaly includes R.Kernel, so methods defined there can be used with R.
+
+</p>
+<pre><code>R.puts(&#39;hello world&#39;)</code></pre>
+<h2>String</h2>
+<p>RubyJS.String wraps a native String primitive.
+
+</p>
+<pre><code>R(&#39;foo&#39;)
+new R.String(&#39;foo&#39;)
+R.String.new(&#39;foo&#39;)
+R.$String(1) // Emulates Ruby String(1)</code></pre>
+<p>Destructive methods have a _bang suffix.
+
+</p>
+<pre><code>str = R(&#39;foo&#39;)
+str.capitalize()      //=&gt; &#39;Foo&#39;
+str                   //=&gt; &#39;foo&#39;
+str.capitalize_bang() //=&gt; &#39;Foo&#39;
+str                   //=&gt; &#39;Foo&#39;</code></pre>
+<p>Create multiple R.Strings with <code>R.w</code> equivalent to Ruby <code>%w[]</code>.
+
+</p>
+<pre><code>words = R.w(&#39;foo bar baz&#39;)</code></pre>
+<h2>Array</h2>
+<p>Arrays are ordered, integer-indexed collections of any object. Array indexing starts at 0, as in C or Java. A negative index is assumed to be relative to the end of the array—that is, an index of -1 indicates the last element of the array, -2 is the next to last element in the array, and so on.
+
+</p>
+<p>RubyJS.Array wraps a native JavaScript array. Members are not directly accessible using <code>[]</code> notation, use <code>RubyJS.Array.get(1)</code> and <code>set(1, &#39;foo&#39;)</code> instead.
+
+</p>
+<p>Array includes optimized versions of RubyJS.Enumerable methods.
+
+</p>
+<pre><code> R([1,2,3])           // =&gt; an R.Array of Number primitives
+ R([1,2,3], true)     // =&gt; an R.Array of R.Fixnums
+ new R.Array([1,2,3])</code></pre>
+<h2>Enumerable, Enumerator</h2>
+<p>The Enumerable mixin provides collection classes with several traversal and searching methods, and with the ability to sort. The class must provide a method <code>each</code>, which yields successive members of the collection. If Enumerable#max, #min, or #sort is used, the objects in the collection must also implement a meaningful &lt;=&gt; operator, as these methods rely on an ordering between members of the collection.
+
+</p>
+<p>Enumerable is currently included in Array, Range and Enumerator. Array implements optimized versions of the methods.
+
+</p>
+<h2>Numerics</h2>
+<p>Numeric and Integer are both modules. Functional number types are Fixnum (an Integer) and Float.
+
+</p>
+<ul>
+<li>Fixnum includes Numeric, Integer</li>
+<li>Float includes Numeric</li>
+</ul>
+<p>Mathematic operations like +, -, * with RubyJS numerics is expensive as for every operation extra objects are created. It is suggested to use JavaScript native primitives for calculations, especially in loops.
+
+
+</p>
+<h2>Aliases</h2>
+<p>Where Ruby methods conflict with JavaScript naming the following aliases are used.
+You can also use the old names through property the brackets, e.g. <code>[&#39;==&#39;]</code>.
+
+</p>
+<pre><code>str.equals(&#39;foo&#39;)
+str[&#39;==&#39;](&#39;foo&#39;)
+
+# &#39;?&#39; is removed
+include    : include?
+
+# &#39;!&#39;&#39; =&gt; _bang
+upcase_bang: upcase!
+
+append     : &lt;&lt;
+equals     : ==
+equal_case : ===
+cmp        : &lt;=&gt;
+lt         : &lt;
+lteq       : &lt;=
+gt         : &gt;
+gteq       : &gt;=
+modulo     : %
+plus       : +
+minus      : -
+multiply   : *
+exp        : **
+divide     : /
+
+# Typecasting:
+
+R.$String(): String()
+R.$Float() : Float()
+
+# Special variables
+
+R[&#39;$~&#39;]    : $~
+R[&#39;$;&#39;]    : $;
+R[&#39;$,&#39;]    : $,</code></pre>
+
+      </div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v0.9.1
+  (Node.js v0.8.4).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

@@ -1,0 +1,155 @@
+---
+layout: bounce
+title: RubyJS
+---
+
+<div id="landing">
+  <div class="container">
+    <div class="row">
+    <div class="span5">
+      <h1>A JavaScript standard library based on the Ruby core-lib</h1>
+      <p>
+        RubyJS is a JavaScript implementation of all methods from Ruby classes like Array, String, Numbers, Time and more.
+      </p>
+      <p>
+        Read the <a href="/blog/2012/12/rubyjs-the-post-launch-launch-post/">announcement</a> post.
+      </p>
+      <p><a href="/getting-started.html" class="btn btn-primary btn-action">Get Started Now</a></p>
+       <p><a href="http://github.com/rubyjs/core-lib" class="btn btn-success btn-action btn-small">Go get it, it's free</a></p>
+    </div>
+    <div class="span7">
+      <img src="images/rubyjs-example.png" width="540" height="304" />
+      <!-- <div class="js-video">
+      <iframe src="http://player.vimeo.com/video/38498748?title=0&amp;byline=0&amp;portrait=0&amp;color=38e8ae" width="500" height="281" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+      </div> -->
+    </div>
+  </div>
+  </div>
+</div>
+
+<div id="content" class="">
+  <div class="container txt-lefty">
+    <div class="row">
+      <div class="span12 txt-lefty">
+        <p>
+          <h3>
+          <blockquote style="font-style: italic; margin-bottom: 0">
+            If I had to code JavaScript I would use RubyJS.
+          </blockquote>
+          <small>
+            Yukihiro (Matz) Matsumoto, creator of Ruby
+          </small>
+        </h3>
+        </p>
+        <hr class="dashed">
+      </div>
+    </div>
+  </div>
+
+  <div class="container txt-middle">
+    <div class="row">
+    <div class="row">
+    <div class="span4 bouncy">
+      <h2>100% JavaScript</h2>
+      <p>
+        RubyJS is built on top of JavaScript. It runs in all browsers. No additional tools needed.
+      </p>
+    </div>
+    <div class="span4 bouncy">
+      <h2>Works like Ruby</h2>
+      <p>
+        Easily port code from Ruby to JavaScript. Become productive in JavaScript in hours. Fully tested with rubyspec.
+      </p>
+    </div>
+    <div class="span4 bouncy">
+      <h2>Fast and small</h2>
+      <p>
+        20 kilobytes minified and gzipped. It is as fast or faster than comparable libraries.
+      </p>
+    </div>
+  </div>
+
+  <hr class="dashed">
+  <div class="row">
+    <div class="span4 bouncy">
+      <h2>Utility belt or OO</h2>
+      <p>
+        Use RubyJS like a utility belt, transforming arrays, string and continue with native objects. Or use the fully-fledged RubyJS objects and make use of their mutator (aka bang) methods.
+      </p>
+    </div>
+    <div class="span4 bouncy">
+      <h2>All-in-one Library</h2>
+      <p>
+        String, Array, Time, Numbers, Range, and more. RubyJS gives you the power of multiple 3rd party libraries, with one coherent API. So you only have to learn, manage and update one.
+      </p>
+    </div>
+    <div class="span4 bouncy">
+      <h2>Ruby Features</h2>
+      <p>
+        Block arguments, destructive (bang-) methods, duck-typing, special variables, mixins.
+      </p>
+    </div>
+  </div>
+
+  <hr class="dashed">
+
+  <div class="row txt-lefty">
+    <div class="span8">
+      <h3>It's about the standard library, not writing Ruby in JS</h3>
+      <p>
+        The main motive is to have a decent standard library for JavaScript.
+        Instead of reinventing the wheel I took something that works already and people like, the Ruby core-lib.
+        RubyJS does not implement the class, object, metaprogramming features of Ruby.
+        The nice side-effect is that Rubyists get an immediate production boost.
+      </p>
+
+      <h3>How its different form underscore, stringjs, etc</h3>
+      <p>
+        RubyJS basically includes multiple libraries in one. There is one API, dependency, documentation and one way of doing things. Methods are chainable by design and chaining works across types.
+      </p>
+{% highlight javascript %}
+arr = ['foo', 'bar']
+str = _(arr).map(function (w) { return S(w).capitalize().s })
+            .join(',');
+S(str).pad(50).s
+{% endhighlight %}
+      <p>
+        With RubyJS: one API. One chain.
+      </p>
+{% highlight javascript %}
+R(arr, true).map(R.proc('capitalize'))
+  .join(',')
+  .center(50)
+  .toNative();
+// In most cases calling toNative() is actually not necessary.
+{% endhighlight %}
+
+
+      <h3>It does it the JavaScript way</h3>
+      <p>
+        RubyJS is simply a library for standard types like String or Arrays that gives you many convenience methods.
+        There are features that are simply included for the completeness sake and to comply with Rubyspec.
+        And then there's also Ruby features that were not ported as they felt to unnatural.
+        <br>
+      </p>
+{% highlight javascript %}
+_.chain([]).sortBy(fn).map(fn).value()
+{% endhighlight %}
+      <p>
+        If the above is the JavaScript way, then so is the following:
+      </p>
+{% highlight javascript %}
+R([]).sortBy(fn).map(fn).toNative()
+{% endhighlight %}
+
+
+      <h3>Lightweight</h3>
+      <p>
+        RubyJS uses lightweight wrapper objects, much like other libraries. Method arguments are smartly typecasted and are only converted to RubyJS objects when really needed. The R function is heavily optimized and causes little overhead. Wrappers can also be significantly faster than extending native classes.
+      </p>
+
+
+    </div>
+  </div>
+  </div>
+</div>

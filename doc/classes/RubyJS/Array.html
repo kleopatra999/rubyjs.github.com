@@ -1,0 +1,2077 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>CoffeeScript API Documentation</title>
+  <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
+  <script src='../../assets/codo.js'></script>
+  <script src='../../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>RubyJS</span>
+    &raquo;
+    <span class='title'>Array</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../../class_list.html'>Classes</a>
+      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='file_list_link' href='../../file_list.html'>Files</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        RubyJS.Array
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib/corelib/array.coffee</td>
+        </tr>
+        <tr>
+          <td>Inherits:</td>
+          <td>
+            <a href='../../classes/RubyJS/Object.html'>RubyJS.Object</a>
+          </td>
+        </tr>
+      </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    No proper support for handling recursive arrays. (e.g. a = [], a.push(a)). Look for ArraySpecs.recursive_array in the specs.
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    #taint, #trust, #freeze does nothing
+  </div>
+  <p>Array wraps a javascript array. </p> 
+</div>
+<div class='tags'>
+</div>
+      <h2>Class Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#new-class'>
+        + (void) <strong>new</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#typecast-class'>
+        + (void) <strong>typecast</strong>(arr, recursive)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#try_convert-class'>
+        + (void) <strong>try_convert</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      Try to convert obj into an array, using to_ary method.
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#is_array-instance'>
+        - (void) <strong>is_array</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#iterator-instance'>
+        - (void) <strong>iterator</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#constructor-instance'>
+        - (void) <strong>constructor</strong>(__native__ = [], clone)
+      </a>
+    </span>
+    <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      Creates a new R.Array with a clone of the given array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#valueOf-instance'>
+        - (void) <strong>valueOf</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_native-instance'>
+        - (void) <strong>to_native</strong>(recursive = false)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#unbox-instance'>
+        - (void) <strong>unbox</strong>(recursive = false)
+      </a>
+    </span>
+    <span class='desc'>
+      TODO: remove legacy behaviour
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_native_clone-instance'>
+        - (void) <strong>to_native_clone</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'=='-instance'>
+        - (void) <strong>'=='</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'<<'-instance'>
+        - (void) <strong>'<<'</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'&'-instance'>
+        - (void) <strong>'&'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'<=>'-instance'>
+        - (void) <strong>'<=>'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#at-instance'>
+        - (void) <strong>at</strong>(index)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the element at index.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#clear-instance'>
+        - (void) <strong>clear</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#clone-instance'>
+        - (void) <strong>clone</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#collect_bang-instance'>
+        - (void) <strong>collect_bang</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Invokes the block once for each element of self, replacing the element with the value returned by block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#combination-instance'>
+        - (void) <strong>combination</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      When invoked with a block, yields all combinations of length n of elements from ary and then returns ary itself.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#compact-instance'>
+        - (void) <strong>compact</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#compact_bang-instance'>
+        - (void) <strong>compact_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#concat-instance'>
+        - (void) <strong>concat</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Appends the elements of other_ary to self.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete-instance'>
+        - (void) <strong>delete</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Deletes items from self that are equal to obj.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete_at-instance'>
+        - (void) <strong>delete_at</strong>(idx)
+      </a>
+    </span>
+    <span class='desc'>
+      Deletes the element at the specified index, returning that element, or nil if the index is out of range.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete_if-instance'>
+        - (R.Array, R.Enumerator) <strong>delete_if</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Deletes every element of self for which block evaluates to true.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#dup-instance'>
+        - (void) <strong>dup</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#eql-instance'>
+        - (void) <strong>eql</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_index-instance'>
+        - (void) <strong>each_index</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Same as Array#each, but passes the index of the element instead of the element itself.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each-instance'>
+        - (void) <strong>each</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Calls block once for each element in self, passing that element as a parameter.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#get-instance'>
+        - (void) <strong>get</strong>(a, b)
+      </a>
+    </span>
+    <span class='desc'>
+      Alias for R.Array#[] R.Array#slice Element Reference—Returns the element at index, or returns a subarray starting at start and continuing for length elements, or returns a subarray specified by range.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#set-instance'>
+        - (void) <strong>set</strong>(idx, obj)
+      </a>
+    </span>
+    <span class='desc'>
+      TODO: IMPLEMENT remaining arguments!!
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#empty-instance'>
+        - (void) <strong>empty</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#fetch-instance'>
+        - (void) <strong>fetch</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Tries to return the element at position index.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#fill-instance'>
+        - (void) <strong>fill</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Fills array with obj or block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#flatten-instance'>
+        - (void) <strong>flatten</strong>(recursion = -1)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new array that is a one-dimensional flattening of this array (recursively).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#insert-instance'>
+        - (void) <strong>insert</strong>(idx, items...)
+      </a>
+    </span>
+    <span class='desc'>
+      Inserts the given values before the element with the given index (which may be negative).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#inspect-instance'>
+        - (void) <strong>inspect</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#join-instance'>
+        - (void) <strong>join</strong>(separator)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a string created by converting each element of the array to a string, separated by sep.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#keep_if-instance'>
+        - (void) <strong>keep_if</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Deletes every element of self for which block evaluates to false.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#minus-instance'>
+        - (void) <strong>minus</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Array Difference - Returns a new array that is a copy of the original array, removing any items that also appear in other_ary.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#multiply-instance'>
+        - (void) <strong>multiply</strong>(multiplier)
+      </a>
+    </span>
+    <span class='desc'>
+      Repetition—With a String argument, equivalent to self.join(str).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#last-instance'>
+        - (void) <strong>last</strong>(n)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the last element(s) of self.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#permutation-instance'>
+        - (void) <strong>permutation</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#plus-instance'>
+        - (void) <strong>plus</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Concatenation—Returns a new array built by concatenating the two arrays together to produce a third array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#pop-instance'>
+        - (void) <strong>pop</strong>(many)
+      </a>
+    </span>
+    <span class='desc'>
+      Removes the last element from self and returns it, or nil if the array is empty.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#product-instance'>
+        - (void) <strong>product</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an array of all combinations of elements from all arrays.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#push-instance'>
+        - (void) <strong>push</strong>(el...)
+      </a>
+    </span>
+    <span class='desc'>
+      Append—Pushes the given object(s) on to the end of this array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rassoc-instance'>
+        - (void) <strong>rassoc</strong>(obj)
+      </a>
+    </span>
+    <span class='desc'>
+      Searches through the array whose elements are also arrays.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rindex-instance'>
+        - (void) <strong>rindex</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the index of the last object in self == to obj.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sample-instance'>
+        - (void) <strong>sample</strong>(n, range = void 0)
+      </a>
+    </span>
+    <span class='desc'>
+      Choose a random element or n random elements from the array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reject_bang-instance'>
+        - (void) <strong>reject_bang</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Equivalent to Array#delete_if, deleting elements from self for which the block evaluates to true, but returns nil if no changes were made.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#replace-instance'>
+        - (void) <strong>replace</strong>(val)
+      </a>
+    </span>
+    <span class='desc'>
+      Replaces the contents of self with the contents of other_ary, truncating or expanding if necessary.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reverse-instance'>
+        - (void) <strong>reverse</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reverse_bang-instance'>
+        - (void) <strong>reverse_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reverse_each-instance'>
+        - (void) <strong>reverse_each</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Same as Array#each, but traverses self in reverse order.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rotate-instance'>
+        - (void) <strong>rotate</strong>(cnt)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns new array by rotating self so that the element at cnt in self is the first element of the new array.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rotate_bang-instance'>
+        - (void) <strong>rotate_bang</strong>(cnt)
+      </a>
+    </span>
+    <span class='desc'>
+      Rotates self in place so that the element at cnt comes first, and returns self.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#select_bang-instance'>
+        - (void) <strong>select_bang</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Invokes the block passing in successive elements from self, deleting elements for which the block returns a false value.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#shift-instance'>
+        - (void) <strong>shift</strong>(n)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the first element of self and removes it (shifting all other elements down by one).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#shuffle-instance'>
+        - (void) <strong>shuffle</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new array with elements of this array shuffled.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#shuffle_bang-instance'>
+        - (void) <strong>shuffle_bang</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Shuffles elements in self in place.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#size-instance'>
+        - (void) <strong>size</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Length of array
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#__size__-instance'>
+        - (void) <strong>__size__</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Length of array as literal
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#slice-instance'>
+        - (void) <strong>slice</strong>(idx, length)
+      </a>
+    </span>
+    <span class='desc'>
+      Element Reference—Returns the element at index, or returns a subarray starting at start and continuing for length elements, or returns a subarray specified by range.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#slice_bang-instance'>
+        - (void) <strong>slice_bang</strong>(idx, length)
+      </a>
+    </span>
+    <span class='desc'>
+      Deletes the element(s) given by an index (optionally with a length) or by a range.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sort_bang-instance'>
+        - (void) <strong>sort_bang</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Sorts self.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sort_by_bang-instance'>
+        - (void) <strong>sort_by_bang</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Sorts self in place using a set of keys generated by mapping the values in self through the given block.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#transpose-instance'>
+        - (void) <strong>transpose</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Assumes that self is an array of arrays and transposes the rows and columns.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#uniq-instance'>
+        - (void) <strong>uniq</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#uniq_bang-instance'>
+        - (void) <strong>uniq_bang</strong>(block)
+      </a>
+    </span>
+    <span class='desc'>
+      Removes duplicate elements from self.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#unshift-instance'>
+        - (void) <strong>unshift</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Prepends objects to the front of self, moving other elements upwards.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#union-instance'>
+        - (void) <strong>union</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Set Union—Returns a new array by joining this array with other_ary, removing duplicates.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_enum-instance'>
+        - (void) <strong>to_enum</strong>(iter = "each", args...)
+      </a>
+    </span>
+    <span class='desc'>
+      find a better way for this.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_ary-instance'>
+        - (void) <strong>to_ary</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#values_at-instance'>
+        - (void) <strong>values_at</strong>(args...)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an array containing the elements in self corresponding to the given selector(s).
+    </span>
+  </li>
+</ul>
+      <h2>
+        <small>Inherited Method Summary</small>
+      </h2>
+      <h3 class='inherited'>
+        Methods inherited from
+        <a href='../../classes/RubyJS/Object.html'>RubyJS.Object</a>
+      </h3>
+      <p class='inherited'>
+                <a href='../../classes/RubyJS/Object.html#include-class'>.include</a>,
+                <a href='../../classes/RubyJS/Object.html#__add_default_aliases__-class'>.__add_default_aliases__</a>,
+                <a href='../../classes/RubyJS/Object.html#send-instance'>#send</a>,
+                <a href='../../classes/RubyJS/Object.html#respond_to-instance'>#respond_to</a>,
+                <a href='../../classes/RubyJS/Object.html#to_enum-instance'>#to_enum</a>,
+        <a href='../../classes/RubyJS/Object.html#tap-instance'>#tap</a>
+      </p>
+      <h2>Class Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='new-class'>
+      + (void) <strong>new</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Returns a new array. In the first form, the new array is empty. In the second it is created with size copies of obj (that is, size references to the same obj). The third form creates a copy of the array passed as a parameter (the array is generated by calling #to_ary on the parameter). In the last form, an array of the given size is created. Each element in this array is calculated by passing the element’s index to the given block and storing the return value. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.Array.new()                  # =&gt; []
+  R.Array.new(2)                 # =&gt; [null, null]
+  R.Array.new(3, &quot;A&quot;)            # =&gt; [&#39;A&#39;,&#39;A&#39;,&#39;A&#39;]
+  # only one copy of the object is created
+  a = R.Array.new(2, R(&#39;a&#39;) )   # =&gt; [&#39;a&#39;, &#39;a&#39;]
+  a[0].capitalize_bang()
+  a                             # =&gt; [&#39;A&#39;, &#39;A&#39;]
+  # here multiple copies are created
+  a = R.Array.new(2, -&gt; R(&#39;a&#39;))
+  squares = R.Array.new(5, (i) -&gt; i.multiply(i)
+  copy = R.Array.new(squares)</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='typecast-class'>
+      + (void) <strong>typecast</strong>(arr, recursive)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='try_convert-class'>
+      + (void) <strong>try_convert</strong>(obj)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Does currently not check if value from to_ary() is an Array
+  </div>
+  <p>Try to convert obj into an array, using to_ary method. Returns converted array or nil if obj cannot be converted for any reason. This method can be used to check if an argument is an array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.Array.try_convert([1])      # =&gt; [1]
+  R.Array.try_convert(R([1]))   # =&gt; [1]
+  R.Array.try_convert(&quot;1&quot;)      # =&gt; null</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+      <h2>Constructor Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='constructor-instance'>
+      - (void) <strong>constructor</strong>(__native__ = [], clone)
+    </p>
+    <div class='docstring'>
+  <p>Creates a new R.Array with a clone of the given array. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='is_array-instance'>
+      - (void) <strong>is_array</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='iterator-instance'>
+      - (void) <strong>iterator</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='valueOf-instance'>
+      - (void) <strong>valueOf</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_native-instance'>
+      - (void) <strong>to_native</strong>(recursive = false)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='unbox-instance'>
+      - (void) <strong>unbox</strong>(recursive = false)
+    </p>
+    <div class='docstring'>
+  <p>TODO: remove legacy behaviour </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_native_clone-instance'>
+      - (void) <strong>to_native_clone</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''=='-instance'>
+      - (void) <strong>'=='</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''<<'-instance'>
+      - (void) <strong>'<<'</strong>(obj)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''&'-instance'>
+      - (void) <strong>'&'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id=''<=>'-instance'>
+      - (void) <strong>'<=>'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='at-instance'>
+      - (void) <strong>at</strong>(index)
+    </p>
+    <div class='docstring'>
+  <p>Returns the element at index. A negative index counts from the end of self. Returns nil if the index is out of range. See also Array#[]. </p> <p>@return obj </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot; ])
+  a.at(0)     #=&gt; &quot;a&quot;
+  a.at(-1)    #=&gt; &quot;e&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='clear-instance'>
+      - (void) <strong>clear</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='clone-instance'>
+      - (void) <strong>clone</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='collect_bang-instance'>
+      - (void) <strong>collect_bang</strong>(block)
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    some edge-cases not handled when breaking out from block.
+  </div>
+  <p>Invokes the block once for each element of self, replacing the element with the value returned by block. See also Enumerable#collect. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>@alias #map_bang @return self </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ])
+  a.collect_bang (x) -&gt; x+&quot;!&quot;
+  a
+  #=&gt;  [ &quot;a!&quot;, &quot;b!&quot;, &quot;c!&quot;, &quot;d!&quot; ]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='combination-instance'>
+      - (void) <strong>combination</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>When invoked with a block, yields all combinations of length n of elements from ary and then returns ary itself. The implementation makes no guarantees about the order in which the combinations are yielded. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>@return R.Array </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([1, 2, 3, 4])
+  a.combination(1).to_a()  #=&gt; [[1],[2],[3],[4]]
+  a.combination(2).to_a()  #=&gt; [[1,2],[1,3],[1,4],[2,3],[2,4],[3,4]]
+  a.combination(3).to_a()  #=&gt; [[1,2,3],[1,2,4],[1,3,4],[2,3,4]]
+  a.combination(4).to_a()  #=&gt; [[1,2,3,4]]
+  a.combination(0).to_a()  #=&gt; [[]] # one combination of length 0
+  a.combination(5).to_a()  #=&gt; []   # no combinations of length 5
+  R([1, 2, 3, 4]).combination(3).to_a()</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='compact-instance'>
+      - (void) <strong>compact</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='compact_bang-instance'>
+      - (void) <strong>compact_bang</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='concat-instance'>
+      - (void) <strong>concat</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Appends the elements of other_ary to self. </p> <p>@return R.Array </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R([ &quot;a&quot;, &quot;b&quot; ]).concat( [&quot;c&quot;, &quot;d&quot;] )
+  #=&gt; [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete-instance'>
+      - (void) <strong>delete</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Deletes items from self that are equal to obj. If any items are found, returns obj. If the item is not found, returns nil. If the optional code block is given, returns the result of block if the item is not found. (To remove nil elements and get an informative return value, use compact!) </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.delete(&quot;b&quot;)                   #=&gt; &quot;b&quot;
+  a                               #=&gt; [&quot;a&quot;, &quot;c&quot;]
+  a.delete(&quot;z&quot;)                   #=&gt; nil
+  a.delete(&quot;z&quot;, -&gt; &#39;not found&#39;)   #=&gt; &quot;not found&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete_at-instance'>
+      - (void) <strong>delete_at</strong>(idx)
+    </p>
+    <div class='docstring'>
+  <p>Deletes the element at the specified index, returning that element, or nil if the index is out of range. See also Array#slice!. </p> <p>@return obj or null </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'> a = R.w(&#39;ant bat cat dog&#39;)
+ a.delete_at(2)    #=&gt; &quot;cat&quot;
+ a                 #=&gt; [&quot;ant&quot;, &quot;bat&quot;, &quot;dog&quot;]
+ a.delete_at(99)   #=&gt; null</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete_if-instance'>
+      - (R.Array, R.Enumerator) <strong>delete_if</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Deletes every element of self for which block evaluates to true. The array is changed instantly every time the block is called and not after the iteration is over. See also Array#reject! </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.delete_if (x) -&gt; x &gt;= &quot;b&quot;
+  #=&gt; [&quot;a&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'>
+        (<tt>R.Array, R.Enumerator</tt>)
+      </span>
+      &mdash;
+      <span class='desc'>when no block</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='dup-instance'>
+      - (void) <strong>dup</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='eql-instance'>
+      - (void) <strong>eql</strong>(other)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    should not call #to_ary on its argument, but it does through boxing, Array.try_convert
+  </div>
+  
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_index-instance'>
+      - (void) <strong>each_index</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Same as Array#each, but passes the index of the element instead of the element itself. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.each_index (x) -&gt; R.puts &quot;#{x} -- &quot;
+  # out: 0 -- 1 -- 2 --</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each-instance'>
+      - (void) <strong>each</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Calls block once for each element in self, passing that element as a parameter. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>@alias #each </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.each (x) -&gt; R.puts &quot;#{x} -- &quot;
+  # out: a -- b -- c --</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='get-instance'>
+      - (void) <strong>get</strong>(a, b)
+    </p>
+    <div class='docstring'>
+  <p>Alias for R.Array#[] R.Array#slice </p> <p>Element Reference—Returns the element at index, or returns a subarray starting at start and continuing for length elements, or returns a subarray specified by range. Negative indices count backward from the end of the array (-1 is the last element). Returns nil if the index (or starting index) are out of range. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot; ])
+  a.get(2) +  a.get(0) + a.get(1)    #=&gt; &quot;cab&quot;
+  a.get(6)                   #=&gt; nil
+  a.get(1, 2)                #=&gt; [ &quot;b&quot;, &quot;c&quot; ]
+  a.get(R.rng(1,3))          #=&gt; [ &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]
+  a.get(R.rng(4,7))          #=&gt; [ &quot;e&quot; ]
+  a.get(R.rng(6,10))         #=&gt; nil
+  a.get(-3, 3)               #=&gt; [ &quot;c&quot;, &quot;d&quot;, &quot;e&quot; ]
+  # special cases
+  a.get(5)                   #=&gt; nil
+  a.get(5, 1)                #=&gt; []
+  a.get(R.rng(5,10))         #=&gt; []</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='set-instance'>
+      - (void) <strong>set</strong>(idx, obj)
+    </p>
+    <div class='docstring'>
+  <p>TODO: IMPLEMENT remaining arguments!! </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='empty-instance'>
+      - (void) <strong>empty</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='fetch-instance'>
+      - (void) <strong>fetch</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Tries to return the element at position index. If the index lies outside the array, the first form throws an IndexError exception, the second form returns default, and the third form returns the value of invoking the block, passing in the index. Negative values of index count from the end of the array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ 11, 22, 33, 44 ])
+  a.fetch(1)               #=&gt; 22
+  a.fetch(-1)              #=&gt; 44
+  a.fetch(4, &#39;cat&#39;)        #=&gt; &quot;cat&quot;
+  a.fetch(4, (i) -&gt; i*i))  #=&gt; 16</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='fill-instance'>
+      - (void) <strong>fill</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    implement fill(range, ...)
+  </div>
+  <p>Fills array with obj or block. </p> <pre><code>fill(obj) → ary fill(obj, start [, length]) → ary fill(obj, range ) → ary fill (index) -&gt; block  → ary fill(start [, length],  (index) -&gt; block  → ary # not yet implemented: fill(range, (index) -&gt; block ) → ary</code></pre> <p>The first three forms set the selected elements of self (which may be the entire array) to obj. A start of nil is equivalent to zero. A length of nil is equivalent to self.length. The last three forms fill the array with the value of the block. The block is passed the absolute index of each element to be filled. Negative values of start count from the end of the array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ])
+  a.fill(&quot;x&quot;)               #=&gt; [&quot;x&quot;, &quot;x&quot;, &quot;x&quot;, &quot;x&quot;]
+  a.fill(&quot;z&quot;, 2, 2)         #=&gt; [&quot;x&quot;, &quot;x&quot;, &quot;z&quot;, &quot;z&quot;]
+  # a.fill(&quot;y&quot;, 0..1)         #=&gt; [&quot;y&quot;, &quot;y&quot;, &quot;z&quot;, &quot;z&quot;]
+  a.fill (i) -&gt; i*i         #=&gt; [0, 1, 4, 9]
+  a.fill(-2) (i) -&gt; i*i*i   #=&gt; [0, 1, 8, 27]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='flatten-instance'>
+      - (void) <strong>flatten</strong>(recursion = -1)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    fails for [undefined, null]
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    do not typecast elements!
+  </div>
+  <p>Returns a new array that is a one-dimensional flattening of this array (recursively). That is, for every element that is an array, extract its elements into the new array. If the optional level argument determines the level of recursion to flatten. </p> <p>TODO: IMPORTANT! </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  s = R([ 1, 2, 3 ])           #=&gt; [1, 2, 3]
+  t = R([ 4, 5, 6, [7, 8] ])   #=&gt; [4, 5, 6, [7, 8]]
+  a = R([ s, t, 9, 10 ])       #=&gt; [[1, 2, 3], [4, 5, 6, [7, 8]], 9, 10]
+  a.flatten()                  #=&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  a = R([ 1, 2, [3, [4, 5] ] ])
+  a.flatten(1)                 #=&gt; [1, 2, 3, [4, 5]]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='insert-instance'>
+      - (void) <strong>insert</strong>(idx, items...)
+    </p>
+    <div class='docstring'>
+  <p>Inserts the given values before the element with the given index (which may be negative). </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R.w(&#39;a b c d&#39;)
+  a.insert(2, 99)         #=&gt; [&quot;a&quot;, &quot;b&quot;, 99, &quot;c&quot;, &quot;d&quot;]
+  a.insert(-2, 1, 2, 3)   #=&gt; [&quot;a&quot;, &quot;b&quot;, 99, &quot;c&quot;, 1, 2, 3, &quot;d&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='inspect-instance'>
+      - (void) <strong>inspect</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='join-instance'>
+      - (void) <strong>join</strong>(separator)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Does not ducktype via #to_str, #to_ary, #to_s or throw error
+  </div>
+  <p>Returns a string created by converting each element of the array to a string, separated by sep. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]).join()      # =&gt; &quot;abc&quot;
+  R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]).join(null)  # =&gt; &quot;abc&quot;
+  R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]).join(&quot;-&quot;)   # =&gt; &quot;a-b-c&quot;
+  # joins nested arrays
+  R([1,[2,[3,4]]]).join(&#39;.&#39;)      # =&gt; &#39;1.2.3.4&#39;
+  # Default separator R[&#39;$,&#39;] (in ruby: $,)
+  R[&#39;$,&#39;]                        # =&gt; null
+  R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]).join()      # =&gt; &quot;abc&quot;
+  R[&#39;$,&#39;] = &#39;|&#39;                  # =&gt; &#39;|&#39;
+  R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]).join()      # =&gt; &quot;a|b|c&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='keep_if-instance'>
+      - (void) <strong>keep_if</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Deletes every element of self for which block evaluates to false. See also Array#select! </p> <p>If no block is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([1,2,3,4])
+  a.keep_if (v) -&gt; i &lt; 3   # =&gt; [1,2,3]
+  a.keep_if  -&gt; true       # =&gt; a # returns self if not changed</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='minus-instance'>
+      - (void) <strong>minus</strong>(other)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    recursive arrays not tested
+  </div>
+  <div class='note'>
+    <strong>Note:</strong>
+    minus checks for identity using other.include(el), which differs slightly from the reference which uses #hash and #eql?
+  </div>
+  <p>Array Difference - Returns a new array that is a copy of the original array, removing any items that also appear in other_ary. (If you need set- like behavior, see the library class Set.) </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R([ 1, 1, 2, 2, 3, 3, 4, 5 ]) - [ 1, 2, 4 ]  #=&gt;  [ 3, 3, 5 ]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='multiply-instance'>
+      - (void) <strong>multiply</strong>(multiplier)
+    </p>
+    <div class='docstring'>
+  <p>Repetition—With a String argument, equivalent to self.join(str). Otherwise, returns a new array built by concatenating the int copies of self. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R([ 1, 2, 3 ]).multiply 3    # =&gt; [ 1, 2, 3, 1, 2, 3, 1, 2, 3 ]
+  R([ 1, 2, 3 ]).multiply &quot;,&quot;  # =&gt; &quot;1,2,3&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='last-instance'>
+      - (void) <strong>last</strong>(n)
+    </p>
+    <div class='docstring'>
+  <p>Returns the last element(s) of self. If the array is empty, the first form returns nil. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;w&quot;, &quot;x&quot;, &quot;y&quot;, &quot;z&quot; ])
+  a.last()     #=&gt; &quot;z&quot;
+  a.last(2)    #=&gt; [&quot;y&quot;, &quot;z&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='permutation-instance'>
+      - (void) <strong>permutation</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Not yet implemented
+  </div>
+  
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='plus-instance'>
+      - (void) <strong>plus</strong>(other)
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    recursive arrays untested.
+  </div>
+  <p>Concatenation—Returns a new array built by concatenating the two arrays together to produce a third array. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R([ 1, 2, 3 ]).plus [ 3, 4 ]     #=&gt; [ 1, 2, 3, 3, 4 ]
+  R([ 1, 2, 3 ])[&#39;+&#39;]([ 3, 4 ])    #=&gt; [ 1, 2, 3, 3, 4 ]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='pop-instance'>
+      - (void) <strong>pop</strong>(many)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    check for recursive arrays
+  </div>
+  <p>Removes the last element from self and returns it, or nil if the array is empty. </p> <p>If a number n is given, returns an array of the last n elements (or less) just like array.slice!(-n, n) does. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ])
+  a.pop()     # =&gt; &quot;d&quot;
+  a.pop(2)    # =&gt; [&quot;b&quot;, &quot;c&quot;]
+  a           # =&gt; [&quot;a&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='product-instance'>
+      - (void) <strong>product</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not check if the result size will fit in an Array.
+  </div>
+  <p>Returns an array of all combinations of elements from all arrays. The length of the returned array is the product of the length of self and the argument arrays. If given a block, product will yield all combinations and return self instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R( [1,2,3] ).product([4,5])       #=&gt; [[1,4],[1,5],[2,4],[2,5],[3,4],[3,5]]
+  R( [1,2]   ).product([1,2])       #=&gt; [[1,1],[1,2],[2,1],[2,2]]
+  R( [1,2]   ).product([3,4],[5,6]) #=&gt; [[1,3,5],[1,3,6],[1,4,5],[1,4,6],
+                                    #     [2,3,5],[2,3,6],[2,4,5],[2,4,6]]
+  R( [1,2] ).product()              #=&gt; [[1],[2]]
+  R( [1,2] ).product([])            #=&gt; []</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='push-instance'>
+      - (void) <strong>push</strong>(el...)
+    </p>
+    <div class='docstring'>
+  <p>Append—Pushes the given object(s) on to the end of this array. This expression returns the array itself, so several appends may be chained together. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.push(&quot;d&quot;, &quot;e&quot;, &quot;f&quot;)
+  #=&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rassoc-instance'>
+      - (void) <strong>rassoc</strong>(obj)
+    </p>
+    <div class='docstring'>
+  <p>Searches through the array whose elements are also arrays. Compares obj with the second element of each contained array using ==. Returns the first contained array that matches. See also Array#assoc. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ [ 1, &quot;one&quot;], [2, &quot;two&quot;], [3, &quot;three&quot;], [&quot;ii&quot;, &quot;two&quot;] ])
+  a.rassoc(&quot;two&quot;)    #=&gt; [2, &quot;two&quot;]
+  a.rassoc(&quot;four&quot;)   #=&gt; nil</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rindex-instance'>
+      - (void) <strong>rindex</strong>(other)
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    does not check if array has changed.
+  </div>
+  <p>Returns the index of the last object in self == to obj. If a block is given instead of an argument, returns index of first object for which block is true, starting from the last object. Returns nil if no match is found. See also Array#index. </p> <p>If neither block nor argument is given, an enumerator is returned instead. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.rindex(&quot;b&quot;)             # =&gt; 3
+  a.rindex(&quot;z&quot;)             # =&gt; nil
+  a.rindex (x) -&gt; x == &quot;b&quot;  # =&gt; 3</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sample-instance'>
+      - (void) <strong>sample</strong>(n, range = void 0)
+    </p>
+    <div class='docstring'>
+  <p>Choose a random element or n random elements from the array. The elements are chosen by using random and unique indices into the array in order to ensure that an element doesn’t repeat itself unless the array already contained duplicate elements. If the array is empty the first form returns nil and the second form returns an empty array. </p> <p>If rng is given, it will be used as the random number generator. </p> <pre><code>R([1,2,3]).sample()    # =&gt; 2 R([1,2,3]).sample(2)   # =&gt; [3,1] R([1,2,3]).sample(4)   # =&gt; [2,1,3]</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reject_bang-instance'>
+      - (void) <strong>reject_bang</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Equivalent to Array#delete_if, deleting elements from self for which the block evaluates to true, but returns nil if no changes were made. The array is changed instantly every time the block is called and not after the iteration is over. See also Enumerable#reject and Array#delete_if. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='replace-instance'>
+      - (void) <strong>replace</strong>(val)
+    </p>
+    <div class='docstring'>
+  <p>Replaces the contents of self with the contents of other_ary, truncating or expanding if necessary. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot; ])
+  a.replace([ &quot;x&quot;, &quot;y&quot;, &quot;z&quot; ])   # =&gt; [&quot;x&quot;, &quot;y&quot;, &quot;z&quot;]
+  a                              # =&gt; [&quot;x&quot;, &quot;y&quot;, &quot;z&quot;]
+  a.replace(R([1]))             # =&gt; [1]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reverse-instance'>
+      - (void) <strong>reverse</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reverse_bang-instance'>
+      - (void) <strong>reverse_bang</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reverse_each-instance'>
+      - (void) <strong>reverse_each</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Same as Array#each, but traverses self in reverse order. </p> <pre><code>a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ]) a.reverse_each (x) -&gt; R.puts &quot;#{x} &quot; # out: c b a</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rotate-instance'>
+      - (void) <strong>rotate</strong>(cnt)
+    </p>
+    <div class='docstring'>
+  <p>Returns new array by rotating self so that the element at cnt in self is the first element of the new array. If cnt is negative then it rotates in the opposite direction. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ])
+  a.rotate()       # =&gt; [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;a&quot;]
+  a                # =&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]
+  a.rotate(2)      # =&gt; [&quot;c&quot;, &quot;d&quot;, &quot;a&quot;, &quot;b&quot;]
+  a.rotate(-3)     # =&gt; [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;a&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rotate_bang-instance'>
+      - (void) <strong>rotate_bang</strong>(cnt)
+    </p>
+    <div class='docstring'>
+  <p>Rotates self in place so that the element at cnt comes first, and returns self. If cnt is negative then it rotates in the opposite direction. </p> <pre><code>a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]) a.rotate_bang()      # =&gt; [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;a&quot;] a                    # =&gt; [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;a&quot;] a.rotate_bang(2)     # =&gt; [&quot;d&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;] a.rotate_bang(-3)    # =&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='select_bang-instance'>
+      - (void) <strong>select_bang</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Invokes the block passing in successive elements from self, deleting elements for which the block returns a false value. It returns self if changes were made, otherwise it returns nil. See also Array#keep_if </p> <p>If no block is given, an enumerator is returned instead. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='shift-instance'>
+      - (void) <strong>shift</strong>(n)
+    </p>
+    <div class='docstring'>
+  <p>Returns the first element of self and removes it (shifting all other elements down by one). Returns nil if the array is empty. </p> <p>If a number n is given, returns an array of the first n elements (or less) just like array.slice!(0, n) does. </p> <pre><code>args = R([ &quot;-m&quot;, &quot;-q&quot;, &quot;filename&quot; ]) args.shift()     #=&gt; &quot;-m&quot; args             #=&gt; [&quot;-q&quot;, &quot;filename&quot;] args = R([ &quot;-m&quot;, &quot;-q&quot;, &quot;filename&quot; ]) args.shift(2)  #=&gt; [&quot;-m&quot;, &quot;-q&quot;] args           #=&gt; [&quot;filename&quot;]</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='shuffle-instance'>
+      - (void) <strong>shuffle</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a new array with elements of this array shuffled. </p> <pre><code>a = [ 1, 2, 3 ]           #=&gt; [1, 2, 3] a.shuffle()                 #=&gt; [2, 3, 1]</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='shuffle_bang-instance'>
+      - (void) <strong>shuffle_bang</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Shuffles elements in self in place. If rng is given, it will be used as the random number generator. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='size-instance'>
+      - (void) <strong>size</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Length of array </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='__size__-instance'>
+      - (void) <strong>__size__</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Length of array as literal </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='slice-instance'>
+      - (void) <strong>slice</strong>(idx, length)
+    </p>
+    <div class='docstring'>
+  <p>Element Reference—Returns the element at index, or returns a subarray starting at start and continuing for length elements, or returns a subarray specified by range. Negative indices count backward from the end of the array (-1 is the last element). Returns null if the index (or starting index) are out of range. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot; ])
+  a.slice(2) +  a[0] + a[1]    #=&gt; &quot;cab&quot;
+  a.slice(6)                   #=&gt; null
+  a.slice(1, 2)                #=&gt; [ &quot;b&quot;, &quot;c&quot; ]
+  a.slice(1..3)                #=&gt; [ &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]
+  a.slice(4..7)                #=&gt; [ &quot;e&quot; ]
+  a.slice(6..10)               #=&gt; null
+  a.slice(-3, 3)               #=&gt; [ &quot;c&quot;, &quot;d&quot;, &quot;e&quot; ]
+  # special cases
+  a.slice(5)                   #=&gt; null
+  a.slice(5, 1)                #=&gt; []
+  a.slice(5..10)               #=&gt; []</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='slice_bang-instance'>
+      - (void) <strong>slice_bang</strong>(idx, length)
+    </p>
+    <div class='docstring'>
+  <p>Deletes the element(s) given by an index (optionally with a length) or by a range. Returns the deleted object (or objects), or null if the index is out of range. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.slice_bang(1)     # =&gt; &quot;b&quot;
+  a                   # =&gt; [&quot;a&quot;, &quot;c&quot;]
+  a.slice_bang(-1)    # =&gt; &quot;c&quot;
+  a                   # =&gt; [&quot;a&quot;]
+  a.slice_bang(100)   # =&gt; null
+  a                   # =&gt; [&quot;a&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sort_bang-instance'>
+      - (void) <strong>sort_bang</strong>(block)
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Suboptimally implemented, by replacing it with Enumerable#sort().to_native()
+  </div>
+  <p>Sorts self. Comparisons for the sort will be done using the &lt;=&gt; operator or using an optional code block. The block implements a comparison between a and b, returning -1, 0, or +1. </p> 
+</div>
+<div class='tags'>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      Enumerable#sort_by
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sort_by_bang-instance'>
+      - (void) <strong>sort_by_bang</strong>(block)
+    </p>
+    <div class='docstring'>
+  <p>Sorts self in place using a set of keys generated by mapping the values in self through the given block. </p> <p>If no block is given, an enumerator is returned instead. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='transpose-instance'>
+      - (void) <strong>transpose</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Assumes that self is an array of arrays and transposes the rows and columns. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([[1,2], [3,4], [5,6]])
+  a.transpose()   # =&gt; [[1, 3, 5], [2, 4, 6]]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='uniq-instance'>
+      - (void) <strong>uniq</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='uniq_bang-instance'>
+      - (void) <strong>uniq_bang</strong>(block)
+    </p>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Not yet correctly implemented. should use #eql on objects, but uses @include().
+  </div>
+  <p>Removes duplicate elements from self. Returns null if no changes are made (that is, no duplicates are found). </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;a&quot;, &quot;a&quot;, &quot;b&quot;, &quot;b&quot;, &quot;c&quot; ])
+  a.uniq!   # =&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;]
+  b = R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ])
+  b.uniq!   # =&gt; null
+  # Not yet implemented:
+  c = R([ &quot;a:def&quot;, &quot;a:xyz&quot;, &quot;b:abc&quot;, &quot;b:xyz&quot;, &quot;c:jkl&quot; ])
+  c.uniq (s) -&gt; s[/^\w+/]  #=&gt; [ &quot;a:def&quot;, &quot;b:abc&quot;, &quot;c:jkl&quot; ]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='unshift-instance'>
+      - (void) <strong>unshift</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <p>Prepends objects to the front of self, moving other elements upwards. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([ &quot;b&quot;, &quot;c&quot;, &quot;d&quot;])
+  a.unshift(&quot;a&quot;)   #=&gt; [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]
+  a.unshift(1, 2)  #=&gt; [ 1, 2, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='union-instance'>
+      - (void) <strong>union</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Set Union—Returns a new array by joining this array with other_ary, removing duplicates. </p> <pre><code>R([ &quot;a&quot;, &quot;b&quot;, &quot;c&quot; ]).union [ &quot;c&quot;, &quot;d&quot;, &quot;a&quot; ]   #=&gt; [ &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot; ]</code></pre> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_enum-instance'>
+      - (void) <strong>to_enum</strong>(iter = "each", args...)
+    </p>
+    <div class='docstring'>
+  <p>find a better way for this. </p> 
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_ary-instance'>
+      - (void) <strong>to_ary</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='values_at-instance'>
+      - (void) <strong>values_at</strong>(args...)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    not working with ranges
+  </div>
+  <p>Returns an array containing the elements in self corresponding to the given selector(s). The selectors may be either integer indices or ranges. See also Array#select. </p> 
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  a = R([&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;])
+  a.values_at(1, 3, 5)
+  a.values_at(1, 3, 5, 7)
+  a.values_at(-1, -3, -5, -7)
+  a.values_at(1..3, 2...5)</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v0.9.1
+  (Node.js v0.8.4).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>
