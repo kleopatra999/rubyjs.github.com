@@ -6,6 +6,17 @@
   <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
   <script src='../../assets/codo.js'></script>
   <script src='../../assets/search_data.js'></script>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33740484-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
   <body>
     <div id='base' data-path='../../'></div>
@@ -181,21 +192,21 @@ Fixnum.</p>
   <li>
     <span class='signature'>
       <a href='#chr-instance'>
-        - (void) <strong>chr</strong>()
+        - (R.String) <strong>chr</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a string containing the character represented by the receiver’s value according to encoding.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#denominator-instance'>
-        - (void) <strong>denominator</strong>()
+        - (R.Fixnum) <strong>denominator</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns 1.
     </span>
   </li>
   <li>
@@ -221,41 +232,41 @@ Fixnum.</p>
   <li>
     <span class='signature'>
       <a href='#even-instance'>
-        - (void) <strong>even</strong>()
+        - (Boolean) <strong>even</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if int is an even number.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#gcd-instance'>
-        - (void) <strong>gcd</strong>(other)
+        - (R.Fixnum) <strong>gcd</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the greatest common divisor (always positive).
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#gcdlcm-instance'>
-        - (void) <strong>gcdlcm</strong>(other)
+        - (R.Array&lt;R.Fixnum, R.Fixnum&gt;) <strong>gcdlcm</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns an array; [int.gcd(int2), int.lcm(int2)].
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#lcm-instance'>
-        - (void) <strong>lcm</strong>(other)
+        - (R.Fixnum) <strong>lcm</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the least common multiple (always positive).
     </span>
   </li>
   <li>
@@ -265,17 +276,17 @@ Fixnum.</p>
       </a>
     </span>
     <span class='desc'>
-      
+      Returns self.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#odd-instance'>
-        - (void) <strong>odd</strong>()
+        - (Boolean) <strong>odd</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if int is an odd number.
     </span>
   </li>
   <li>
@@ -291,31 +302,31 @@ Fixnum.</p>
   <li>
     <span class='signature'>
       <a href='#next-instance'>
-        - (void) <strong>next</strong>()
+        - (R.Fixnum) <strong>next</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the Integer equal to int + 1.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#pred-instance'>
-        - (void) <strong>pred</strong>()
+        - (R.Fixnum) <strong>pred</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the Integer equal to int - 1.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#round-instance'>
-        - (void) <strong>round</strong>(n)
+        - (R.Fixnum) <strong>round</strong>(n)
       </a>
     </span>
     <span class='desc'>
-      
+      Rounds to a given precision in decimal digits (default 0 digits).
     </span>
   </li>
   <li>
@@ -443,16 +454,42 @@ Fixnum.</p>
   </div>
   <div class='method_details'>
     <p class='signature' id='chr-instance'>
-      - (void) <strong>chr</strong>()
+      - (R.String) <strong>chr</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a string containing the character represented by the receiver’s value according to encoding.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(65).chr()                   #=&gt; &quot;A&quot;
+  R(230).chr()                  #=&gt; &quot;\346&quot;
+  R(255).chr(Encoding::UTF_8)   #=&gt; &quot;\303\277&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.String</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='denominator-instance'>
-      - (void) <strong>denominator</strong>()
+      - (R.Fixnum) <strong>denominator</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns 1.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -474,44 +511,117 @@ Fixnum.</p>
   </div>
   <div class='method_details'>
     <p class='signature' id='even-instance'>
-      - (void) <strong>even</strong>()
+      - (Boolean) <strong>even</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if int is an even number.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='gcd-instance'>
-      - (void) <strong>gcd</strong>(other)
+      - (R.Fixnum) <strong>gcd</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the greatest common divisor (always positive). 0.gcd(x) and x.gcd(0) return abs(x).</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(2).gcd(2)                    #=&gt; 2
+  R(3).gcd(-7)                   #=&gt; 1
+  R((1&lt;&lt;31)-1).gcd((1&lt;&lt;61)-1)    #=&gt; 1</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='gcdlcm-instance'>
-      - (void) <strong>gcdlcm</strong>(other)
+      - (R.Array&lt;R.Fixnum, R.Fixnum&gt;) <strong>gcdlcm</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns an array; [int.gcd(int2), int.lcm(int2)].</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(2).gcdlcm(2)                    #=&gt; [2, 2]
+  R(3).gcdlcm(-7)                   #=&gt; [1, 21]
+  R((1&lt;&lt;31)-1).gcdlcm((1&lt;&lt;61)-1)    #=&gt; [1, 4951760154835678088235319297]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Array&lt;R.Fixnum, R.Fixnum&gt;</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='lcm-instance'>
-      - (void) <strong>lcm</strong>(other)
+      - (R.Fixnum) <strong>lcm</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the least common multiple (always positive). 0.lcm(x) and x.lcm(0) return zero.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(2).lcm(2)                    #=&gt; 2
+  R(3).lcm(-7)                   #=&gt; 21
+  R((1&lt;&lt;31)-1).lcm((1&lt;&lt;61)-1)    #=&gt; 4951760154835678088235319297</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='numerator-instance'>
       - (void) <strong>numerator</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns self.</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='odd-instance'>
-      - (void) <strong>odd</strong>()
+      - (Boolean) <strong>odd</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if int is an odd number.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -523,23 +633,75 @@ Fixnum.</p>
   </div>
   <div class='method_details'>
     <p class='signature' id='next-instance'>
-      - (void) <strong>next</strong>()
+      - (R.Fixnum) <strong>next</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the Integer equal to int + 1.</p><p>@alias #succ</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(1).next(     #=&gt; 2
+  R(-1).next()   #=&gt; 0</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='pred-instance'>
-      - (void) <strong>pred</strong>()
+      - (R.Fixnum) <strong>pred</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the Integer equal to int - 1.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(1).pred()    #=&gt; 0
+  R(-1).pred()   #=&gt; -2</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='round-instance'>
-      - (void) <strong>round</strong>(n)
+      - (R.Fixnum) <strong>round</strong>(n)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Rounds to a given precision in decimal digits (default 0 digits). Precision may be negative. Returns a floating point number when ndigits is positive, self for zero, and round down for negative.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(1).round()      #=&gt; 1
+  R(1).round(2)     #=&gt; 1.0
+  R(15).round(-1)   #=&gt; 20</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -574,11 +736,11 @@ Fixnum.</p>
     </div>
     <div id='footer'>
   Generated on
-  Sat Feb 23 2013 17:35:26 GMT+0700 (ICT)
+  Sat Feb 23 2013 18:44:06 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
-  (Node.js v0.8.4).
+  (Node.js v0.8.18).
   &#10034;
   Press Ctrl-h to see the keyboard shortcuts
   &#10034;

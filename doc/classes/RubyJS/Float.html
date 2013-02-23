@@ -6,6 +6,17 @@
   <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
   <script src='../../assets/codo.js'></script>
   <script src='../../assets/search_data.js'></script>
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33740484-2']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
   <body>
     <div id='base' data-path='../../'></div>
@@ -235,88 +246,8 @@
   </li>
   <li>
     <span class='signature'>
-      <a href='#is_float-instance'>
-        - (void) <strong>is_float</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#toString-instance'>
-        - (void) <strong>toString</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#valueOf-instance'>
-        - (void) <strong>valueOf</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#to_native-instance'>
-        - (void) <strong>to_native</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#arg-instance'>
-        - (void) <strong>arg</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#ceil-instance'>
-        - (void) <strong>ceil</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#inspect-instance'>
-        - (void) <strong>inspect</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
       <a href='#'<=>'-instance'>
         - (void) <strong>'<=>'</strong>(other)
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#dup-instance'>
-        - (void) <strong>dup</strong>()
       </a>
     </span>
     <span class='desc'>
@@ -395,42 +326,82 @@
   </li>
   <li>
     <span class='signature'>
-      <a href='#eql-instance'>
-        - (void) <strong>eql</strong>(other)
+      <a href='#arg-instance'>
+        - (R.Float) <strong>arg</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns 0 if the value is positive, pi otherwise.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#ceil-instance'>
+        - (R.Fixnum) <strong>ceil</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the smallest Integer greater than or equal to flt.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#inspect-instance'>
+        - (void) <strong>inspect</strong>()
       </a>
     </span>
     <span class='desc'>
       
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#dup-instance'>
+        - (void) <strong>dup</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#eql-instance'>
+        - (Boolean) <strong>eql</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true only if obj is a Float with the same value as flt.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#finite-instance'>
-        - (void) <strong>finite</strong>()
+        - (Boolean) <strong>finite</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if flt is a valid IEEE floating point number (it is not infinite, and nan? is false).
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#infinite-instance'>
-        - (void) <strong>infinite</strong>()
+        - (Boolean) <strong>infinite</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns nil, -1, or +1 depending on whether flt is finite, -infinity, or +infinity.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#nan-instance'>
-        - (void) <strong>nan</strong>()
+        - (Boolean) <strong>nan</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if flt is an invalid IEEE floating point number.
     </span>
   </li>
   <li>
@@ -440,43 +411,63 @@
       </a>
     </span>
     <span class='desc'>
-      
+      As flt is already a float, returns self.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#to_i-instance'>
-        - (void) <strong>to_i</strong>()
+        - (R.Fixnum) <strong>to_i</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns flt truncated to an Integer.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#floor-instance'>
-        - (void) <strong>floor</strong>()
+        - (R.Fixnum) <strong>floor</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the largest integer less than or equal to flt.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#quo-instance'>
-        - (void) <strong>quo</strong>(other)
+        - (R.Float) <strong>quo</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns float / numeric.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#round-instance'>
-        - (void) <strong>round</strong>(n = 0)
+        - (R.Fixnum, R.Float) <strong>round</strong>(n = 0)
+      </a>
+    </span>
+    <span class='desc'>
+      Rounds flt to a given precision in decimal digits (default 0 digits).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_s-instance'>
+        - (R.String) <strong>to_s</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a string containing a representation of self.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#toString-instance'>
+        - (String) <strong>toString</strong>()
       </a>
     </span>
     <span class='desc'>
@@ -485,8 +476,18 @@
   </li>
   <li>
     <span class='signature'>
-      <a href='#to_s-instance'>
-        - (void) <strong>to_s</strong>()
+      <a href='#valueOf-instance'>
+        - (String) <strong>valueOf</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_native-instance'>
+        - (String) <strong>to_native</strong>()
       </a>
     </span>
     <span class='desc'>
@@ -576,64 +577,8 @@
       <h2>Instance Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
-    <p class='signature' id='is_float-instance'>
-      - (void) <strong>is_float</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='toString-instance'>
-      - (void) <strong>toString</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='valueOf-instance'>
-      - (void) <strong>valueOf</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='to_native-instance'>
-      - (void) <strong>to_native</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='arg-instance'>
-      - (void) <strong>arg</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='ceil-instance'>
-      - (void) <strong>ceil</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='inspect-instance'>
-      - (void) <strong>inspect</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
     <p class='signature'<=>'-instance'>
       - (void) <strong>'<=>'</strong>(other)
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='dup-instance'>
-      - (void) <strong>dup</strong>()
     </p>
     <div class='tags'>
 </div>
@@ -688,84 +633,321 @@
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='eql-instance'>
-      - (void) <strong>eql</strong>(other)
+    <p class='signature' id='arg-instance'>
+      - (R.Float) <strong>arg</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns 0 if the value is positive, pi otherwise.</p><p>@alias #angle, #phase</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Float</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='ceil-instance'>
+      - (R.Fixnum) <strong>ceil</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the smallest Integer greater than or equal to flt.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+ R( 1.2).ceil()      #=&gt; 2
+ R( 2.0).ceil()      #=&gt; 2
+ R(-1.2).ceil()      #=&gt; -1
+ R(-2.0).ceil()      #=&gt; -2</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='inspect-instance'>
+      - (void) <strong>inspect</strong>()
     </p>
     <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='dup-instance'>
+      - (void) <strong>dup</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='eql-instance'>
+      - (Boolean) <strong>eql</strong>(other)
+    </p>
+    <div class='docstring'>
+  <p>Returns true only if obj is a Float with the same value as flt. Contrast
+this with Float#==, which performs type conversions.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  new R.Float(1.0).eql(1)   #=&gt; false</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='finite-instance'>
-      - (void) <strong>finite</strong>()
+      - (Boolean) <strong>finite</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if flt is a valid IEEE floating point number (it is not
+infinite, and nan? is false).</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='infinite-instance'>
-      - (void) <strong>infinite</strong>()
+      - (Boolean) <strong>infinite</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns nil, -1, or +1 depending on whether flt is finite, -infinity, or
++infinity.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  new R.Float(0.0).infinite()        #=&gt; nil
+  new R.Float(-1.0&#47;0.0).infinite()   #=&gt; -1
+  new R.Float(+1.0&#47;0.0).infinite()   #=&gt; 1</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='nan-instance'>
-      - (void) <strong>nan</strong>()
+      - (Boolean) <strong>nan</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if flt is an invalid IEEE floating point number.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  a = new R.Float(-1.0)      #=&gt; -1.0
+  a.nan()                    #=&gt; false
+  a = new R.Float(0.0&#47;0.0)   #=&gt; NaN
+  a.nan()                    #=&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='to_f-instance'>
       - (void) <strong>to_f</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>As flt is already a float, returns self.</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='to_i-instance'>
-      - (void) <strong>to_i</strong>()
+      - (R.Fixnum) <strong>to_i</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns flt truncated to an Integer.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='floor-instance'>
-      - (void) <strong>floor</strong>()
+      - (R.Fixnum) <strong>floor</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the largest integer less than or equal to flt.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  new R.Float(1.2).floor()    #=&gt; 1
+  new R.Float(2.0).floor()    #=&gt; 2
+  new R.Float(-1.2).floor()   #=&gt; -2
+  new R.Float(-2.0).floor()   #=&gt; -2</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='quo-instance'>
-      - (void) <strong>quo</strong>(other)
+      - (R.Float) <strong>quo</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns float / numeric.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Float</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='round-instance'>
-      - (void) <strong>round</strong>(n = 0)
+      - (R.Fixnum, R.Float) <strong>round</strong>(n = 0)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Rounds flt to a given precision in decimal digits (default 0 digits).
+Precision may be negative. Returns a floating point number when ndigits is
+more than zero.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(1.4).round()      #=&gt; 1
+  R(1.5).round()      #=&gt; 2
+  R(1.6).round()      #=&gt; 2
+  R(-1.5).round()     #=&gt; -2
+  R(1.234567).round(2)  #=&gt; 1.23
+  R(1.234567).round(3)  #=&gt; 1.235
+  R(1.234567).round(4)  #=&gt; 1.2346
+  R(1.234567).round(5)  #=&gt; 1.23457
+  R(34567.89).round(-5) #=&gt; 0
+  R(34567.89).round(-4) #=&gt; 30000
+  R(34567.89).round(-3) #=&gt; 35000
+  R(34567.89).round(-2) #=&gt; 34600
+  R(34567.89).round(-1) #=&gt; 34570
+  R(34567.89).round(0)  #=&gt; 34568
+  R(34567.89).round(1)  #=&gt; 34567.9
+  R(34567.89).round(2)  #=&gt; 34567.89
+  R(34567.89).round(3)  #=&gt; 34567.89</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum, R.Float</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='to_s-instance'>
-      - (void) <strong>to_s</strong>()
+      - (R.String) <strong>to_s</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a string containing a representation of self. As well as a fixed
+or exponential form of the number, the call may return “NaN”, “Infinity”,
+and “-Infinity”.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.String</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='toString-instance'>
+      - (String) <strong>toString</strong>()
     </p>
     <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>String</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='valueOf-instance'>
+      - (String) <strong>valueOf</strong>()
+    </p>
+    <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>String</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_native-instance'>
+      - (String) <strong>to_native</strong>()
+    </p>
+    <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>String</tt></li>
+  </ul>
 </div>
   </div>
 </div>
     </div>
     <div id='footer'>
   Generated on
-  Sat Feb 23 2013 17:35:26 GMT+0700 (ICT)
+  Sat Feb 23 2013 18:44:06 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
-  (Node.js v0.8.4).
+  (Node.js v0.8.18).
   &#10034;
   Press Ctrl-h to see the keyboard shortcuts
   &#10034;
