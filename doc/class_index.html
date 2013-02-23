@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>CoffeeScript API Documentation</title>
+  <meta charset='UTF-8'>
+  <title>RubyJS API Documentation</title>
   <link rel='stylesheet' href='assets/codo.css' type='text/css'>
   <script src='assets/codo.js'></script>
   <script src='assets/search_data.js'></script>
@@ -19,9 +20,9 @@
     </nav>
     <div id='search'>
       <a id='class_list_link' href='class_list.html'>Classes</a>
-      <a id='mixin_list_link' href='mixin_list.html'>Mixins</a>
-      <a id='method_list_link' href='method_list.html'>Methods</a>
       <a id='file_list_link' href='file_list.html'>Files</a>
+      <a id='method_list_link' href='method_list.html'>Methods</a>
+      <a id='extra_list_link' href='extra_list.html'>Extras</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -61,12 +62,16 @@
         Mixin list
       </li>
       <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
         <span>Ctrl-M</span>
         Method list
       </li>
       <li>
-        <span>Ctrl-F</span>
-        File list
+        <span>Ctrl-E</span>
+        Extras list
       </li>
     </ul>
     <p>
@@ -94,28 +99,28 @@
   </div>
 </div>
     <div id='content'>
-      <h1 class='noborder title'>CoffeeScript API Documentation</h1>
+      <h1 class='noborder title'>RubyJS API Documentation</h1>
       <div id='listing'>
         <h1 class='alphaindex'>Alphabetic Index</h1>
-        <h2>File Listing</h2>
+        <h2>Extra File Listing</h2>
         <ul id='files'>
           <li>
             <a href='README.md.html' title='README.md'>README.md</a>
           </li>
+          <li>
+            <a href='CHANGELOG.md.html' title='CHANGELOG.md'>CHANGELOG.md</a>
+          </li>
+          <li>
+            <a href='LICENSE.html' title='LICENSE'>LICENSE</a>
+          </li>
         </ul>
-        <h2>Namespace Listing A-Z</h2>
-        <div id='index'>
+        <h2>Class Listing A-Z</h2>
+        <div class='index'>
           <ul>
             <li class='letter'>a</li>
             <ul>
               <li>
                 <a href='classes/RubyJS/Array.html'>Array</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
-                <a href='classes/RubyJS/ArgumentError.html'>ArgumentError</a>
                 <small>
                   (RubyJS)
                 </small>
@@ -130,6 +135,9 @@
                 <small>
                   (RubyJS)
                 </small>
+              </li>
+              <li>
+                <a href='classes/Block.html'>Block</a>
               </li>
               <li>
                 <a href='classes/RubyJS/Breaker.html'>Breaker</a>
@@ -160,12 +168,6 @@
                 </small>
               </li>
               <li>
-                <a href='classes/RubyJS/EnumerableArray.html'>EnumerableArray</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
                 <a href='classes/RubyJS/Enumerator.html'>Enumerator</a>
                 <small>
                   (RubyJS)
@@ -176,12 +178,6 @@
           <ul>
             <li class='letter'>f</li>
             <ul>
-              <li>
-                <a href='classes/RubyJS/FloatDomainError.html'>FloatDomainError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
               <li>
                 <a href='classes/RubyJS/Fixnum.html'>Fixnum</a>
                 <small>
@@ -210,12 +206,6 @@
           <ul>
             <li class='letter'>i</li>
             <ul>
-              <li>
-                <a href='classes/RubyJS/IndexError.html'>IndexError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
               <li>
                 <a href='classes/RubyJS/Integer.html'>Integer</a>
                 <small>
@@ -256,18 +246,6 @@
             <li class='letter'>n</li>
             <ul>
               <li>
-                <a href='classes/RubyJS/NotSupportedError.html'>NotSupportedError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
-                <a href='classes/RubyJS/NotImplementedError.html'>NotImplementedError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
                 <a href='classes/RubyJS/Numeric.html'>Numeric</a>
                 <small>
                   (RubyJS)
@@ -290,18 +268,6 @@
             <li class='letter'>r</li>
             <ul>
               <li>
-                <a href='classes/RubyJS/RegexpError.html'>RegexpError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
-                <a href='classes/RubyJS/RangeError.html'>RangeError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
                 <a href='classes/RubyJS/Range.html'>Range</a>
                 <small>
                   (RubyJS)
@@ -319,12 +285,6 @@
             <li class='letter'>s</li>
             <ul>
               <li>
-                <a href='classes/RubyJS/StandardError.html'>StandardError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
                 <a href='classes/RubyJS/String.html'>String</a>
                 <small>
                   (RubyJS)
@@ -336,12 +296,6 @@
             <li class='letter'>t</li>
             <ul>
               <li>
-                <a href='classes/RubyJS/TypeError.html'>TypeError</a>
-                <small>
-                  (RubyJS)
-                </small>
-              </li>
-              <li>
                 <a href='classes/RubyJS/Time.html'>Time</a>
                 <small>
                   (RubyJS)
@@ -349,13 +303,46 @@
               </li>
             </ul>
           </ul>
+        </div>
+        <h2>File Listing A-Z</h2>
+        <div class='index'>
           <ul>
-            <li class='letter'>z</li>
+            <li class='letter'>b</li>
             <ul>
               <li>
-                <a href='classes/RubyJS/ZeroDivisionError.html'>ZeroDivisionError</a>
+                <a href='files/corelib/block.coffee.html'>block.coffee</a>
                 <small>
-                  (RubyJS)
+                  (corelib)
+                </small>
+              </li>
+            </ul>
+          </ul>
+          <ul>
+            <li class='letter'>c</li>
+            <ul>
+              <li>
+                <a href='files/corelib/coerce.coffee.html'>coerce.coffee</a>
+                <small>
+                  (corelib)
+                </small>
+              </li>
+            </ul>
+          </ul>
+          <ul>
+            <li class='letter'>r</li>
+            <ul>
+              <li>
+                <a href='files/ruby.coffee.html'>ruby.coffee</a>
+              </li>
+            </ul>
+          </ul>
+          <ul>
+            <li class='letter'>s</li>
+            <ul>
+              <li>
+                <a href='files/corelib/string.coffee.html'>string.coffee</a>
+                <small>
+                  (corelib)
                 </small>
               </li>
             </ul>
@@ -365,10 +352,10 @@
     </div>
     <div id='footer'>
   Generated on
-  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  Sat Feb 23 2013 17:35:26 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
-  v0.9.1
+  v1.5.6
   (Node.js v0.8.4).
   &#10034;
   Press Ctrl-h to see the keyboard shortcuts

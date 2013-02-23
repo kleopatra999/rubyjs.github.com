@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>CoffeeScript API Documentation</title>
+  <meta charset='UTF-8'>
+  <title>RubyJS API Documentation</title>
   <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
   <script src='../../assets/codo.js'></script>
   <script src='../../assets/search_data.js'></script>
@@ -10,6 +11,8 @@
     <div id='base' data-path='../../'></div>
 <div id='header'>
   <div id='menu'>
+    <a href='../../README.md.html' title='RubyJS'>RubyJS</a>
+    &raquo;
     <a href='../../class_index.html' title='Index'>Index</a>
     &raquo;
     <span class='title'>RubyJS</span>
@@ -24,9 +27,9 @@
     </nav>
     <div id='search'>
       <a id='class_list_link' href='../../class_list.html'>Classes</a>
-      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
-      <a id='method_list_link' href='../../method_list.html'>Methods</a>
       <a id='file_list_link' href='../../file_list.html'>Files</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='extra_list_link' href='../../extra_list.html'>Extras</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -66,12 +69,16 @@
         Mixin list
       </li>
       <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
         <span>Ctrl-M</span>
         Method list
       </li>
       <li>
-        <span>Ctrl-F</span>
-        File list
+        <span>Ctrl-E</span>
+        Extras list
       </li>
     </ul>
     <p>
@@ -106,7 +113,7 @@
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>lib/corelib/time.coffee</td>
+          <td>lib&#47;corelib&#47;time.coffee</td>
         </tr>
         <tr>
           <td>Inherits:</td>
@@ -115,16 +122,157 @@
           </td>
         </tr>
       </table>
+      <h2>Overview</h2>
+      <div class='docstring'>
+  <p>new RubyJS.Time(new Date(), 3600)</p><p>JS Date objects have no support for timezones. R.Time emulates timezones using
+a second fake object that is offset by the user defined utc_offset.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      If local timezone is ICT (+07:00)
+    </h4>
+    <pre><code class='coffee'>
+  t = R.Time.new(2012,12,24,12,0,0, &quot;+01:00&quot;)
+  t.__native__
+  # =&gt; Mon Dec 24 2012 18:00:00 GMT+0700 (ICT)
+  # t.__native__ has the correct timestamp for the local time.
+  #              2012-12-24 12:00 (CET) - &quot;+01:00 (CET)&quot;
+  #              2012-12-24 11:00 (UCT) + &quot;+07:00 (ICT)&quot;
+  #              2012-12-24 18:00 (ICT)
+  #
+  t._tzdate
+  # =&gt; Mon Dec 24 2012 12:00:00 GMT+0700 (ICT)
+  #
+  # t._tzdate holds the wrong timestamp but is useful to work with native JS
+  # methods.
+  #
+  t.hour()      # =&gt; 12 (internally uses _tzdate.getHours())</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+      <h2>Constant Summary</h2>
+      <dl class='constants'>
+        <dt id='LOCALE-constant'>
+          LOCALE
+          =
+          <div class='tags'>
+</div>
+        </dt>
+        <dd>
+          <pre><code class='coffee'>{
+  'DAYS': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+  'DAYS_SHORT': ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+  'MONTHS': [null, 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  'MONTHS_SHORT': [null, 'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  'AM': 'AM',
+  'PM': 'PM',
+  'AM_LOW': 'am',
+  'PM_LOW': 'pm'
+}</code></pre>
+        </dd>
+        <dt id='TIME_ZONES-constant'>
+          TIME_ZONES
+          =
+          <div class='tags'>
+</div>
+        </dt>
+        <dd>
+          <pre><code class='coffee'>{
+  'UTC': 0,
+  'UT': 0,
+  'GMT': 0,
+  'EST': -5,
+  'EDT': -4,
+  'CST': -6,
+  'CDT': -5,
+  'MST': -7,
+  'MDT': -6,
+  'PST': -8,
+  'PDT': -7
+}</code></pre>
+        </dd>
+      </dl>
       <h2>Class Method Summary</h2>
       <ul class='summary'>
   <li>
     <span class='signature'>
-      <a href='#new-class'>
-        + (void) <strong>new</strong>()
+      <a href='#now-class'>
+        + (void) <strong>now</strong>()
       </a>
     </span>
     <span class='desc'>
       
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#new-class'>
+        + (void) <strong>new</strong>(year, month, day, hour, min, sec, utc_offset)
+      </a>
+    </span>
+    <span class='desc'>
+      new → time click to toggle source new(year, month=nil, day=nil, hour=nil, min=nil, sec=nil, utc_offset=nil) → time
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_local_to_offset-class'>
+        + (void) <strong>_local_to_offset</strong>(date, utc_offset)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_offset_to_local-class'>
+        + (void) <strong>_offset_to_local</strong>(date, utc_offset)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#at-class'>
+        + (void) <strong>at</strong>(seconds, microseconds)
+      </a>
+    </span>
+    <span class='desc'>
+      Creates a new time object with the value given by time, the given number of seconds_with_frac, or seconds and microseconds_with_frac from the Epoch.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#local-class'>
+        + (void) <strong>local</strong>(year, month, day, hour, min, sec)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#utc-class'>
+        + (void) <strong>utc</strong>(year, month, day, hour, min, sec)
+      </a>
+    </span>
+    <span class='desc'>
+      Creates a time based on given values, interpreted as UTC (GMT).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#now-class'>
+        + (void) <strong>now</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Synonym for Time.new.
     </span>
   </li>
 </ul>
@@ -133,10 +281,400 @@
   <li>
     <span class='signature'>
       <a href='#constructor-instance'>
-        - (void) <strong>constructor</strong>()
+        - (void) <strong>constructor</strong>(__native__, utc_offset)
       </a>
     </span>
     <span class='constructor note title'>Constructor</span>
+    <span class='desc'>
+      when passing utc<em>offset @<em>_native</em></em> has to be in that timezone as well.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#is_time-instance'>
+        - (void) <strong>is_time</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'<=>'-instance'>
+        - (void) <strong>'<=>'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'=='-instance'>
+        - (void) <strong>'=='</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'-'-instance'>
+        - (void) <strong>'-'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#'+'-instance'>
+        - (void) <strong>'+'</strong>(other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#asctime-instance'>
+        - (void) <strong>asctime</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a canonical string representation of time.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#dup-instance'>
+        - (void) <strong>dup</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#year-instance'>
+        - (void) <strong>year</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#month-instance'>
+        - (void) <strong>month</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      @alias #mon
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#monday-instance'>
+        - (void) <strong>monday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#tuesday-instance'>
+        - (void) <strong>tuesday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#wednesday-instance'>
+        - (void) <strong>wednesday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#thursday-instance'>
+        - (void) <strong>thursday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#friday-instance'>
+        - (void) <strong>friday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#saturday-instance'>
+        - (void) <strong>saturday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sunday-instance'>
+        - (void) <strong>sunday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#day-instance'>
+        - (void) <strong>day</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the day of the month (1..n) for time.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#getgm-instance'>
+        - (void) <strong>getgm</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns a new new_time object representing time in UTC.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#gmt-instance'>
+        - (void) <strong>gmt</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if time represents a time in UTC (GMT).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#gmt_offset-instance'>
+        - (?) <strong>gmt_offset</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the offset in seconds between the timezone of time and UTC.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#gmtime-instance'>
+        - (void) <strong>gmtime</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Converts time to UTC (GMT), modifying the receiver.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#hour-instance'>
+        - (void) <strong>hour</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#hour12-instance'>
+        - (void) <strong>hour12</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#inspect-instance'>
+        - (void) <strong>inspect</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#min-instance'>
+        - (void) <strong>min</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the minute of the hour (0..59) for time.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sec-instance'>
+        - (void) <strong>sec</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the second of the minute (0..60)[Yes, seconds really can range from zero to 60.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#strftime-instance'>
+        - (void) <strong>strftime</strong>(format)
+      </a>
+    </span>
+    <span class='desc'>
+      @todo: implement %N
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#succ-instance'>
+        - (void) <strong>succ</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_i-instance'>
+        - (void) <strong>to_i</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the value of time as an integer number of seconds since the Epoch.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_f-instance'>
+        - (void) <strong>to_f</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the value of time as a floating point number of seconds since the Epoch.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#__tz_delta__-instance'>
+        - (void) <strong>__tz_delta__</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#__utc_delta__-instance'>
+        - (void) <strong>__utc_delta__</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Return 0 if local timezone matches gmt_offset.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#tv_usec-instance'>
+        - (void) <strong>tv_usec</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns just the number of microseconds for time.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#wday-instance'>
+        - (void) <strong>wday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an integer representing the day of the week, 0..6, with Sunday == 0.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#yday-instance'>
+        - (void) <strong>yday</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an integer representing the day of the year, 1..366.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#valueOf-instance'>
+        - (void) <strong>valueOf</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#zone-instance'>
+        - (void) <strong>zone</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the name of the time zone used for time.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_rjust-instance'>
+        - (void) <strong>_rjust</strong>(fixnum, str = '0')
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#_offset_str-instance'>
+        - (void) <strong>_offset_str</strong>()
+      </a>
+    </span>
     <span class='desc'>
       
     </span>
@@ -160,10 +698,109 @@
       <h2>Class Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
-    <p class='signature' id='new-class'>
-      + (void) <strong>new</strong>()
+    <p class='signature' id='now-class'>
+      + (void) <strong>now</strong>()
     </p>
     <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='new-class'>
+      + (void) <strong>new</strong>(year, month, day, hour, min, sec, utc_offset)
+    </p>
+    <div class='docstring'>
+  <p>new → time click to toggle source
+new(year, month=nil, day=nil, hour=nil, min=nil, sec=nil, utc_offset=nil) → time</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_local_to_offset-class'>
+      + (void) <strong>_local_to_offset</strong>(date, utc_offset)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_offset_to_local-class'>
+      + (void) <strong>_offset_to_local</strong>(date, utc_offset)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='at-class'>
+      + (void) <strong>at</strong>(seconds, microseconds)
+    </p>
+    <div class='docstring'>
+  <p>Creates a new time object with the value given by time, the given number
+of seconds_with_frac, or seconds and microseconds_with_frac from the
+Epoch. seconds_with_frac and microseconds_with_frac can be Integer, Float,
+Rational, or other Numeric. non-portable feature allows the offset to be
+negative on some systems.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.Time.at(0)            #=&gt; 1969-12-31 18:00:00 -0600
+  R.Time.at(Time.at(0))   #=&gt; 1969-12-31 18:00:00 -0600
+  R.Time.at(946702800)    #=&gt; 1999-12-31 23:00:00 -0600
+  R.Time.at(-284061600)   #=&gt; 1960-12-31 00:00:00 -0600
+  R.Time.at(946684800.2).usec() #=&gt; 200000
+  R.Time.at(946684800, 123456.789).nsec() #=&gt; 123456789
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='local-class'>
+      + (void) <strong>local</strong>(year, month, day, hour, min, sec)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='utc-class'>
+      + (void) <strong>utc</strong>(year, month, day, hour, min, sec)
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    unsupported c-style syntax R.Time.gm(1, 15, 20, 1, 1, 2000, &#39;ignored&#39;, &#39;ignored&#39;, &#39;ignored&#39;, &#39;ignored&#39;)
+  </div>
+  <p>Creates a time based on given values, interpreted as UTC (GMT). The year
+must be specified. Other values default to the minimum value for that
+field (and may be nil or omitted). Months may be specified by numbers from
+1 to 12, or by the three-letter English month names. Hours are specified
+on a 24-hour clock (0..23). Raises an ArgumentError if any values are out
+of range. Will also accept ten arguments in the order output by Time#to_a.
+sec_with_frac and usec_with_frac can have a fractional part.</p><p>@alias #gm</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R.Time.utc(2000,&quot;jan&quot;,1,20,15,1)  #=&gt; 2000-01-01 20:15:01 UTC
+  R.Time.gm(2000,&quot;jan&quot;,1,20,15,1)   #=&gt; 2000-01-01 20:15:01 UTC</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='now-class'>
+      + (void) <strong>now</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Synonym for Time.new. Returns a Time object initialized to the current
+system time.</p>
+</div>
+<div class='tags'>
 </div>
   </div>
 </div>
@@ -171,7 +808,487 @@
       <div class='methods'>
   <div class='method_details'>
     <p class='signature' id='constructor-instance'>
-      - (void) <strong>constructor</strong>()
+      - (void) <strong>constructor</strong>(__native__, utc_offset)
+    </p>
+    <div class='docstring'>
+  <p>when passing utc<em>offset @<em>_native</em></em> has to be in that timezone as well.
+utc_offset is in seconds</p><p>e.g. to create a GMT date:</p><pre><code>new R.Time(new Date(), 3600)</code></pre>
+
+</div>
+<div class='tags'>
+</div>
+  </div>
+</div>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='is_time-instance'>
+      - (void) <strong>is_time</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature'<=>'-instance'>
+      - (void) <strong>'<=>'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature'=='-instance'>
+      - (void) <strong>'=='</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature'-'-instance'>
+      - (void) <strong>'-'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature'+'-instance'>
+      - (void) <strong>'+'</strong>(other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='asctime-instance'>
+      - (void) <strong>asctime</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a canonical string representation of time.</p><p>Time.now.asctime   #=&gt; &quot;Wed Apr  9 08:56:03 2003&quot;</p><p>@alias #ctime</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='dup-instance'>
+      - (void) <strong>dup</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='year-instance'>
+      - (void) <strong>year</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='month-instance'>
+      - (void) <strong>month</strong>()
+    </p>
+    <div class='docstring'>
+  <p>@alias #mon</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='monday-instance'>
+      - (void) <strong>monday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='tuesday-instance'>
+      - (void) <strong>tuesday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='wednesday-instance'>
+      - (void) <strong>wednesday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='thursday-instance'>
+      - (void) <strong>thursday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='friday-instance'>
+      - (void) <strong>friday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='saturday-instance'>
+      - (void) <strong>saturday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sunday-instance'>
+      - (void) <strong>sunday</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='day-instance'>
+      - (void) <strong>day</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the day of the month (1..n) for time.</p><p>@alias #mday</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = Time.now()   #=&gt; 2007-11-19 08:27:03 -0600
+  t.day()          #=&gt; 19
+  t.mday()         #=&gt; 19</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='getgm-instance'>
+      - (void) <strong>getgm</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns a new new_time object representing time in UTC.</p><p>@alias #getutc</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = R.Time.local(2000,1,1,20,15,1)   #=&gt; 2000-01-01 20:15:01 -0600
+  t.gmt()                              #=&gt; false
+  y = t.getgm()                        #=&gt; 2000-01-02 02:15:01 UTC
+  y.gmt())                             #=&gt; true
+  t == y                               #=&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='gmt-instance'>
+      - (void) <strong>gmt</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns true if time represents a time in UTC (GMT).</p><p>@alias #is_utc</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  t = Time.now()                      #=&gt; 2007-11-19 08:15:23 -0600
+  t.utc(                              #=&gt; false
+  t = Time.gm(2000,&quot;jan&quot;,1,20,15,1)   #=&gt; 2000-01-01 20:15:01 UTC
+  t.utc()                             #=&gt; true
+
+  t = Time.now()                      #=&gt; 2007-11-19 08:16:03 -0600
+  t.gmt()                             #=&gt; false
+  t = Time.gm(2000,1,1,20,15,1)       #=&gt; 2000-01-01 20:15:01 UTC
+  t.gmt()                             #=&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='gmt_offset-instance'>
+      - (?) <strong>gmt_offset</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the offset in seconds between the timezone of time and UTC.</p><p>@offset
+    t = R.Time.gm(2000,1,1,20,15,1)   #=&gt; 2000-01-01 20:15:01 UTC
+    t.gmt_offset()                    #=&gt; 0
+    l = t.getlocal()                  #=&gt; 2000-01-01 14:15:01 -0600
+    l.gmt_offset()                    #=&gt; -21600</p><p>@alias #gmtoff, #utc_offset</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt>?</tt>)
+      &mdash;
+      <span class='desc'>R.Fixnum offset in seconds</span>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='gmtime-instance'>
+      - (void) <strong>gmtime</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Converts time to UTC (GMT), modifying the receiver.</p><p>t = Time.now   #=&gt; 2007-11-19 08:18:31 -0600
+t.gmt?         #=&gt; false
+t.gmtime       #=&gt; 2007-11-19 14:18:31 UTC
+t.gmt?         #=&gt; true</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='hour-instance'>
+      - (void) <strong>hour</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='hour12-instance'>
+      - (void) <strong>hour12</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='inspect-instance'>
+      - (void) <strong>inspect</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='min-instance'>
+      - (void) <strong>min</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the minute of the hour (0..59) for time.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  t = R.Time.now()   #=&gt; 2007-11-19 08:25:51 -0600
+  t.min()            #=&gt; 25
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sec-instance'>
+      - (void) <strong>sec</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the second of the minute (0..60)[Yes, seconds really can range
+from zero to 60. This allows the system to inject leap seconds every now
+and then to correct for the fact that years are not really a convenient
+number of hours long.] for time.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  t = R.Time.now()   #=&gt; 2007-11-19 08:25:02 -0600
+  t.sec()            #=&gt; 2
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='strftime-instance'>
+      - (void) <strong>strftime</strong>(format)
+    </p>
+    <div class='docstring'>
+  <p>@todo: implement %N</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='succ-instance'>
+      - (void) <strong>succ</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_i-instance'>
+      - (void) <strong>to_i</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the value of time as an integer number of seconds since the Epoch.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = R.Time.now()
+  &quot;%10.5f&quot; % t.to_f   #=&gt; &quot;1270968656.89607&quot;
+  t.to_i              #=&gt; 1270968656
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_f-instance'>
+      - (void) <strong>to_f</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the value of time as a floating point number of seconds since the
+Epoch.</p><p>t = R.Time.now()
+&quot;%10.5f&quot; % t.to_f   #=&gt; &quot;1270968744.77658&quot;
+t.to_i              #=&gt; 1270968744
+Note that IEEE 754 double is not accurate enough to represent number of nanoseconds from the Epoch.</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='__tz_delta__-instance'>
+      - (void) <strong>__tz_delta__</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='__utc_delta__-instance'>
+      - (void) <strong>__utc_delta__</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Return 0 if local timezone matches gmt_offset.
+otherwise the difference to UTC</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='tv_usec-instance'>
+      - (void) <strong>tv_usec</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    implement
+  </div>
+  <p>Returns just the number of microseconds for time.</p><p>@alias #usec</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = Time.now        #=&gt; 2007-11-19 08:03:26 -0600
+  &quot;%10.6f&quot; % t.to_f   #=&gt; &quot;1195481006.775195&quot;
+  t.usec              #=&gt; 775195</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='wday-instance'>
+      - (void) <strong>wday</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns an integer representing the day of the week, 0..6, with Sunday == 0.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = Time.now()   #=&gt; 2007-11-20 02:35:35 -0600
+  t.wday()         #=&gt; 2
+  t.sunday()      #=&gt; false
+  t.monday()      #=&gt; false
+  t.tuesday()     #=&gt; true
+  t.wednesday()   #=&gt; false
+  t.thursday()    #=&gt; false
+  t.friday()      #=&gt; false
+  t.saturday()    #=&gt; false
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='yday-instance'>
+      - (void) <strong>yday</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns an integer representing the day of the year, 1..366.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = Time.now()   #=&gt; 2007-11-19 08:32:31 -0600
+  t.yday()         #=&gt; 323
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='valueOf-instance'>
+      - (void) <strong>valueOf</strong>()
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='zone-instance'>
+      - (void) <strong>zone</strong>()
+    </p>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    implement
+  </div>
+  <p>Returns the name of the time zone used for time. As of Ruby 1.8, returns
+“UTC” rather than “GMT” for UTC times.</p><p>zone: -&gt; t = Math.floor(@gmt_offset() / 60 * 60) for own zone, i in R.Time.TIME_ZONES
+    return R(zone) if t == i null</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  t = R.Time.gm(2000, &quot;jan&quot;, 1, 20, 15, 1)
+  t.zone()   #=&gt; &quot;UTC&quot;
+  t = Time.local(2000, &quot;jan&quot;, 1, 20, 15, 1)
+  t.zone()   #=&gt; &quot;CST&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_rjust-instance'>
+      - (void) <strong>_rjust</strong>(fixnum, str = '0')
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='_offset_str-instance'>
+      - (void) <strong>_offset_str</strong>()
     </p>
     <div class='tags'>
 </div>
@@ -180,10 +1297,10 @@
     </div>
     <div id='footer'>
   Generated on
-  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  Sat Feb 23 2013 17:35:26 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
-  v0.9.1
+  v1.5.6
   (Node.js v0.8.4).
   &#10034;
   Press Ctrl-h to see the keyboard shortcuts

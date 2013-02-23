@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>CoffeeScript API Documentation</title>
+  <meta charset='UTF-8'>
+  <title>RubyJS API Documentation</title>
   <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
   <script src='../../assets/codo.js'></script>
   <script src='../../assets/search_data.js'></script>
@@ -10,6 +11,8 @@
     <div id='base' data-path='../../'></div>
 <div id='header'>
   <div id='menu'>
+    <a href='../../README.md.html' title='RubyJS'>RubyJS</a>
+    &raquo;
     <a href='../../class_index.html' title='Index'>Index</a>
     &raquo;
     <span class='title'>RubyJS</span>
@@ -24,9 +27,9 @@
     </nav>
     <div id='search'>
       <a id='class_list_link' href='../../class_list.html'>Classes</a>
-      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
-      <a id='method_list_link' href='../../method_list.html'>Methods</a>
       <a id='file_list_link' href='../../file_list.html'>Files</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='extra_list_link' href='../../extra_list.html'>Extras</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -66,12 +69,16 @@
         Mixin list
       </li>
       <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
         <span>Ctrl-M</span>
         Method list
       </li>
       <li>
-        <span>Ctrl-F</span>
-        File list
+        <span>Ctrl-E</span>
+        Extras list
       </li>
     </ul>
     <p>
@@ -106,7 +113,7 @@
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>lib/corelib/range.coffee</td>
+          <td>lib&#47;corelib&#47;range.coffee</td>
         </tr>
         <tr>
           <td>Inherits:</td>
@@ -123,7 +130,7 @@
       </table>
       <h2>Overview</h2>
       <div class='docstring'>
-  <p>R.Range.new() </p> 
+  <p>R.Range.new()</p>
 </div>
 <div class='tags'>
 </div>
@@ -155,16 +162,6 @@
   </li>
   <li>
     <span class='signature'>
-      <a href='#iterator-instance'>
-        - (void) <strong>iterator</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
       <a href='#'=='-instance'>
         - (void) <strong>'=='</strong>(other)
       </a>
@@ -176,11 +173,11 @@
   <li>
     <span class='signature'>
       <a href='#begin-instance'>
-        - (void) <strong>begin</strong>(obj)
+        - (?) <strong>begin</strong>(obj)
       </a>
     </span>
     <span class='desc'>
-      Returns the first object in rng @return obj
+      Returns the first object in rng
     </span>
   </li>
   <li>
@@ -190,7 +187,7 @@
       </a>
     </span>
     <span class='desc'>
-      Returns true if obj is between beg and end, i.e beg <= obj <= end (or end exclusive when exclude_end? is true).
+      Returns true if obj is between beg and end, i.e beg &lt;= obj &lt;= end (or end exclusive when exclude_end? is true).
     </span>
   </li>
   <li>
@@ -216,11 +213,11 @@
   <li>
     <span class='signature'>
       <a href='#end-instance'>
-        - (void) <strong>end</strong>()
+        - (?) <strong>end</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the object that defines the end of rng.
     </span>
   </li>
   <li>
@@ -246,11 +243,11 @@
   <li>
     <span class='signature'>
       <a href='#inspect-instance'>
-        - (void) <strong>inspect</strong>()
+        - (String) <strong>inspect</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Convert this range object to a printable form (using inspect to convert the start and end objects).
     </span>
   </li>
   <li>
@@ -266,7 +263,7 @@
   <li>
     <span class='signature'>
       <a href='#max-instance'>
-        - (void) <strong>max</strong>(block)
+        - (?) <strong>max</strong>(block)
       </a>
     </span>
     <span class='desc'>
@@ -335,7 +332,7 @@
       + (void) <strong>new</strong>(start, end, exclusive = false)
     </p>
     <div class='docstring'>
-  <p>TODO: .new should BOX here: </p> 
+  <p>TODO: .new should BOX here:</p>
 </div>
 <div class='tags'>
 </div>
@@ -348,7 +345,7 @@
       - (void) <strong>constructor</strong>(start, end, exclusive = false)
     </p>
     <div class='docstring'>
-  <p>TODO: do not box here... </p> 
+  <p>TODO: do not box here...</p>
 </div>
 <div class='tags'>
 </div>
@@ -357,14 +354,7 @@
       <h2>Instance Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
-    <p class='signature' id='iterator-instance'>
-      - (void) <strong>iterator</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id=''=='-instance'>
+    <p class='signature'=='-instance'>
       - (void) <strong>'=='</strong>(other)
     </p>
     <div class='tags'>
@@ -372,12 +362,21 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='begin-instance'>
-      - (void) <strong>begin</strong>(obj)
+      - (?) <strong>begin</strong>(obj)
     </p>
     <div class='docstring'>
-  <p>Returns the first object in rng </p> <p>@return obj </p> 
+  <p>Returns the first object in rng</p>
 </div>
 <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt>?</tt>)
+      &mdash;
+      <span class='desc'>obj</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -385,13 +384,15 @@
       - (void) <strong>cover</strong>(obj)
     </p>
     <div class='docstring'>
-  <p>Returns true if obj is between beg and end, i.e beg &lt;= obj &lt;= end (or end exclusive when exclude_end? is true). </p> <pre><code>R.rng(&quot;a&quot;, &quot;z&quot;).cover(&quot;c&quot;)    #=&gt; true R.rng(&quot;a&quot;, &quot;z&quot;).cover(&quot;5&quot;)    #=&gt; false</code></pre> <p>@param other </p> 
+  <p>Returns true if obj is between beg and end, i.e beg &lt;= obj &lt;= end (or end
+exclusive when exclude_end? is true).</p><pre><code>R.rng(&quot;a&quot;, &quot;z&quot;).cover(&quot;c&quot;)    #=&gt; true
+R.rng(&quot;a&quot;, &quot;z&quot;).cover(&quot;5&quot;)    #=&gt; false</code></pre><p>@param other</p>
 </div>
 <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''==='-instance'>
+    <p class='signature'==='-instance'>
       - (void) <strong>'==='</strong>(other)
     </p>
     <div class='tags'>
@@ -406,26 +407,41 @@
     <strong>TODO:</strong>
     Untested single_block_args
   </div>
-  <p>Iterates over the elements rng, passing each in turn to the block. You can only iterate if the start object of the range supports the succ method (which means that you can’t iterate over ranges of Float objects). </p> <p>If no block is given, an enumerator is returned instead. </p> <pre><code>R.rng(10, 15).each (n) -&gt;    console.log n, &#39; &#39; # 10 11 12 13 14 15</code></pre> 
+  <p>Iterates over the elements rng, passing each in turn to the block. You can
+only iterate if the start object of the range supports the succ method
+(which means that you can’t iterate over ranges of Float objects).</p><p>If no block is given, an enumerator is returned instead.</p><pre><code>R.rng(10, 15).each (n) -&gt;
+   console.log n, &#39; &#39;
+
+# 10 11 12 13 14 15</code></pre>
+
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
   <ul class='return'>
     <li>
-      <span class='type'>
-        (<tt>Range, Enumerator</tt>)
-      </span>
-      &mdash;
-      <span class='desc'></span>
-    </li>
+      <span class='type'></span><tt>Range, Enumerator</tt></li>
   </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='end-instance'>
-      - (void) <strong>end</strong>()
+      - (?) <strong>end</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the object that defines the end of rng.</p><pre><code>R.rng(1,10).end()        #=&gt; 10
+R.rng(1,10, true).end()  #=&gt; 10</code></pre>
+
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt>?</tt>)
+      &mdash;
+      <span class='desc'>obj</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -433,18 +449,13 @@
       - (true, false) <strong>exclude_end</strong>()
     </p>
     <div class='docstring'>
-  <p>Returns true if rng excludes its end value. </p> 
+  <p>Returns true if rng excludes its end value.</p>
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
   <ul class='return'>
     <li>
-      <span class='type'>
-        (<tt>true, false</tt>)
-      </span>
-      &mdash;
-      <span class='desc'></span>
-    </li>
+      <span class='type'></span><tt>true, false</tt></li>
   </ul>
 </div>
   </div>
@@ -455,28 +466,32 @@
     <div class='docstring'>
   <div class='note todo'>
     <strong>TODO:</strong>
-    #first(n) not yet implemented
+    <h1>first(n) not yet implemented</h1>
   </div>
-  <p>Returns the first object in rng, or the first n elements. </p> 
+  <p>Returns the first object in rng, or the first n elements.</p>
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
   <ul class='return'>
     <li>
-      <span class='type'>
-        (<tt>obj, Array<obj></tt>)
-      </span>
-      &mdash;
-      <span class='desc'></span>
-    </li>
+      <span class='type'></span><tt>obj, Array&lt;obj&gt;</tt></li>
   </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='inspect-instance'>
-      - (void) <strong>inspect</strong>()
+      - (String) <strong>inspect</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Convert this range object to a printable form (using inspect to convert the
+start and end objects).</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>String</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -484,19 +499,33 @@
       - (void) <strong>min</strong>(block)
     </p>
     <div class='docstring'>
-  <pre><code>min → obj min {| a,b | block } → obj</code></pre> <p>Returns the minimum value in rng. The second uses the block to compare values. Returns nil if the first value in range is larger than the last value </p> 
+  <pre><code>min → obj
+min {| a,b | block } → obj</code></pre><p>Returns the minimum value in rng. The second uses the block to compare
+values. Returns nil if the first value in range is larger than the last
+value</p>
 </div>
 <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='max-instance'>
-      - (void) <strong>max</strong>(block)
+      - (?) <strong>max</strong>(block)
     </p>
     <div class='docstring'>
-  <p>Returns the maximum value in rng. The second uses the block to compare values. Returns nil if the first value in range is larger than the last value. </p> <p>@return obj </p> 
+  <p>Returns the maximum value in rng. The second uses the block to compare
+values. Returns nil if the first value in range is larger than the last
+value.</p>
 </div>
 <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span>
+      (<tt>?</tt>)
+      &mdash;
+      <span class='desc'>obj</span>
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -515,15 +544,18 @@
     <strong>TODO:</strong>
     fix imprecision when using floats as step_sizes
   </div>
-  <p>Iterates over rng, passing each nth element to the block. If the range contains numbers, n is added for each iteration. Otherwise step invokes succ to iterate through range elements. The following code uses class Xs, which is defined in the class-level documentation. </p> <p>If no block is given, an enumerator is returned instead. </p> <p>   R.rng(&#39;a&#39;, &#39;f&#39;).step(2, (x) -&gt; puts x) # =&gt; a c e    R.rng(&#39;a&#39;, &#39;f&#39;).step(3).to_a()         # =&gt; [a, d] </p> 
+  <p>Iterates over rng, passing each nth element to the block. If the range
+contains numbers, n is added for each iteration. Otherwise step invokes
+succ to iterate through range elements. The following code uses class Xs,
+which is defined in the class-level documentation.</p><p>If no block is given, an enumerator is returned instead.</p><p>   R.rng(&#39;a&#39;, &#39;f&#39;).step(2, (x) -&gt; puts x) # =&gt; a c e
+   R.rng(&#39;a&#39;, &#39;f&#39;).step(3).to_a()         # =&gt; [a, d]</p>
 </div>
 <div class='tags'>
   <h3>Returns:</h3>
   <ul class='return'>
     <li>
-      <span class='type'>
-        (<tt>Range, Enumerator</tt>)
-      </span>
+      <span class='type'></span>
+      (<tt>Range, Enumerator</tt>)
       &mdash;
       <span class='desc'>returns self or Enumerator if no block given.</span>
     </li>
@@ -541,10 +573,10 @@
     </div>
     <div id='footer'>
   Generated on
-  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  Sat Feb 23 2013 17:35:26 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
-  v0.9.1
+  v1.5.6
   (Node.js v0.8.4).
   &#10034;
   Press Ctrl-h to see the keyboard shortcuts

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>CoffeeScript API Documentation</title>
+  <meta charset='UTF-8'>
+  <title>RubyJS API Documentation</title>
   <link rel='stylesheet' href='../../assets/codo.css' type='text/css'>
   <script src='../../assets/codo.js'></script>
   <script src='../../assets/search_data.js'></script>
@@ -10,6 +11,8 @@
     <div id='base' data-path='../../'></div>
 <div id='header'>
   <div id='menu'>
+    <a href='../../README.md.html' title='RubyJS'>RubyJS</a>
+    &raquo;
     <a href='../../class_index.html' title='Index'>Index</a>
     &raquo;
     <span class='title'>RubyJS</span>
@@ -24,9 +27,9 @@
     </nav>
     <div id='search'>
       <a id='class_list_link' href='../../class_list.html'>Classes</a>
-      <a id='mixin_list_link' href='../../mixin_list.html'>Mixins</a>
-      <a id='method_list_link' href='../../method_list.html'>Methods</a>
       <a id='file_list_link' href='../../file_list.html'>Files</a>
+      <a id='method_list_link' href='../../method_list.html'>Methods</a>
+      <a id='extra_list_link' href='../../extra_list.html'>Extras</a>
     </div>
   </div>
   <iframe id='search_frame'></iframe>
@@ -66,12 +69,16 @@
         Mixin list
       </li>
       <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
         <span>Ctrl-M</span>
         Method list
       </li>
       <li>
-        <span>Ctrl-F</span>
-        File list
+        <span>Ctrl-E</span>
+        Extras list
       </li>
     </ul>
     <p>
@@ -106,7 +113,7 @@
       <table class='box'>
         <tr>
           <td>Defined in:</td>
-          <td>lib/corelib/fixnum.coffee</td>
+          <td>lib&#47;corelib&#47;fixnum.coffee</td>
         </tr>
         <tr>
           <td>Inherits:</td>
@@ -410,7 +417,7 @@
       + (void) <strong>__cache_fixnums__</strong>(from = -1, to = 256)
     </p>
     <div class='docstring'>
-  <p>Fixnums are unchangeable. Cache them for later use. </p> 
+  <p>Fixnums are unchangeable. Cache them for later use.</p>
 </div>
 <div class='tags'>
 </div>
@@ -450,56 +457,56 @@
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''=='-instance'>
+    <p class='signature'=='-instance'>
       - (void) <strong>'=='</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''<=>'-instance'>
+    <p class='signature'<=>'-instance'>
       - (void) <strong>'<=>'</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''+'-instance'>
+    <p class='signature'+'-instance'>
       - (void) <strong>'+'</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''-'-instance'>
+    <p class='signature'-'-instance'>
       - (void) <strong>'-'</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''/'-instance'>
+    <p class='signature'/'-instance'>
       - (void) <strong>'/'</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''*'-instance'>
+    <p class='signature'*'-instance'>
       - (void) <strong>'*'</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''**'-instance'>
+    <p class='signature'**'-instance'>
       - (void) <strong>'**'</strong>(other)
     </p>
     <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id=''%'-instance'>
+    <p class='signature'%'-instance'>
       - (void) <strong>'%'</strong>(other)
     </p>
     <div class='tags'>
@@ -510,14 +517,16 @@
       - (void) <strong>fdiv</strong>(other)
     </p>
     <div class='docstring'>
-  <p>Returns the floating point result of dividing fix by numeric. </p> 
+  <p>Returns the floating point result of dividing fix by numeric.</p>
   <div class='examples'>
     <h3>Examples:</h3>
     <h4>
       
     </h4>
     <pre><code class='coffee'>  R(654321).fdiv(13731)      #=&gt; 47.6528293642124
-  R(654321).fdiv(13731.24)   #=&gt; 47.6519964693647</code></pre>
+  R(654321).fdiv(13731.24)   #=&gt; 47.6519964693647
+
+</code></pre>
   </div>
 </div>
 <div class='tags'>
@@ -535,7 +544,7 @@
       - (void) <strong>to_f</strong>()
     </p>
     <div class='docstring'>
-  <p>Converts fix to a Float. </p> 
+  <p>Converts fix to a Float.</p>
 </div>
 <div class='tags'>
 </div>
@@ -545,7 +554,8 @@
       - (void) <strong>to_s</strong>(base = 10)
     </p>
     <div class='docstring'>
-  <p>Returns a string containing the representation of fix radix base (between 2 and 36). </p> 
+  <p>Returns a string containing the representation of fix radix base (between
+2 and 36).</p>
   <div class='examples'>
     <h3>Examples:</h3>
     <h4>
@@ -556,7 +566,9 @@
   R(12345).to_s(8)    #=&gt; &quot;30071&quot;
   R(12345).to_s(10)   #=&gt; &quot;12345&quot;
   R(12345).to_s(16)   #=&gt; &quot;3039&quot;
-  R(12345).to_s(36)   #=&gt; &quot;9ix&quot;</code></pre>
+  R(12345).to_s(36)   #=&gt; &quot;9ix&quot;
+
+</code></pre>
   </div>
 </div>
 <div class='tags'>
@@ -566,10 +578,10 @@
     </div>
     <div id='footer'>
   Generated on
-  Tue Nov 27 2012 22:25:50 GMT+0700 (ICT)
+  Sat Feb 23 2013 17:35:26 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
-  v0.9.1
+  v1.5.6
   (Node.js v0.8.4).
   &#10034;
   Press Ctrl-h to see the keyboard shortcuts
