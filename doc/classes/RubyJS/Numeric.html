@@ -185,16 +185,6 @@
       <ul class='summary'>
   <li>
     <span class='signature'>
-      <a href='#is_numeric-instance'>
-        - (void) <strong>is_numeric</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
       <a href='#'<=>'-instance'>
         - (void) <strong>'<=>'</strong>(other)
       </a>
@@ -206,31 +196,31 @@
   <li>
     <span class='signature'>
       <a href='#abs-instance'>
-        - (void) <strong>abs</strong>()
+        - (R.Numeric) <strong>abs</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the absolute value of num.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#abs2-instance'>
-        - (void) <strong>abs2</strong>()
+        - (R.Numeric) <strong>abs2</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns square of self.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#ceil-instance'>
-        - (void) <strong>ceil</strong>()
+        - (R.Fixnum) <strong>ceil</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the smallest Integer greater than or equal to num.
     </span>
   </li>
   <li>
@@ -240,17 +230,17 @@
       </a>
     </span>
     <span class='desc'>
-      TODO: this needs some serious love
+      If a Numeric is the same type as num, returns an array containing aNumeric and num.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#div-instance'>
-        - (void) <strong>div</strong>(other)
+        - (R.Float) <strong>div</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Uses / to perform division, then converts the result to an integer.
     </span>
   </li>
   <li>
@@ -266,17 +256,17 @@
   <li>
     <span class='signature'>
       <a href='#eql-instance'>
-        - (void) <strong>eql</strong>(other)
+        - (Boolean) <strong>eql</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if num and numeric are the same type and have equal values.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#inspect-instance'>
-        - (void) <strong>inspect</strong>()
+        - (R.String) <strong>inspect</strong>()
       </a>
     </span>
     <span class='desc'>
@@ -286,21 +276,21 @@
   <li>
     <span class='signature'>
       <a href='#fdiv-instance'>
-        - (void) <strong>fdiv</strong>(other)
+        - (R.Float) <strong>fdiv</strong>(other)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns float division.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#floor-instance'>
-        - (void) <strong>floor</strong>()
+        - (R.Fixnum) <strong>floor</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the largest integer less than or equal to num.
     </span>
   </li>
   <li>
@@ -310,7 +300,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the absolute value of num.
     </span>
   </li>
   <li>
@@ -320,17 +310,17 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Alias to <a href='../../classes/RubyJS/Numeric.html#divmod-instance'>#divmod</a> @alias #divmod
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#nonzero-instance'>
-        - (void) <strong>nonzero</strong>()
+        - (null, this) <strong>nonzero</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns self if num is not zero, nil otherwise.
     </span>
   </li>
   <li>
@@ -340,7 +330,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns most exact division (rational for integers, float for floats).
     </span>
   </li>
   <li>
@@ -350,7 +340,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns an array; [num, 0].
     </span>
   </li>
   <li>
@@ -360,67 +350,57 @@
       </a>
     </span>
     <span class='desc'>
-      
+      x.remainder(y) means x-y*(x/y).truncate
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#round-instance'>
-        - (void) <strong>round</strong>(n)
+        - (R.Numeric) <strong>round</strong>(n)
       </a>
     </span>
     <span class='desc'>
-      
+      Rounds num to a given precision in decimal digits (default 0 digits).
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#step-instance'>
-        - (void) <strong>step</strong>(limit, step = 1, block)
+        - (this, R.Enumerator) <strong>step</strong>(limit, step = 1, block)
       </a>
     </span>
     <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#to_int-instance'>
-        - (void) <strong>to_int</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
+      Invokes block with the sequence of numbers starting at num, incremented by step (default 1) on each call.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#truncate-instance'>
-        - (void) <strong>truncate</strong>()
+        - (R.Fixnum) <strong>truncate</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns num truncated to an integer.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#uminus-instance'>
-        - (void) <strong>uminus</strong>()
+        - (R.Numeric) <strong>uminus</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Unary Minus—Returns the receiver’s value, negated.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#zero-instance'>
-        - (void) <strong>zero</strong>()
+        - (Boolean) <strong>zero</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if num has a zero value.
     </span>
   </li>
 </ul>
@@ -476,13 +456,6 @@
       <h2>Instance Method Details</h2>
       <div class='methods'>
   <div class='method_details'>
-    <p class='signature' id='is_numeric-instance'>
-      - (void) <strong>is_numeric</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
     <p class='signature'<=>'-instance'>
       - (void) <strong>'<=>'</strong>(other)
     </p>
@@ -491,23 +464,66 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='abs-instance'>
-      - (void) <strong>abs</strong>()
+      - (R.Numeric) <strong>abs</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the absolute value of num.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(12).abs()         #=&gt; 12
+  (-34.56).abs()      #=&gt; 34.56
+  R(-34.56).abs()     #=&gt; 34.56</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Numeric</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='abs2-instance'>
-      - (void) <strong>abs2</strong>()
+      - (R.Numeric) <strong>abs2</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns square of self.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Numeric</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='ceil-instance'>
-      - (void) <strong>ceil</strong>()
+      - (R.Fixnum) <strong>ceil</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the smallest Integer greater than or equal to num. Class Numeric achieves this by converting itself to a Float then invoking Float#ceil.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(1).ceil()      #=&gt; 1
+  R(1.2).ceil()    #=&gt; 2
+  R(-1.2).ceil()   #=&gt; -1
+  R(-1.0).ceil()   #=&gt; -1</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -515,16 +531,42 @@
       - (void) <strong>coerce</strong>(other)
     </p>
     <div class='docstring'>
-  <p>TODO: this needs some serious love</p>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    this needs some serious love
+  </div>
+  <p>If a Numeric is the same type as num, returns an array containing aNumeric
+and num. Otherwise, returns an array with both aNumeric and num
+represented as Float objects. This coercion mechanism is used by Ruby to
+handle mixed-type numeric operations: it is intended to find a compatible
+common type between the two operands of the operator.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(1).coerce(2.5)   #=&gt; [2.5, 1.0]
+  R(1.2).coerce(3)   #=&gt; [3.0, 1.2]
+  R(1).coerce(2)     #=&gt; [2, 1]</code></pre>
+  </div>
 </div>
 <div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='div-instance'>
-      - (void) <strong>div</strong>(other)
+      - (R.Float) <strong>div</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Uses / to perform division, then converts the result to an integer.
+numeric does not define the / operator; this is left to subclasses.</p><p>Equivalent to num.divmod(aNumeric).</p><p>See {R.Numeric#divmod}</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Float</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -536,121 +578,254 @@
   </div>
   <div class='method_details'>
     <p class='signature' id='eql-instance'>
-      - (void) <strong>eql</strong>(other)
+      - (Boolean) <strong>eql</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if num and numeric are the same type and have equal values.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  new R.Fixnum(1).equals(new R.Float(1.0))  #=&gt; true
+  new R.Fixnum(1).eql(new R.Float(1.0))     #=&gt; false
+  new R.Float(1).eql(new R.Float(1.0))      #=&gt; true</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='inspect-instance'>
-      - (void) <strong>inspect</strong>()
+      - (R.String) <strong>inspect</strong>()
     </p>
     <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.String</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='fdiv-instance'>
-      - (void) <strong>fdiv</strong>(other)
+      - (R.Float) <strong>fdiv</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns float division.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Float</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='floor-instance'>
-      - (void) <strong>floor</strong>()
+      - (R.Fixnum) <strong>floor</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the largest integer less than or equal to num. Numeric implements this by converting anInteger to a Float and invoking Float#floor.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R( 1).floor()   #=&gt; 1
+  R(-1).floor()   #=&gt; -1</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='magnitude-instance'>
       - (void) <strong>magnitude</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the absolute value of num.</p><p>@alias #abs</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='modulo-instance'>
       - (void) <strong>modulo</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Alias to <a href='../../classes/RubyJS/Numeric.html#divmod-instance'>#divmod</a></p><p>@alias #divmod</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='nonzero-instance'>
-      - (void) <strong>nonzero</strong>()
+      - (null, this) <strong>nonzero</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns self if num is not zero, nil otherwise. This behavior is useful
+when chaining comparisons:</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>null, this</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='quo-instance'>
       - (void) <strong>quo</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns most exact division (rational for integers, float for floats).</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='rect-instance'>
       - (void) <strong>rect</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns an array; [num, 0].</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='remainder-instance'>
       - (void) <strong>remainder</strong>(other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>x.remainder(y) means x-y*(x/y).truncate</p>
+</div>
+<div class='tags'>
+  <h3>See also:</h3>
+  <ul class='see'>
+    <li>
+      {R.Numeric#divmod}
+    </li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='round-instance'>
-      - (void) <strong>round</strong>(n)
+      - (R.Numeric) <strong>round</strong>(n)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Rounds num to a given precision in decimal digits (default 0 digits).
+Precision may be negative. Returns a floating point number when ndigits is
+more than zero. Numeric implements this by converting itself to a Float
+and invoking Float#round.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Numeric</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='step-instance'>
-      - (void) <strong>step</strong>(limit, step = 1, block)
+      - (this, R.Enumerator) <strong>step</strong>(limit, step = 1, block)
     </p>
-    <div class='tags'>
-</div>
+    <div class='docstring'>
+  <p>Invokes block with the sequence of numbers starting at num, incremented by
+step (default 1) on each call. The loop finishes when the value to be
+passed to the block is greater than limit (if step is positive) or less
+than limit (if step is negative). If all the arguments are integers, the
+loop operates using an integer counter. If any of the arguments are
+floating point numbers, all are converted to floats, and the loop is
+executed floor(n + n*epsilon)+ 1 times, where n = (limit - num)/step.
+Otherwise, the loop starts at num, uses either the &lt; or &gt; operator to
+compare the counter against limit, and increments itself using the +
+operator.</p><p>If no block is given, an enumerator is returned instead.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  R(1).step(10, 2, function (i) { R.puts(i)} )
+  R(Math.E).step(Math.PI, 0.2, function (i) { R.puts(i)} )
+  # produces:
+  # 1 3 5 7 9
+  # 2.71828182845905 2.91828182845905 3.11828182845905</code></pre>
   </div>
-  <div class='method_details'>
-    <p class='signature' id='to_int-instance'>
-      - (void) <strong>to_int</strong>()
-    </p>
-    <div class='tags'>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this, R.Enumerator</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='truncate-instance'>
-      - (void) <strong>truncate</strong>()
+      - (R.Fixnum) <strong>truncate</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns num truncated to an integer. Numeric implements this by converting
+its value to a float and invoking Float#truncate.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='uminus-instance'>
-      - (void) <strong>uminus</strong>()
+      - (R.Numeric) <strong>uminus</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Unary Minus—Returns the receiver’s value, negated.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Numeric</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='zero-instance'>
-      - (void) <strong>zero</strong>()
+      - (Boolean) <strong>zero</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if num has a zero value.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
 </div>
   </div>
 </div>
     </div>
     <div id='footer'>
   Generated on
-  Sat Feb 23 2013 18:44:06 GMT+0700 (ICT)
+  Sun Feb 24 2013 14:20:55 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6

@@ -171,26 +171,6 @@ Fixnum.</p>
       <ul class='summary'>
   <li>
     <span class='signature'>
-      <a href='#is_integer-instance'>
-        - (void) <strong>is_integer</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#unbox-instance'>
-        - (void) <strong>unbox</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
       <a href='#chr-instance'>
         - (R.String) <strong>chr</strong>()
       </a>
@@ -211,22 +191,12 @@ Fixnum.</p>
   </li>
   <li>
     <span class='signature'>
-      <a href='#upto-instance'>
-        - (void) <strong>upto</strong>(stop, block)
-      </a>
-    </span>
-    <span class='desc'>
-      TODO: remove dog food
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
       <a href='#downto-instance'>
-        - (void) <strong>downto</strong>(stop, block)
+        - (this) <strong>downto</strong>(stop, block)
       </a>
     </span>
     <span class='desc'>
-      
+      Iterates block, passing decreasing values from int down to and including limit.
     </span>
   </li>
   <li>
@@ -272,7 +242,7 @@ Fixnum.</p>
   <li>
     <span class='signature'>
       <a href='#numerator-instance'>
-        - (void) <strong>numerator</strong>()
+        - (R.Fixnum,this) <strong>numerator</strong>()
       </a>
     </span>
     <span class='desc'>
@@ -292,11 +262,11 @@ Fixnum.</p>
   <li>
     <span class='signature'>
       <a href='#ord-instance'>
-        - (void) <strong>ord</strong>()
+        - (this) <strong>ord</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the int itself.
     </span>
   </li>
   <li>
@@ -332,37 +302,37 @@ Fixnum.</p>
   <li>
     <span class='signature'>
       <a href='#times-instance'>
-        - (void) <strong>times</strong>(block)
+        - (this) <strong>times</strong>(block)
       </a>
     </span>
     <span class='desc'>
-      
+      Iterates block int times, passing in values from zero to int - 1.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#to_i-instance'>
-        - (void) <strong>to_i</strong>()
+        - (this) <strong>to_i</strong>()
       </a>
     </span>
     <span class='desc'>
-      
+      As int is already an Integer, all these methods simply return the receiver
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#upto-instance'>
+        - (this) <strong>upto</strong>(stop, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Iterates block, passing in integer values from int up to and including limit.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#toString-instance'>
-        - (void) <strong>toString</strong>()
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#__ensure_integer__-instance'>
-        - (void) <strong>__ensure_integer__</strong>(other)
+        - (String) <strong>toString</strong>()
       </a>
     </span>
     <span class='desc'>
@@ -382,7 +352,6 @@ Fixnum.</p>
                 <a href='../../classes/RubyJS/Numeric.html#try_convert-class'>.try_convert</a>,
                 <a href='../../classes/RubyJS/Numeric.html#new-class'>.new</a>,
                 <a href='../../classes/RubyJS/Numeric.html#typecast-class'>.typecast</a>,
-                <a href='../../classes/RubyJS/Numeric.html#is_numeric-instance'>#is_numeric</a>,
                 <a href='../../classes/RubyJS/Numeric.html#'<=>'-instance'>#&#39;&lt;=&gt;&#39;</a>,
                 <a href='../../classes/RubyJS/Numeric.html#abs-instance'>#abs</a>,
                 <a href='../../classes/RubyJS/Numeric.html#abs2-instance'>#abs2</a>,
@@ -402,7 +371,6 @@ Fixnum.</p>
                 <a href='../../classes/RubyJS/Numeric.html#remainder-instance'>#remainder</a>,
                 <a href='../../classes/RubyJS/Numeric.html#round-instance'>#round</a>,
                 <a href='../../classes/RubyJS/Numeric.html#step-instance'>#step</a>,
-                <a href='../../classes/RubyJS/Numeric.html#to_int-instance'>#to_int</a>,
                 <a href='../../classes/RubyJS/Numeric.html#truncate-instance'>#truncate</a>,
                 <a href='../../classes/RubyJS/Numeric.html#uminus-instance'>#uminus</a>,
         <a href='../../classes/RubyJS/Numeric.html#zero-instance'>#zero</a>
@@ -438,20 +406,6 @@ Fixnum.</p>
 </div>
       <h2>Instance Method Details</h2>
       <div class='methods'>
-  <div class='method_details'>
-    <p class='signature' id='is_integer-instance'>
-      - (void) <strong>is_integer</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='unbox-instance'>
-      - (void) <strong>unbox</strong>()
-    </p>
-    <div class='tags'>
-</div>
-  </div>
   <div class='method_details'>
     <p class='signature' id='chr-instance'>
       - (R.String) <strong>chr</strong>()
@@ -493,20 +447,37 @@ Fixnum.</p>
 </div>
   </div>
   <div class='method_details'>
-    <p class='signature' id='upto-instance'>
-      - (void) <strong>upto</strong>(stop, block)
+    <p class='signature' id='downto-instance'>
+      - (this) <strong>downto</strong>(stop, block)
     </p>
     <div class='docstring'>
-  <p>TODO: remove dog food</p>
+  <p>Iterates block, passing decreasing values from int down to and including
+limit.</p><p>If no block is given, an enumerator is returned instead.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+ R(5).downto(1, function (n) { R.puts(n + &quot;.. &quot;) }
+ # =&gt; 5.. 4.. 3.. 2.. 1..</code></pre>
+  </div>
 </div>
 <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='downto-instance'>
-      - (void) <strong>downto</strong>(stop, block)
-    </p>
-    <div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>stop</span>
+      <span class='type'>
+        (<tt>Number</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -601,12 +572,17 @@ Fixnum.</p>
   </div>
   <div class='method_details'>
     <p class='signature' id='numerator-instance'>
-      - (void) <strong>numerator</strong>()
+      - (R.Fixnum,this) <strong>numerator</strong>()
     </p>
     <div class='docstring'>
   <p>Returns self.</p>
 </div>
 <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum, this</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -626,9 +602,18 @@ Fixnum.</p>
   </div>
   <div class='method_details'>
     <p class='signature' id='ord-instance'>
-      - (void) <strong>ord</strong>()
+      - (this) <strong>ord</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the int itself.</p><pre><code> a.ord    #=&gt; 97</code></pre><p>This method is intended for compatibility to character constant in Ruby
+1.9. For example, ?a.ord returns 97 both in 1.8 and 1.9.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
@@ -706,37 +691,94 @@ Fixnum.</p>
   </div>
   <div class='method_details'>
     <p class='signature' id='times-instance'>
-      - (void) <strong>times</strong>(block)
+      - (this) <strong>times</strong>(block)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Iterates block int times, passing in values from zero to int - 1.</p><p>If no block is given, an enumerator is returned instead.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(5).times(function(i) { R.puts(i) })
+  # =&gt; 0 1 2 3 4</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='to_i-instance'>
-      - (void) <strong>to_i</strong>()
+      - (this) <strong>to_i</strong>()
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>As int is already an Integer, all these methods simply return the receiver</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='upto-instance'>
+      - (this) <strong>upto</strong>(stop, block)
+    </p>
+    <div class='docstring'>
+  <p>Iterates block, passing in integer values from int up to and including
+limit.</p><p>If no block is given, an enumerator is returned instead.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(5).upto(10, function (i) { R.puts(i + &quot; &quot; })
+  # =&gt; 5 6 7 8 9 10</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Parameters:</h3>
+  <ul class='param'>
+    <li>
+      <span class='name'>stop</span>
+      <span class='type'>
+        (<tt>Number</tt>)
+      </span>
+    </li>
+  </ul>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='toString-instance'>
-      - (void) <strong>toString</strong>()
+      - (String) <strong>toString</strong>()
     </p>
     <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='__ensure_integer__-instance'>
-      - (void) <strong>__ensure_integer__</strong>(other)
-    </p>
-    <div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>String</tt></li>
+  </ul>
 </div>
   </div>
 </div>
     </div>
     <div id='footer'>
   Generated on
-  Sat Feb 23 2013 18:44:06 GMT+0700 (ICT)
+  Sun Feb 24 2013 14:20:55 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
