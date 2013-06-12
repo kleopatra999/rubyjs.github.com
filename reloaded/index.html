@@ -1,0 +1,469 @@
+<!doctype html>
+<html>
+  <head>
+    <title>RubyJS Documentation</title>
+    <link href="styles.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="prettify.js"></script>
+    <script src="Chart.js"></script>
+    <script type="text/javascript" src="//use.typekit.net/puc1imu.js"></script>
+    <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  </head>
+  <body>
+  <div id="wrapper">
+    <nav>
+      <dl>
+      </dl>
+    </nav>
+
+    <div id="contentWrapper">
+      <h1 id="mainHeader">RubyJS Documentation</h1>
+
+      <article id="gettingStarted">
+        <h1>Getting started</h1>
+
+        <h2>What's new</h2>
+        <p>
+          If you have been following RubyJS for a while here are the most important changes:
+        </p>
+        <ul>
+          <li>RubyJS Lite: Focus on functional style without use of wrapper objects.</li>
+          <li>RubyJS Classic: wrapper objects build upon Lite.</li>
+          <li>Consistent and simplified typecasting of return values and block arguments</li>
+          <li>Duck-typing through <code>valueOf()</code> instead of <code>to_str, to_int, etc</code></li>
+          <li>Use <code>valueOf()</code> instead of <code>to_native()</code>
+        </ul>
+
+        <h2>0.8.0-beta1</h2>
+        <p>
+          If you used RubyJS 0.7 before there's a bunch of changes.
+
+        </p>
+
+
+        <h2>Install</h2>
+        <p></p>
+
+
+
+      </article>
+      <article id="overview">
+        <h1>Overview</h1>
+        <p>
+          RubyJS (Lite) consists of the implementation of Ruby methods. They follow a functional style, similar to underscorejs. The methods are not just inspired by Ruby but are implemented according to the rubyspecs. On top of that RubyJS Classic provides an OO layer that allows to chain methods across types. An additional way is to add RubyJS methods to native classes. Method names can be prefixed. This is controversial, so read carefully below before you make an opinion.
+
+        </p>
+        <h2>RubyJS Lite - Functional</h2>
+        <p>
+          The recommended way to get started with RubyJS. Ruby methods are implemented in a functional style, similar to underscorejs. These methods live in a namespace named according to their Ruby class name.
+
+          <code>_s</code> String,
+          <code>_a</code> Array,
+          <code>_h</code> Hash,
+          <code>_n</code> Numerics,
+          <code>_i</code> Iterator/Enumerable.
+        </p>
+
+<pre data-type="javascript"><code>// Functional use
+_s.capitalize("foo")      // => "Foo"
+_a.rindex([1,2,3,2,1], 2) // => 4
+_n.upto(1, 5, function(i) { console.log(i) })
+_h.rassoc({a: 2, b:3}, 3) // => 'b'
+</code></pre>
+
+        <p>
+          The functional methods accept and return JavaScript natives only. There is partial support for duck-typing through <code>valueOf()</code>.
+        </p>
+
+
+        <h2>RubyJS Classic - OO</h2>
+
+        <p>
+          RubyJS Classic is an object-oriented layer that uses wrapper objects. This allows for easy extending with additional classes. One example is R.Time that features timezone support in JS. However you are more likely to use it because it allows to chain methods.
+        </p>
+
+<pre data-type="javascript"><code>// OO use
+R("foo")          // => {R.String: "foo"}
+  .capitalize()   // => {R.String: "Foo"}
+  .ljust(7, '-')  // => {R.String: "--Foo--"}
+  .split('')      // => {R.Array : ["-", "-", ..]}
+  .size()         // => {R.Fixnum: 10 }
+  .valueOf()      // => 10
+</code></pre>
+        <h2>RubyJS I'm feeling Evil</h2>
+
+        <p>
+          This is a very controversial topic. Read carefully before making an opinion.
+        </p>
+
+        <ul>
+          <li>Extending natives is optin and disabled by default</li>
+          <li>By default RubyJS lives completely in the <code>R</code> namespace</li>
+          <li>Object.prototype never gets modified</li>
+          <li>Method names can be prefixed for additional safety</li>
+        </ul>
+
+        <p>
+          To add RubyJS methods to the prototypes of JS natives call the
+          <code>R.i_am_feeling_evil()</code> method with an optional prefix. <code>i_am_feeling_evil</code> never overwrites methods that already exist, and does not modify Object.prototype.
+        </p>
+
+<pre data-type="javascript"><code>// Adding methods to native classes
+R.i_am_feeling_evil('')
+"kampai".ljust(10, ' ') // => '  kampai  '
+  .size() // 10
+  .times(function(i) { console.log(i)} )
+</code></pre>
+
+        <p>
+          A safer option is to prefix the methods.
+        </p>
+
+<pre data-type="javascript"><code>// Adding methods to native classes with a prefix
+R.i_am_feeling_evil('rb_')
+"kampai".rb_ljust(10, ' ') // => '  kampai  '
+  .rb_size() // 10
+  .rb_times(function(i) { console.log(i)} )
+</code></pre>
+
+        <p>
+          A major benefit of this approach is that methods are chainable.
+        </p>
+
+
+        <h2>Benefits for JS Developers</h2>
+        <p>
+
+        </p>
+
+<pre data-type="javascript"><code>// JS
+['10', '10', '10'].map(parseInt)     // => [10, NaN, 2]
+// underscore
+_.map(['10', '10', '10'], parseInt)  // => [10, NaN, 2]
+// RubyJS
+_a.map(['10', '10', '10'], parseInt) // => [10, 10, 10]
+</code></pre>
+
+<pre data-type="javascript"><code>// JS
+[1, 8, 15].sort()     // => [1, 15, 8]
+// underscore
+_.sortBy([1, 8, 15])  // => [1, 15, 8]
+// RubyJS
+_a.sort([1, 8, 15])   // => [1, 8, 15]
+
+// underscore
+_.sortBy(['b', 'a'])  // => ['b', 'a']
+// RubyJS
+_a.sort(['b', 'a'])   // => ['a', 'b']
+_a.sort([[2],[1],[]]) // => [[],[1],[2]]
+_a.sort([1, 'a'])     // ArgumentError
+</code></pre>
+
+<pre data-type="javascript"><code>// JS
+Math.round(0.045, 2)  // => 0
+0.045.toFixed(2)      // => 0.04
+0.035.toFixed(2)      // => 0.04 (!)
+// RubyJS
+_n.round(0.045, 2)    // => 0.05
+_n.round(0.035, 2)    // => 0.04
+_n.round(123, -1)     // => 120
+</code></pre>
+
+    </article>
+    <article id="rubyjs_classic">
+
+
+        <h1>RubyJS Classic - OO</h1>
+        <p>
+          This is how RubyJS originally started. It works as close to Ruby as possible. And it currently is used to test RubyJS with the RubySpec. It consists of classes for the different types. They live in the <code>R</code> namespace.
+        </p>
+
+        <h2>RubyJS Classes</h2>
+
+<pre data-type="javascript"><code>// OO use
+new R.String("foo")    // => {R.String: "foo"}
+new R.Array([1,2])     // => {R.Array:  [1, 2]}
+new R.Fixnum(1)        // => {R.Fixnum: 1}
+new R.Float(1.0)       // => {R.Fixnum: 1.0}
+new R.Hash({1: 2})     // => {R.Hash: {'1': 2}}
+new R.Time(new Date()) // => {R.Time: ...}
+new R.Range(1,2)       // => {R.Range: 1..2}
+new R.Regexp(/\w/)     // => {R.Regexp: /\w/}
+</code></pre>
+
+
+
+        <h2>Typecasting</h2>
+
+        <p>
+          <code>R(obj)</code> typecasts obj into the appropriate RubyJS class.
+        </p>
+
+<pre data-type="javascript"><code>// OO use
+R("foo")   // => {R.String: "foo"}
+R([1,2])   // => {R.Array:  [1, 2]}
+R(1)       // => {R.Fixnum: 1}
+R(1.2)     // => {R.Float: 1}
+// Careful with numbers
+R(1.0)     // => {R.Fixnum: 1}
+// Objects/Hashes are not typecasted
+R({})      // => {}
+R.hsh({})  // => {R.Hash: {}}
+</code></pre>
+
+        <h3>Access native object</h3>
+        <p>
+          At any point you can access the wrapped JavaScript object using <code>valueOf()</code>. This operation is safe as every JS object implements it.
+        </p>
+
+<pre data-type="javascript"><code>// valueOf() returns wrapped object.
+R(1).valueOf()                // 1
+R([1,2]).join("-").valueOf()  // => '1-2-3'
+R("f b").split(' ').valueOf() // => ['f', 'b']
+
+// Safe operation, works on natives too.
+R("foo").valueOf().valueOf()  // "foo"
+[1,2,3].valueOf()             // [1,2,3]
+</code></pre>
+
+        <p>
+          For strings and numbers you often don't need to call <code>valueOf()</code>.
+        </p>
+
+<pre data-type="javascript"><code>R(1) + 2            // => 3
+R(1).to_s() + 2     // => "12"
+"Hello " + R('world').upcase()
+// => 'Hello WORLD'
+</code></pre>
+
+        <h3>Duck-typed method arguments</h3>
+        <p>
+          RubyJS methods coerce method arguments to JS natives. Unless an argument is already a JS literal of the expected type methods try to typecast it. It'll use <code>valueOf()</code> method and will raise a TypeError if that method returns a wrong type.
+        </p>
+
+<pre data-type="javascript"><code>_n.round( 1.234, 1 )
+_n.round( 1.234, 1.99 )
+_n.round( 1.234, R(1) )
+_n.round( 1.234, new Number(1) )
+_n.round( 1.234, {valueOf: function () { return 1; }})
+// => 1.2
+
+_n.round( 1.234, "1" )
+_n.round( 1.234, {valueOf: function () { return "1"; }})
+// => TypeError
+
+// This allows you to add your custom RubyJS classes
+_n.round( 1.234, new R.Rational(8, 4) ) // => 2
+</code></pre>
+
+        <h2>Chainable Methods</h2>
+        <p>
+          Instance and class methods of RubyJS classes return RubyJS objects. That makes them chainable. <code>valueOf()</code> returns the wrapped object.
+        </p>
+
+<pre data-type="javascript"><code>// OO use
+R("foo")          // => {R.String: "foo"}
+  .capitalize()   // => {R.String: "Foo"}
+  .ljust(7, '-')  // => {R.String: "--Foo--"}
+  .split('')      // => {R.Array : ["-", "-", ..]}
+  .size()         // => {R.Fixnum: 10 }
+  .valueOf()      // => 10
+</code></pre>
+
+        <p>
+          <strong>Rule 1:</strong> RubyJS Classic methods return a RubyJS object. Elements of Arrays and Hashes are not typecasted (non-recursive).
+        </p>
+
+<pre data-type="javascript"><code>R("foo").split('')
+// => {R.Array: ['F', 'o', 'o'] }
+// a RubyJS array with native JS strings (and not of R.String)
+
+R([1,2,3]).first()
+// 1
+</code></pre>
+
+        <p>
+          <strong>Rule 2:</strong> Block arguments are never typecasted to RubyJS objects. For performance reasons.
+        </p>
+
+<pre data-type="javascript"><code>// Wrong:
+R(1).times(function (i) { puts( i.odd() ) })
+// => NoMethodError.
+
+// Better:
+R(1).times(function (i) { puts( R(i).odd() ) })
+R(1).times(function (i) { puts( _n.odd(i)  ) })
+</code></pre>
+
+        <p>
+          <strong>Rule 3:</strong> At any point you can access the wrapped JavaScript object using <code>valueOf()</code>. This operation is safe as every JS object implements it.
+        </p>
+
+<pre data-type="javascript"><code>// valueOf() returns wrapped object.
+R(1).valueOf()                // 1
+R([1,2]).join("-").valueOf()  // => '1-2-3'
+R("f b").split(' ').valueOf() // => ['f', 'b']
+// Safe operation, works on natives too.
+R("foo").valueOf().valueOf()  // "foo"
+[1,2,3].valueOf()             // [1,2,3]
+</code></pre>
+
+
+
+        <h2>Enumerable/Enumerator</h2>
+        <p>
+          RubyJS Classic implements the exact same behaviour as their Ruby counterparts.
+        </p>
+
+
+        <h3>Chaining iterators</h3>
+        <p>
+          When you don't pass a block to an iterator, you can chain the methods of Enumerable through Enumerators.
+        </p>
+
+<pre data-type="javascript"><code>R(2).upto(4)                                // => {R.Enumerator }
+  .each_with_object("foo")                  // => {R.Enumerator }
+  .map(function (i, obj) { return obj+i; });
+// => {R.Array: ['foo2', 'foo3', 'foo4']}
+
+
+R(['a', 'b']).each_with_index() // => {R.Enumerator ..}
+  .to_a()                       // calls R.Enumerator#to_a
+// => {R.Array: [['a', 0], ['b', 1]]}
+
+</code></pre>
+
+
+
+        <h3>Block argument splatting</h3>
+
+<pre data-type="javascript"><code>var points = [[2,3], [5,7]];
+_arr.map(points, function (arr) { return arr.reverse(); });
+// => [[3,2], [7,5]]
+
+_arr.map(points, function (x,y) { return x+y; });
+// => [5, 12]
+
+_arr.each_with_index(['a', 'b'], function (a, i) { return a+i; });
+// => ['a0', 'b0']
+
+
+</code></pre>
+
+
+        <h2>Symbol to Proc</h2>
+        <p>
+          Ruby allows to write <code>[1,2].map(&amp;:odd)</code>, RubyJS supports this in a similar fashion using <code>_proc</code> and adds some extra goodies.
+        </p>
+
+<pre data-type="javascript"><code>// valueOf() returns wrapped object.
+_w("foo bar").map( _proc('capitalize') )
+// {R.Array: [{R.String: 'foo'}, {R.String: 'bar'}]}
+
+// _proc also tries to typecast elements with R() if no such method found.
+R(["foo", "bar"]).map( _proc('capitalize') )
+// {R.Array: ['foo', 'bar']}
+
+// _proc accepts params
+R(["foo", "bar"]).map( _proc('ljust', 5, '-') )
+// {R.Array: ['foo--', 'bar--']}
+</code></pre>
+
+        <h2>Using functional methods</h2>
+        <p>
+          Instead of using <code>_proc</code> you can in many cases just pass a RubyJS Lite function.
+        </p>
+
+<pre data-type="javascript"><code>// valueOf() returns wrapped object.
+// this will call _str.size('foo') and _str.size('foo')
+R(["foo", "bar"]).map( _s.size )
+// {R.Array: [3,3]}
+
+// Note that RubyJS Lite functions return JS and not RubyJS objects.
+// Compare above with:
+R(["foo", "bar"]).map( _proc('size') )
+// {R.Array: [{R.Fixnum: 3}, R.Fixnum: 3}]}
+
+</code></pre>
+
+        <h2>Unsupported Ruby features</h2>
+        <p>
+          To reduce bloat NilClass, Boolean are not supported.
+          Symbols are also not supported as JavaScript String literals share the same behaviour (performance, immutable).
+        </p>
+
+
+      </article>
+    </div>
+  </div>
+  </body>
+  <script>
+  $(document).ready(function(){
+
+    var $nav = $("nav dl");
+
+    $("article").each(function(){
+      var $el = $(this);
+      var $h1 = $el.find("h1");
+      var sectionTitle = $h1.html();
+      var articleId = $el.attr("id");
+      var $dt = $("<dt><a href=\"#"+articleId +"\">"+sectionTitle+"</a></dt>");
+
+      $dt.find("a").on("click",function(e){
+        e.preventDefault();
+        $('html,body').animate({scrollTop: $h1.offset().top},400);
+      });
+
+      $nav.append($dt);
+
+      var $subtitles = $el.find("h2");
+
+      $subtitles.each(function(){
+        var $h2 = $(this);
+        var title = $h2.text();
+        var newID = articleId + "-" +camelCase(title);
+        $h2.attr("id",newID);
+        var $dd = $("<dd><a href=\"#" +newID + "\">" + title + "</a></dd>");
+
+        $dd.find("a").on("click",function(e){
+          e.preventDefault();
+          $('html,body').animate({scrollTop: $h2.offset().top},400);
+        })
+        $nav.append($dd);
+
+      });
+
+      var $articles = $el.find("article");
+
+    });
+
+    prettyPrint();
+
+    function camelCase(str){
+      var splitString = str.split(" ");
+
+      var returnedCamel = splitString[0].toLowerCase();
+
+      for (var i=1; i<splitString.length; i++){
+        returnedCamel += splitString[i].charAt(0).toUpperCase() + splitString[i].substring(1).toLowerCase();
+      }
+
+      return returnedCamel;
+
+    }
+  });
+  </script>
+  <script type="text/javascript">
+
+    // var _gaq = _gaq || [];
+    // _gaq.push(['_setAccount', 'UA-28909194-3']);
+    // _gaq.push(['_trackPageview']);
+
+    // (function() {
+    //   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    //   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    //   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    // })();
+
+  </script>
+</html>
