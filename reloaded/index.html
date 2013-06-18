@@ -16,6 +16,7 @@
 
     <div id="contentWrapper">
       <h1 id="mainHeader">RubyJS Documentation</h1>
+      <h2>Sorry, just a sneak peek. Still working on these docs</h2>
 
       <article id="gettingStarted">
         <h1>Getting started</h1>
@@ -54,19 +55,22 @@
         <h2>RubyJS Lite - Functional</h2>
         <p>
           The recommended way to get started with RubyJS. Ruby methods are implemented in a functional style, similar to underscorejs. These methods live in a namespace named according to their Ruby class name.
-
-          <code>_s</code> String,
-          <code>_a</code> Array,
-          <code>_h</code> Hash,
-          <code>_n</code> Numerics,
-          <code>_i</code> Iterator/Enumerable.
+          <ul>
+            <li><code>_s</code> String</li>
+            <li><code>_a</code> Array</li>
+            <li><code>_h</code> Hash</li>
+            <li><code>_n</code> Numerics</li>
+            <li><code>_i</code> Iterator/Enumerable</li>
+            <li><code>_t</code> Time</li>
+          </ul>
         </p>
 
 <pre data-type="javascript"><code>// Functional use
 _s.capitalize("foo")      // => "Foo"
-_a.rindex([1,2,3,2,1], 2) // => 4
+_a.rindex([1,2,3,2,1], 2) // => 3
 _n.upto(1, 5, function(i) { console.log(i) })
-_h.rassoc({a: 2, b:3}, 3) // => 'b'
+_h.rassoc({a: 2, b:3}, 3) // => ["b", 3]
+_t.strftime(new Date(), "%Y-%m-%d") // => "2013-02-11"
 </code></pre>
 
         <p>
@@ -88,6 +92,7 @@ R("foo")          // => {R.String: "foo"}
   .size()         // => {R.Fixnum: 10 }
   .valueOf()      // => 10
 </code></pre>
+
         <h2>RubyJS I'm feeling Evil</h2>
 
         <p>
@@ -130,8 +135,13 @@ R.i_am_feeling_evil('rb_')
 
 
         <h2>Benefits for JS Developers</h2>
-        <p>
 
+        <p>
+          RubyJS combines the power of multiple 3rd party libraries. You only have to learn one API and manage one external dependency. RubyJS lets you use it in multiple ways, functional, oo or by extending native classes.
+        </p>
+
+        <p>
+          RubyJS iterators protocol results in less surprises and work-arounds in your library.
         </p>
 
 <pre data-type="javascript"><code>// JS
@@ -141,6 +151,10 @@ _.map(['10', '10', '10'], parseInt)  // => [10, NaN, 2]
 // RubyJS
 _a.map(['10', '10', '10'], parseInt) // => [10, 10, 10]
 </code></pre>
+
+        <p>
+
+        </p>
 
 <pre data-type="javascript"><code>// JS
 [1, 8, 15].sort()     // => [1, 15, 8]
@@ -157,6 +171,10 @@ _a.sort([[2],[1],[]]) // => [[],[1],[2]]
 _a.sort([1, 'a'])     // ArgumentError
 </code></pre>
 
+      <p>
+
+      </p>
+
 <pre data-type="javascript"><code>// JS
 Math.round(0.045, 2)  // => 0
 0.045.toFixed(2)      // => 0.04
@@ -164,7 +182,7 @@ Math.round(0.045, 2)  // => 0
 // RubyJS
 _n.round(0.045, 2)    // => 0.05
 _n.round(0.035, 2)    // => 0.04
-_n.round(123, -1)     // => 120
+_n.round(123,  -1)     // => 120
 </code></pre>
 
     </article>
