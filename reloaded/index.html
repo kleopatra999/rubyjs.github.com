@@ -52,7 +52,7 @@
           RubyJS (Lite) consists of the implementation of Ruby methods. They follow a functional style, similar to underscorejs. The methods are not just inspired by Ruby but are implemented according to the rubyspecs. On top of that RubyJS Classic provides an OO layer that allows to chain methods across types. An additional way is to add RubyJS methods to native classes. Method names can be prefixed. This is controversial, so read carefully below before you make an opinion.
 
         </p>
-        <h2>RubyJS Lite - Functional</h2>
+        <h2>RubyJS (Lite) - Functional</h2>
         <p>
           The recommended way to get started with RubyJS. Ruby methods are implemented in a functional style, similar to underscorejs. These methods live in a namespace named according to their Ruby class name.
           <ul>
@@ -93,7 +93,7 @@ R("foo")          // => {R.String: "foo"}
   .valueOf()      // => 10
 </code></pre>
 
-        <h2>RubyJS I'm feeling Evil</h2>
+        <h2>RubyJS god_mode</h2>
 
         <p>
           This is a very controversial topic. Read carefully before making an opinion.
@@ -108,11 +108,11 @@ R("foo")          // => {R.String: "foo"}
 
         <p>
           To add RubyJS methods to the prototypes of JS natives call the
-          <code>R.i_am_feeling_evil()</code> method with an optional prefix. <code>i_am_feeling_evil</code> never overwrites methods that already exist, and does not modify Object.prototype.
+          <code>R.god_mode('rb_')</code> method with a prefix (defaults to 'rb_'). <code>god_mode</code> never overwrites methods that already exist, and does not modify Object.prototype.
         </p>
 
-<pre data-type="javascript"><code>// Adding methods to native classes
-R.i_am_feeling_evil('')
+<pre data-type="javascript"><code>// Adding methods to native classes without prefix
+R.god_mode('')
 "kampai".ljust(10, ' ') // => '  kampai  '
   .size() // 10
   .times(function(i) { console.log(i)} )
@@ -123,7 +123,7 @@ R.i_am_feeling_evil('')
         </p>
 
 <pre data-type="javascript"><code>// Adding methods to native classes with a prefix
-R.i_am_feeling_evil('rb_')
+R.god_mode('rb_')
 "kampai".rb_ljust(10, ' ') // => '  kampai  '
   .rb_size() // 10
   .rb_times(function(i) { console.log(i)} )
@@ -140,8 +140,10 @@ R.i_am_feeling_evil('rb_')
           RubyJS combines the power of multiple 3rd party libraries. You only have to learn one API and manage one external dependency. RubyJS lets you use it in multiple ways, functional, oo or by extending native classes.
         </p>
 
+        <h3>Iterators</h3>
+
         <p>
-          RubyJS iterators protocol results in less surprises and work-arounds in your library.
+          The design of the Ruby/RubyJS iterator protocol results in less surprises and work-arounds in JS libraries.
         </p>
 
 <pre data-type="javascript"><code>// JS
@@ -151,6 +153,46 @@ _.map(['10', '10', '10'], parseInt)  // => [10, NaN, 2]
 // RubyJS
 _a.map(['10', '10', '10'], parseInt) // => [10, 10, 10]
 </code></pre>
+
+        <p>
+          Normal JavaScript iterators (and underscorejs) pass the current element, index and the source array to the function:
+        </p>
+
+<pre data-type="javascript"><code>// JS
+['a'].forEach(function() { console.log(arguments) })
+// => ["a", 0, ["a"]]
+</code></pre>
+
+        <p>
+          What seems like an advantage makes working with methods that accept multiple arguments hard.
+        </p>
+
+<pre data-type="javascript"><code>// Above example explained
+arr = ['10', '10']
+arr.map(parseInt)
+// calls:
+// parseInt('10', 0, arr)
+// parseInt('10', 1, arr)
+</code></pre>
+
+        <p>
+          To make functions useable with iterators such as map, library authors have to add little hacks to their methods.
+        </p>
+
+<pre data-type="javascript"><code>// hack to make _.last work with _.map
+_.last = function(array, n, guard) {
+  // ...
+  if ((n != null) && !guard) {
+    // code when called directly (guard is undefined)
+  } else {
+    // code when called through iterator. ignore n
+</code></pre>
+
+        <p>
+
+        </p>
+
+        <h3>Human friendly</h3>
 
         <p>
 
@@ -186,12 +228,18 @@ _n.round(123,  -1)     // => 120
 </code></pre>
 
     </article>
+
+    <article id="rubyjs_lite">
+      <h1>RubyJS (Lite)</h1>
+
+    </article>
+
     <article id="rubyjs_classic">
 
 
         <h1>RubyJS Classic - OO</h1>
         <p>
-          This is how RubyJS originally started. It works as close to Ruby as possible. And it currently is used to test RubyJS with the RubySpec. It consists of classes for the different types. They live in the <code>R</code> namespace.
+          This is how RubyJS originally started. It works as close to Ruby as possible. And it currently is used to test RubyJS with the RubySpec. It consists of classes for the different types. They live in the <code>R</code> namespace. Internally it uses the functional RubyJS (Lite) methods.
         </p>
 
         <h2>RubyJS Classes</h2>
@@ -469,7 +517,16 @@ R(["foo", "bar"]).map( _proc('size') )
     }
   });
   </script>
-  <script type="text/javascript">
 
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33740484-2']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
   </script>
 </html>
