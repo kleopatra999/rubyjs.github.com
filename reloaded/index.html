@@ -69,6 +69,7 @@
 _s.capitalize("foo")      // => "Foo"
 _a.rindex([1,2,3,2,1], 2) // => 3
 _n.upto(1, 5, function(i) { console.log(i) })
+_n.upto(1, 5)             // => [1,2,3,4,5]
 _h.rassoc({a: 2, b:3}, 3) // => ["b", 3]
 _t.strftime(new Date(), "%Y-%m-%d") // => "2013-02-11"
 </code></pre>
@@ -351,12 +352,12 @@ R([1,2,3]).first()
         </p>
 
 <pre data-type="javascript"><code>// Wrong:
-R(1).times(function (i) { puts( i.odd() ) })
+R(1).times(function (i) { _puts( i.odd() ) })
 // => NoMethodError.
 
 // Better:
-R(1).times(function (i) { puts( R(i).odd() ) })
-R(1).times(function (i) { puts( _n.odd(i)  ) })
+R(1).times(function (i) { _puts( R(i).odd() ) })
+R(1).times(function (i) { _puts( _n.odd(i)  ) })
 </code></pre>
 
         <p>

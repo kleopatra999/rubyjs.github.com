@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>RubyJS API Documentation</title>
+  <link rel='stylesheet' href='../assets/codo.css' type='text/css'>
+  <script src='../assets/codo.js'></script>
+  <script src='../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../README.md.html' title='RubyJS'>RubyJS</a>
+    &raquo;
+    <a href='../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>NumericMethods</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../class_list.html'>Classes</a>
+      <a id='file_list_link' href='../file_list.html'>Files</a>
+      <a id='method_list_link' href='../method_list.html'>Methods</a>
+      <a id='extra_list_link' href='../extra_list.html'>Extras</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-E</span>
+        Extras list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        NumericMethods
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib&#47;lite&#47;num.coffee</td>
+        </tr>
+      </table>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#cmp-instance'>
+        - (void) <strong>cmp</strong>(num, other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#abs-instance'>
+        - (void) <strong>abs</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#abs2-instance'>
+        - (void) <strong>abs2</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#ceil-instance'>
+        - (void) <strong>ceil</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#divmod-instance'>
+        - (void) <strong>divmod</strong>(num, other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#downto-instance'>
+        - (void) <strong>downto</strong>(num, stop, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#eql-instance'>
+        - (void) <strong>eql</strong>(num, other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#floor-instance'>
+        - (void) <strong>floor</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#nonzero-instance'>
+        - (void) <strong>nonzero</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#step-instance'>
+        - (void) <strong>step</strong>(num, limit, step = 1, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#upto-instance'>
+        - (void) <strong>upto</strong>(num, stop, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#zero-instance'>
+        - (void) <strong>zero</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#even-instance'>
+        - (void) <strong>even</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#gcd-instance'>
+        - (void) <strong>gcd</strong>(num, other)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#gcdlcm-instance'>
+        - (Array&lt;Number, Number&gt;) <strong>gcdlcm</strong>(num, other)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns an array; [int.gcd(int2), int.lcm(int2)].
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#lcm-instance'>
+        - (Number) <strong>lcm</strong>(num, other)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the least common multiple (always positive).
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#numerator-instance'>
+        - (void) <strong>numerator</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#odd-instance'>
+        - (Boolean) <strong>odd</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns true if int is an odd number.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#ord-instance'>
+        - (this) <strong>ord</strong>()
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the int itself.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#next-instance'>
+        - (R.Fixnum) <strong>next</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the Integer equal to int + 1.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#pred-instance'>
+        - (R.Fixnum) <strong>pred</strong>(num)
+      </a>
+    </span>
+    <span class='desc'>
+      Returns the Integer equal to int - 1.
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#round-instance'>
+        - (void) <strong>round</strong>(num, n)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#times-instance'>
+        - (this) <strong>times</strong>(num, block)
+      </a>
+    </span>
+    <span class='desc'>
+      Iterates block int times, passing in values from zero to int - 1.
+    </span>
+  </li>
+</ul>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='cmp-instance'>
+      - (void) <strong>cmp</strong>(num, other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='abs-instance'>
+      - (void) <strong>abs</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='abs2-instance'>
+      - (void) <strong>abs2</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='ceil-instance'>
+      - (void) <strong>ceil</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='divmod-instance'>
+      - (void) <strong>divmod</strong>(num, other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='downto-instance'>
+      - (void) <strong>downto</strong>(num, stop, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='eql-instance'>
+      - (void) <strong>eql</strong>(num, other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='floor-instance'>
+      - (void) <strong>floor</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='nonzero-instance'>
+      - (void) <strong>nonzero</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='step-instance'>
+      - (void) <strong>step</strong>(num, limit, step = 1, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='upto-instance'>
+      - (void) <strong>upto</strong>(num, stop, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='zero-instance'>
+      - (void) <strong>zero</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='even-instance'>
+      - (void) <strong>even</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='gcd-instance'>
+      - (void) <strong>gcd</strong>(num, other)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='gcdlcm-instance'>
+      - (Array&lt;Number, Number&gt;) <strong>gcdlcm</strong>(num, other)
+    </p>
+    <div class='docstring'>
+  <p>Returns an array; [int.gcd(int2), int.lcm(int2)].</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  _n.gcdlcm(2,  2)                   #=&gt; [2, 2]
+  _n.gcdlcm(3, -7)                   #=&gt; [1, 21]
+  _n.gcdlcm((1&lt;&lt;31)-1, (1&lt;&lt;61)-1)    #=&gt; [1, 4951760154835678088235319297]</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Array&lt;Number, Number&gt;</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='lcm-instance'>
+      - (Number) <strong>lcm</strong>(num, other)
+    </p>
+    <div class='docstring'>
+  <p>Returns the least common multiple (always positive). 0.lcm(x) and x.lcm(0) return zero.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  _n.lcm(2,  2)                   #=&gt; 2
+  _n.lcm(3, -7)                   #=&gt; 21
+  _n.lcm((1&lt;&lt;31)-1, (1&lt;&lt;61)-1)    #=&gt; 4951760154835678088235319297</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Number</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='numerator-instance'>
+      - (void) <strong>numerator</strong>(num)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='odd-instance'>
+      - (Boolean) <strong>odd</strong>(num)
+    </p>
+    <div class='docstring'>
+  <p>Returns true if int is an odd number.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>Boolean</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='ord-instance'>
+      - (this) <strong>ord</strong>()
+    </p>
+    <div class='docstring'>
+  <p>Returns the int itself.</p><pre><code> a.ord    #=&gt; 97</code></pre><p>This method is intended for compatibility to character constant in Ruby
+1.9. For example, ?a.ord returns 97 both in 1.8 and 1.9.</p>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='next-instance'>
+      - (R.Fixnum) <strong>next</strong>(num)
+    </p>
+    <div class='docstring'>
+  <p>Returns the Integer equal to int + 1.</p><p>@alias #succ</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(1).next(     #=&gt; 2
+  R(-1).next()   #=&gt; 0</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='pred-instance'>
+      - (R.Fixnum) <strong>pred</strong>(num)
+    </p>
+    <div class='docstring'>
+  <p>Returns the Integer equal to int - 1.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(1).pred()    #=&gt; 0
+  R(-1).pred()   #=&gt; -2</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>R.Fixnum</tt></li>
+  </ul>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='round-instance'>
+      - (void) <strong>round</strong>(num, n)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='times-instance'>
+      - (this) <strong>times</strong>(num, block)
+    </p>
+    <div class='docstring'>
+  <p>Iterates block int times, passing in values from zero to int - 1.</p><p>If no block is given, an enumerator is returned instead.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>
+  R(5).times(function(i) { R.puts(i) })
+  # =&gt; 0 1 2 3 4</code></pre>
+  </div>
+</div>
+<div class='tags'>
+  <h3>Returns:</h3>
+  <ul class='return'>
+    <li>
+      <span class='type'></span><tt>this</tt></li>
+  </ul>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Wed Jun 19 2013 16:56:11 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v1.5.6
+  (Node.js v0.10.10).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>

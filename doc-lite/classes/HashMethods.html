@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset='UTF-8'>
+  <title>RubyJS API Documentation</title>
+  <link rel='stylesheet' href='../assets/codo.css' type='text/css'>
+  <script src='../assets/codo.js'></script>
+  <script src='../assets/search_data.js'></script>
+</head>
+  <body>
+    <div id='base' data-path='../'></div>
+<div id='header'>
+  <div id='menu'>
+    <a href='../README.md.html' title='RubyJS'>RubyJS</a>
+    &raquo;
+    <a href='../class_index.html' title='Index'>Index</a>
+    &raquo;
+    <span class='title'>HashMethods</span>
+    <nav>
+      <ul>
+        <li class='noframes'>
+          (<a class='noframes' href='#'>no frames</a>)
+        </li>
+      </ul>
+    </nav>
+    <div id='search'>
+      <a id='class_list_link' href='../class_list.html'>Classes</a>
+      <a id='file_list_link' href='../file_list.html'>Files</a>
+      <a id='method_list_link' href='../method_list.html'>Methods</a>
+      <a id='extra_list_link' href='../extra_list.html'>Extras</a>
+    </div>
+  </div>
+  <iframe id='search_frame'></iframe>
+  <div id='fuzzySearch'>
+    <input type='text'>
+    <ol></ol>
+  </div>
+  <div id='help'>
+    <p>
+      Quickly fuzzy find classes, mixins, methods, file:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-T</span>
+        Open fuzzy finder dialog
+      </li>
+    </ul>
+    <p>
+      In frame mode you can toggle the list naviation frame on the left side:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-L</span>
+        Toggle list view
+      </li>
+    </ul>
+    <p>
+      You can focus a list in frame mode or toggle a tab in frameless mode:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-C</span>
+        Class list
+      </li>
+      <li>
+        <span>Ctrl-I</span>
+        Mixin list
+      </li>
+      <li>
+        <span>Ctrl-F</span>
+        File list
+      </li>
+      <li>
+        <span>Ctrl-M</span>
+        Method list
+      </li>
+      <li>
+        <span>Ctrl-E</span>
+        Extras list
+      </li>
+    </ul>
+    <p>
+      You can focus and blur the search input:
+    </p>
+    <ul>
+      <li>
+        <span>Ctrl-S</span>
+        Focus search input
+      </li>
+      <li>
+        <span>Esc</span>
+        Blur search input
+      </li>
+    </ul>
+    <p>
+      In frameless mode you can close the list tab:
+    </p>
+    <ul>
+      <li>
+        <span>Esc</span>
+        Close list tab
+      </li>
+    </ul>
+  </div>
+</div>
+    <div id='content'>
+      <h1>
+        Class:
+        HashMethods
+      </h1>
+      <table class='box'>
+        <tr>
+          <td>Defined in:</td>
+          <td>lib&#47;lite&#47;hsh.coffee</td>
+        </tr>
+        <tr>
+          <td>Inherits:</td>
+          <td>
+            <a href='../classes/EnumerableMethods.html'>EnumerableMethods</a>
+          </td>
+        </tr>
+      </table>
+      <h2>Instance Method Summary</h2>
+      <ul class='summary'>
+  <li>
+    <span class='signature'>
+      <a href='#assoc-instance'>
+        - (void) <strong>assoc</strong>(hsh, needle)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete-instance'>
+        - (void) <strong>delete</strong>(hsh, key, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#delete_if-instance'>
+        - (void) <strong>delete_if</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each-instance'>
+        - (void) <strong>each</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_key-instance'>
+        - (void) <strong>each_key</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#each_value-instance'>
+        - (void) <strong>each_value</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#empty-instance'>
+        - (void) <strong>empty</strong>(hsh)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#fetch-instance'>
+        - (void) <strong>fetch</strong>(hsh, key, default_value)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#flatten-instance'>
+        - (void) <strong>flatten</strong>(hsh, recursion = 1)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#get-instance'>
+        - (void) <strong>get</strong>(hsh, key)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#has_value-instance'>
+        - (void) <strong>has_value</strong>(hsh, val)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#has_key-instance'>
+        - (void) <strong>has_key</strong>(hsh, key)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#keep_if-instance'>
+        - (void) <strong>keep_if</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#key-instance'>
+        - (void) <strong>key</strong>(hsh, value)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#invert-instance'>
+        - (void) <strong>invert</strong>(hsh)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#keys-instance'>
+        - (void) <strong>keys</strong>(hsh)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#merge-instance'>
+        - (void) <strong>merge</strong>(hsh, other, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#merge$-instance'>
+        - (void) <strong>merge$</strong>(hsh, other, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#rassoc-instance'>
+        - (void) <strong>rassoc</strong>(hsh, needle)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reject-instance'>
+        - (void) <strong>reject</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#reject$-instance'>
+        - (void) <strong>reject$</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      @destructive
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#select-instance'>
+        - (void) <strong>select</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#select$-instance'>
+        - (void) <strong>select$</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#size-instance'>
+        - (void) <strong>size</strong>(hsh)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#sort-instance'>
+        - (void) <strong>sort</strong>(hsh, block)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#to_a-instance'>
+        - (void) <strong>to_a</strong>(hsh)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#values-instance'>
+        - (void) <strong>values</strong>(hsh)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+  <li>
+    <span class='signature'>
+      <a href='#values_at-instance'>
+        - (void) <strong>values_at</strong>(hsh, keys...)
+      </a>
+    </span>
+    <span class='desc'>
+      
+    </span>
+  </li>
+</ul>
+      <h2>
+        <small>Inherited Method Summary</small>
+      </h2>
+      <h3 class='inherited'>
+        Methods inherited from
+        <a href='../classes/EnumerableMethods.html'>EnumerableMethods</a>
+      </h3>
+      <p class='inherited'>
+                <a href='../classes/EnumerableMethods.html#each-instance'>#each</a>,
+                <a href='../classes/EnumerableMethods.html#all-instance'>#all</a>,
+                <a href='../classes/EnumerableMethods.html#any-instance'>#any</a>,
+                <a href='../classes/EnumerableMethods.html#collect_concat-instance'>#collect_concat</a>,
+                <a href='../classes/EnumerableMethods.html#count-instance'>#count</a>,
+                <a href='../classes/EnumerableMethods.html#cycle-instance'>#cycle</a>,
+                <a href='../classes/EnumerableMethods.html#drop-instance'>#drop</a>,
+                <a href='../classes/EnumerableMethods.html#drop_while-instance'>#drop_while</a>,
+                <a href='../classes/EnumerableMethods.html#each_cons-instance'>#each_cons</a>,
+                <a href='../classes/EnumerableMethods.html#each_entry-instance'>#each_entry</a>,
+                <a href='../classes/EnumerableMethods.html#each_slice-instance'>#each_slice</a>,
+                <a href='../classes/EnumerableMethods.html#each_with_index-instance'>#each_with_index</a>,
+                <a href='../classes/EnumerableMethods.html#each_with_object-instance'>#each_with_object</a>,
+                <a href='../classes/EnumerableMethods.html#find-instance'>#find</a>,
+                <a href='../classes/EnumerableMethods.html#find_all-instance'>#find_all</a>,
+                <a href='../classes/EnumerableMethods.html#find_index-instance'>#find_index</a>,
+                <a href='../classes/EnumerableMethods.html#first-instance'>#first</a>,
+                <a href='../classes/EnumerableMethods.html#include-instance'>#include</a>,
+                <a href='../classes/EnumerableMethods.html#inject-instance'>#inject</a>,
+                <a href='../classes/EnumerableMethods.html#grep-instance'>#grep</a>,
+                <a href='../classes/EnumerableMethods.html#group_by-instance'>#group_by</a>,
+                <a href='../classes/EnumerableMethods.html#map-instance'>#map</a>,
+                <a href='../classes/EnumerableMethods.html#max-instance'>#max</a>,
+                <a href='../classes/EnumerableMethods.html#max_by-instance'>#max_by</a>,
+                <a href='../classes/EnumerableMethods.html#min-instance'>#min</a>,
+                <a href='../classes/EnumerableMethods.html#min_by-instance'>#min_by</a>,
+                <a href='../classes/EnumerableMethods.html#minmax-instance'>#minmax</a>,
+                <a href='../classes/EnumerableMethods.html#minmax_by-instance'>#minmax_by</a>,
+                <a href='../classes/EnumerableMethods.html#none-instance'>#none</a>,
+                <a href='../classes/EnumerableMethods.html#one-instance'>#one</a>,
+                <a href='../classes/EnumerableMethods.html#partition-instance'>#partition</a>,
+                <a href='../classes/EnumerableMethods.html#reject-instance'>#reject</a>,
+                <a href='../classes/EnumerableMethods.html#reverse_each-instance'>#reverse_each</a>,
+                <a href='../classes/EnumerableMethods.html#slice_before-instance'>#slice_before</a>,
+                <a href='../classes/EnumerableMethods.html#sort-instance'>#sort</a>,
+                <a href='../classes/EnumerableMethods.html#sort_by-instance'>#sort_by</a>,
+                <a href='../classes/EnumerableMethods.html#take-instance'>#take</a>,
+                <a href='../classes/EnumerableMethods.html#take_while-instance'>#take_while</a>,
+                <a href='../classes/EnumerableMethods.html#to_a-instance'>#to_a</a>,
+        <a href='../classes/EnumerableMethods.html#zip-instance'>#zip</a>
+      </p>
+      <h2>Instance Method Details</h2>
+      <div class='methods'>
+  <div class='method_details'>
+    <p class='signature' id='assoc-instance'>
+      - (void) <strong>assoc</strong>(hsh, needle)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete-instance'>
+      - (void) <strong>delete</strong>(hsh, key, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='delete_if-instance'>
+      - (void) <strong>delete_if</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each-instance'>
+      - (void) <strong>each</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_key-instance'>
+      - (void) <strong>each_key</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='each_value-instance'>
+      - (void) <strong>each_value</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='empty-instance'>
+      - (void) <strong>empty</strong>(hsh)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='fetch-instance'>
+      - (void) <strong>fetch</strong>(hsh, key, default_value)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='flatten-instance'>
+      - (void) <strong>flatten</strong>(hsh, recursion = 1)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='get-instance'>
+      - (void) <strong>get</strong>(hsh, key)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='has_value-instance'>
+      - (void) <strong>has_value</strong>(hsh, val)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='has_key-instance'>
+      - (void) <strong>has_key</strong>(hsh, key)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='keep_if-instance'>
+      - (void) <strong>keep_if</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='key-instance'>
+      - (void) <strong>key</strong>(hsh, value)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='invert-instance'>
+      - (void) <strong>invert</strong>(hsh)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='keys-instance'>
+      - (void) <strong>keys</strong>(hsh)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='merge-instance'>
+      - (void) <strong>merge</strong>(hsh, other, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='merge$-instance'>
+      - (void) <strong>merge$</strong>(hsh, other, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='rassoc-instance'>
+      - (void) <strong>rassoc</strong>(hsh, needle)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reject-instance'>
+      - (void) <strong>reject</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='reject$-instance'>
+      - (void) <strong>reject$</strong>(hsh, block)
+    </p>
+    <div class='docstring'>
+  <p>@destructive</p>
+</div>
+<div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='select-instance'>
+      - (void) <strong>select</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='select$-instance'>
+      - (void) <strong>select$</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='size-instance'>
+      - (void) <strong>size</strong>(hsh)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='sort-instance'>
+      - (void) <strong>sort</strong>(hsh, block)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='to_a-instance'>
+      - (void) <strong>to_a</strong>(hsh)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='values-instance'>
+      - (void) <strong>values</strong>(hsh)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+  <div class='method_details'>
+    <p class='signature' id='values_at-instance'>
+      - (void) <strong>values_at</strong>(hsh, keys...)
+    </p>
+    <div class='tags'>
+</div>
+  </div>
+</div>
+    </div>
+    <div id='footer'>
+  Generated on
+  Wed Jun 19 2013 16:56:11 GMT+0700 (ICT)
+  by
+  <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
+  v1.5.6
+  (Node.js v0.10.10).
+  &#10034;
+  Press Ctrl-h to see the keyboard shortcuts
+  &#10034;
+  <a href='http://twitter.com/#!/netzpirat'>@netzpirat</a>
+  &#10034;
+  <a href='https://mksoft.ch'>mksoft.ch</a>
+</div>
+  </body>
+</html>
