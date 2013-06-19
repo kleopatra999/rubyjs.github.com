@@ -293,7 +293,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Inserts other_str before the character at the given index, modifying str.
     </span>
   </li>
   <li>
@@ -303,7 +303,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      If integer is greater than the length of str, returns a new String of length integer with str left justified and padded with padstr; otherwise, returns str.
     </span>
   </li>
   <li>
@@ -313,7 +313,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a copy of str with leading whitespace removed.
     </span>
   </li>
   <li>
@@ -333,7 +333,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Copy—Returns a new String containing integer copies of the receiver.
     </span>
   </li>
   <li>
@@ -353,7 +353,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a new string with the characters from str in reverse order.
     </span>
   </li>
   <li>
@@ -363,7 +363,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the index of the last occurrence of the given substring or pattern (regexp) in str.
     </span>
   </li>
   <li>
@@ -373,7 +373,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      If integer is greater than the length of str, returns a new String of length integer with str right justified and padded with padstr; otherwise, returns str.
     </span>
   </li>
   <li>
@@ -383,7 +383,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Searches sep or pattern (regexp) in the string from the end of the string, and returns the part before it, the match, and the part after it.
     </span>
   </li>
   <li>
@@ -393,7 +393,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a copy of str with trailing whitespace removed.
     </span>
   </li>
   <li>
@@ -403,7 +403,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Both forms iterate through str, matching the pattern (which may be a Regexp or a String).
     </span>
   </li>
   <li>
@@ -413,7 +413,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Builds a set of characters from the other_str parameter(s) using the procedure described for String#count.
     </span>
   </li>
   <li>
@@ -423,7 +423,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a copy of str with leading and trailing whitespace removed.
     </span>
   </li>
   <li>
@@ -473,7 +473,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if str starts with one of the prefixes given.
     </span>
   </li>
   <li>
@@ -524,26 +524,6 @@
     </span>
     <span class='desc'>
       
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#__matched__-instance'>
-        - (void) <strong>__matched__</strong>(str, args)
-      </a>
-    </span>
-    <span class='desc'>
-      
-    </span>
-  </li>
-  <li>
-    <span class='signature'>
-      <a href='#__to_regexp__-instance'>
-        - (void) <strong>__to_regexp__</strong>(str)
-      </a>
-    </span>
-    <span class='desc'>
-      creates a regexp from the &quot;a-z&quot;, &quot;^ab&quot; arguments used in #count
     </span>
   </li>
 </ul>
@@ -689,21 +669,73 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='insert-instance'>
       - (void) <strong>insert</strong>(str, idx, other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Inserts other_str before the character at the given index, modifying str.
+Negative indices count from the end of the string, and insert after the
+given character. The intent is insert aString so that it starts at the
+given index.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.insert(&quot;abcd&quot;, 0, &#39;X&#39;)    &#47;&#47; =&gt; &quot;Xabcd&quot;
+_s.insert(&quot;abcd&quot;, 3, &#39;X&#39;)    &#47;&#47; =&gt; &quot;abcXd&quot;
+_s.insert(&quot;abcd&quot;, 4, &#39;X&#39;)    &#47;&#47; =&gt; &quot;abcdX&quot;</code></pre>
+    <h4>
+      inserts after with negative counts
+    </h4>
+    <pre><code class='coffee'>_s.insert(&quot;abcd&quot;, -3, &#39;X&#39;)   &#47;&#47; =&gt; &quot;abXcd&quot;
+_s.insert(&quot;abcd&quot;, -1, &#39;X&#39;)   &#47;&#47; =&gt; &quot;abcdX&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='ljust-instance'>
       - (void) <strong>ljust</strong>(str, width, padString = " ")
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>If integer is greater than the length of str, returns a new String of
+length integer with str left justified and padded with padstr; otherwise,
+returns str.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.ljust(&quot;hello&quot;, 4)           &#47;&#47; =&gt; &quot;hello&quot;
+_s.ljust(&quot;hello&quot;, 20)          &#47;&#47; =&gt; &quot;hello               &quot;
+_s.ljust(&quot;hello&quot;, 20, &#39;1234&#39;)  &#47;&#47; =&gt; &quot;hello123412341234123&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='lstrip-instance'>
       - (void) <strong>lstrip</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a copy of str with leading whitespace removed. See also
+String#rstrip and String#strip.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.lstrip(&quot;  hello  &quot;)  &#47;&#47; =&gt; &quot;hello  &quot;
+_s.lstrip(&quot;hello&quot;)      &#47;&#47; =&gt; &quot;hello&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -717,7 +749,19 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='multiply-instance'>
       - (void) <strong>multiply</strong>(str, num)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Copy—Returns a new String containing integer copies of the receiver.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.multiply(&quot;Ho! &quot;, 3)   &#47;&#47; =&gt; &quot;Ho! Ho! Ho! &quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -731,56 +775,210 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='reverse-instance'>
       - (void) <strong>reverse</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a new string with the characters from str in reverse order.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.reverse(&quot;stressed&quot;)   &#47;&#47; =&gt; &quot;desserts&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='rindex-instance'>
       - (void) <strong>rindex</strong>(str, needle, offset)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    <h1>rindex(/.../) does not add matches to R[&#39;$~&#39;] as it should</h1>
+  </div>
+  <p>Returns the index of the last occurrence of the given substring or pattern
+(regexp) in str. Returns nil if not found. If the second parameter is
+present, it specifies the position in the string to end the
+search—characters beyond this point will not be considered.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.rindex(&quot;hello&quot;, &#39;e&#39;)             &#47;&#47; =&gt; 1
+_s.rindex(&quot;hello&quot;, &#39;l&#39;)             &#47;&#47; =&gt; 3
+_s.rindex(&quot;hello&quot;, &#39;a&#39;)             &#47;&#47; =&gt; null
+_s.rindex(&quot;hello&quot;, &#47;[aeiou]&#47;, -2)   &#47;&#47; =&gt; 1</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='rjust-instance'>
       - (void) <strong>rjust</strong>(str, width, pad_str = " ")
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>If integer is greater than the length of str, returns a new String of
+length integer with str right justified and padded with padstr; otherwise,
+returns str.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.rjust(&quot;hello&quot;, 4)            &#47;&#47; =&gt; &quot;hello&quot;
+_s.rjust(&quot;hello&quot;, 20)           &#47;&#47; =&gt; &quot;               hello&quot;
+_s.rjust(&quot;hello&quot;, 20, &#39;1234&#39;)   &#47;&#47; =&gt; &quot;123412341234123hello&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='rpartition-instance'>
       - (void) <strong>rpartition</strong>(str, pattern)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not yet accept regexp as pattern
+  </div>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    does not yet affect R[&#39;$~&#39;]
+  </div>
+  <p>Searches sep or pattern (regexp) in the string from the end of the string,
+and returns the part before it, the match, and the part after it. If it is
+not found, returns two empty strings and str.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.rpartition(&quot;hello&quot;, &quot;l&quot;)     &#47;&#47; =&gt; [&quot;hel&quot;, &quot;l&quot;, &quot;o&quot;]
+_s.rpartition(&quot;hello&quot;, &quot;x&quot;)     &#47;&#47; =&gt; [&quot;&quot;, &quot;&quot;, &quot;hello&quot;]</code></pre>
+    <h4>
+      edge cases
+    </h4>
+    <pre><code class='coffee'>_s.rpartition(&quot;hello&quot;, &quot;x&quot;)     &#47;&#47; =&gt; [&quot;&quot;, &quot;&quot;, &quot;hello&quot;]
+_s.rpartition(&quot;hello&quot;, &quot;hello&quot;) &#47;&#47; =&gt; [&quot;&quot;, &quot;hello&quot;, &quot;&quot;]</code></pre>
+    <h4>
+      todo:
+    </h4>
+    <pre><code class='coffee'>_s.rpartition(&quot;hello&quot;, &#47;.l&#47;)    &#47;&#47; =&gt; [&quot;he&quot;, &quot;ll&quot;, &quot;o&quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='rstrip-instance'>
       - (void) <strong>rstrip</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a copy of str with trailing whitespace removed. See also
+String#lstrip and String#strip.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.rstrip(&quot;  hello  &quot;)  &#47;&#47; =&gt; &quot;  hello&quot;
+_s.rstrip(&quot;hello&quot;)      &#47;&#47; =&gt; &quot;hello&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='scan-instance'>
       - (void) <strong>scan</strong>(str, pattern, block = null)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    some untested specs
+  </div>
+  <p>Both forms iterate through str, matching the pattern (which may be a
+Regexp or a String). For each match, a result is generated and either
+added to the result array or passed to the block. If the pattern contains
+no groups, each individual result consists of the matched string, $&amp;. If
+the pattern contains groups, each individual result is itself an array
+containing one entry per group.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  str = &quot;cruel world&quot;
+  _s.scan(str, &#47;\w+&#47;)        #=&gt; [&quot;cruel&quot;, &quot;world&quot;]
+  _s.scan(str, &#47;...&#47;)        #=&gt; [&quot;cru&quot;, &quot;el &quot;, &quot;wor&quot;]
+  _s.scan(str, &#47;(...)&#47;)      #=&gt; [[&quot;cru&quot;], [&quot;el &quot;], [&quot;wor&quot;]]
+  _s.scan(str, &#47;(..)(..)&#47;)   #=&gt; [[&quot;cr&quot;, &quot;ue&quot;], [&quot;l &quot;, &quot;wo&quot;]]
+  &#47;&#47; And the block form:
+  _s.scan(str, &#47;\w+&#47;, function (w) { _puts(&quot;&lt;&lt;#{w}&gt;&gt; &quot;) } )
+  &#47;&#47; &gt; &lt;&lt;cruel&gt;&gt; &lt;&lt;world&gt;&gt;
+  &#47;&#47; TODO:
+  &#47;&#47; _s.scan(str, &#47;(.)(.)&#47;, function (x,y) { _puts(y, x)} )
+  &#47;&#47; &gt; rceu lowlr</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='squeeze-instance'>
       - (void) <strong>squeeze</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    Fix A-a bug
+  </div>
+  <p>Builds a set of characters from the other_str parameter(s) using the
+procedure described for String#count. Returns a new string where runs of
+the same character that occur in this set are replaced by a single
+character. If no arguments are given, all runs of identical characters are
+replaced by a single character.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.squeeze(&quot;yellow moon&quot;)                 &#47;&#47; =&gt; &quot;yelow mon&quot;
+_s.squeeze(&quot;  now   is  the&quot;, &quot; &quot;)        &#47;&#47; =&gt; &quot; now is the&quot;
+_s.squeeze(&quot;putters shoot balls&quot;, &quot;m-z&quot;)  &#47;&#47; =&gt; &quot;puters shot balls&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='strip-instance'>
       - (void) <strong>strip</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a copy of str with leading and trailing whitespace removed.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.strip(&quot;    hello    &quot;)   &#47;&#47; =&gt; &quot;hello&quot;
+_s.strip(&quot;\tgoodbye\r\n&quot;)   &#47;&#47; =&gt; &quot;goodbye&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -815,7 +1013,22 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='start_with-instance'>
       - (void) <strong>start_with</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if str starts with one of the prefixes given.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.start_with(&quot;hello&quot;, &quot;hell&quot;)               &#47;&#47; =&gt; true
+&#47;&#47; returns true if one of the prefixes matches.
+_s.start_with(&quot;hello&quot;, &quot;heaven&quot;, &quot;hell&quot;)     &#47;&#47; =&gt; true
+_s.start_with(&quot;hello&quot;, &quot;heaven&quot;, &quot;paradise&quot;) &#47;&#47; =&gt; false
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -868,28 +1081,11 @@ _s.swapcase(&quot;cYbEr_PuNk11&quot;)   &#47;&#47; =&gt; &quot;CyBeR_pUnK11&quot
     <div class='tags'>
 </div>
   </div>
-  <div class='method_details'>
-    <p class='signature' id='__matched__-instance'>
-      - (void) <strong>__matched__</strong>(str, args)
-    </p>
-    <div class='tags'>
-</div>
-  </div>
-  <div class='method_details'>
-    <p class='signature' id='__to_regexp__-instance'>
-      - (void) <strong>__to_regexp__</strong>(str)
-    </p>
-    <div class='docstring'>
-  <p>creates a regexp from the &quot;a-z&quot;, &quot;^ab&quot; arguments used in #count</p>
-</div>
-<div class='tags'>
-</div>
-  </div>
 </div>
     </div>
     <div id='footer'>
   Generated on
-  Wed Jun 19 2013 16:56:11 GMT+0700 (ICT)
+  Wed Jun 19 2013 23:49:54 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
