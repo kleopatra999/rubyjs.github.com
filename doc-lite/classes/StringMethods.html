@@ -143,7 +143,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a copy of str with the first character converted to uppercase and the remainder to lowercase.
     </span>
   </li>
   <li>
@@ -153,7 +153,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      If integer is greater than the length of str, returns a new String of length integer with str centered and padded with padstr; otherwise, returns str.
     </span>
   </li>
   <li>
@@ -163,17 +163,17 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Passes each character in str to the given block, or returns an enumerator if no block is given.
     </span>
   </li>
   <li>
     <span class='signature'>
       <a href='#chomp-instance'>
-        - (void) <strong>chomp</strong>(str, sep = null)
+        - (void) <strong>chomp</strong>(str, sep)
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a new String with the given record separator removed from the end of str (if present).
     </span>
   </li>
   <li>
@@ -183,7 +183,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a new String with the last character removed.
     </span>
   </li>
   <li>
@@ -193,7 +193,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Each other_str parameter defines a set of characters to count.
     </span>
   </li>
   <li>
@@ -223,7 +223,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns a copy of str with all uppercase letters replaced with their lowercase counterparts.
     </span>
   </li>
   <li>
@@ -253,7 +253,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if str ends with one of the suffixes given.
     </span>
   </li>
   <li>
@@ -273,7 +273,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns true if str contains the given string or character.
     </span>
   </li>
   <li>
@@ -283,7 +283,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the index of the first occurrence of the given substring or pattern (regexp) in str.
     </span>
   </li>
   <li>
@@ -443,7 +443,7 @@
       </a>
     </span>
     <span class='desc'>
-      
+      Returns the successor to str.
     </span>
   </li>
   <li>
@@ -564,42 +564,155 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='capitalize-instance'>
       - (void) <strong>capitalize</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Doesn&#39;t handle special characters like ä, ö.
+  </div>
+  <p>Returns a copy of str with the first character converted to uppercase and
+the remainder to lowercase. Note: case conversion is effective only in
+ASCII region.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.capitalize(&quot;hello&quot;)    &#47;&#47; =&gt; &quot;Hello&quot;
+_s.capitalize(&quot;HELLO&quot;)    &#47;&#47; =&gt; &quot;Hello&quot;
+_s.capitalize(&quot;äöü&quot;)      &#47;&#47; =&gt; &quot;äöü&quot;
+_s.capitalize(&quot;123ABC&quot;)   &#47;&#47; =&gt; &quot;123abc&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='center-instance'>
       - (void) <strong>center</strong>(str, length, padString = ' ')
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>If integer is greater than the length of str, returns a new String of
+length integer with str centered and padded with padstr; otherwise,
+returns str.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.center(&quot;hello&quot;, 4)         &#47;&#47; =&gt; &quot;hello&quot;
+_s.center(&quot;hello&quot;, 20)        &#47;&#47; =&gt; &quot;       hello        &quot;
+_s.center(&quot;hello&quot;, 20, &#39;123&#39;) &#47;&#47; =&gt; &quot;1231231hello12312312&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='chars-instance'>
       - (void) <strong>chars</strong>(str, block)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    Does <em>not</em> typecast chars to R.Strings.
+  </div>
+  <p>Passes each character in str to the given block, or returns an enumerator if
+no block is given.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>  acc = []
+  _s.chars(&quot;foo&quot;, function (c) { acc.push(c + &#39; &#39;) })
+  acc &#47;&#47; =&gt; [&quot;f &quot;, &quot;o &quot;, &quot;o &quot;]</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='chomp-instance'>
-      - (void) <strong>chomp</strong>(str, sep = null)
+      - (void) <strong>chomp</strong>(str, sep)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a new String with the given record separator removed from the end
+of str (if present). If $/ has not been changed from the default Ruby
+record separator, then chomp also removes carriage return characters (that
+is it will remove \n, \r, and \r\n).</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.chomp(&quot;hello&quot;)            &#47;&#47; =&gt; &quot;hello&quot;
+_s.chomp(&quot;hello\n&quot;)          &#47;&#47; =&gt; &quot;hello&quot;
+_s.chomp(&quot;hello\r\n&quot;)        &#47;&#47; =&gt; &quot;hello&quot;
+_s.chomp(&quot;hello\n\r&quot;)        &#47;&#47; =&gt; &quot;hello\n&quot;
+_s.chomp(&quot;hello\r&quot;)          &#47;&#47; =&gt; &quot;hello&quot;
+_s.chomp(&quot;hello \n there&quot;)   &#47;&#47; =&gt; &quot;hello \n there&quot;
+_s.chomp(&quot;hello&quot;, &quot;llo&quot;)     &#47;&#47; =&gt; &quot;he&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='chop-instance'>
       - (void) <strong>chop</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns a new String with the last character removed. If the string ends
+with \r\n, both characters are removed. Applying chop to an empty string
+returns an empty string. String#chomp is often a safer alternative, as it
+leaves the string unchanged if it doesn’t end in a record separator.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.chop(&quot;string\r\n&quot;)   &#47;&#47; =&gt; &quot;string&quot;
+_s.chop(&quot;string\n\r&quot;)   &#47;&#47; =&gt; &quot;string\n&quot;
+_s.chop(&quot;string\n&quot;)     &#47;&#47; =&gt; &quot;string&quot;
+_s.chop(&quot;string&quot;)       &#47;&#47; =&gt; &quot;strin&quot;
+_s.chop(_s.chop(&quot;x&quot;))   &#47;&#47; =&gt; &quot;&quot;
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='count-instance'>
       - (void) <strong>count</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    expect( s.count(&quot;A-a&quot;)).toEqual s.count(&quot;A-Z[\]^_`a&quot;)
+  </div>
+  <p>Each other_str parameter defines a set of characters to count. The
+intersection of these sets defines the characters to count in str. Any
+other_str that starts with a caret (^) is negated. The sequence c1–c2 means
+all characters between c1 and c2.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>str = &quot;hello world&quot;
+_s.count(str, &quot;lo&quot;)           &#47;&#47; =&gt; 5
+_s.count(str, &quot;lo&quot;, &quot;o&quot;)      &#47;&#47; =&gt; 2
+_s.count(str, &quot;hello&quot;, &quot;^l&quot;)  &#47;&#47; =&gt; 4
+_s.count(str, &quot;ej-m&quot;)         &#47;&#47; =&gt; 4</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -620,7 +733,24 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='downcase-instance'>
       - (void) <strong>downcase</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note'>
+    <strong>Note:</strong>
+    unlike toLowerCase, donwcase doesnt change special characters ä,ö
+  </div>
+  <p>Returns a copy of str with all uppercase letters replaced with their
+lowercase counterparts. The operation is locale insensitive—only characters
+“A” to “Z” are affected. Note: case replacement is effective only in ASCII
+region.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.downcase(&quot;hEllO&quot;)   &#47;&#47; =&gt; &quot;hello&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -641,7 +771,10 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='end_with-instance'>
       - (void) <strong>end_with</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if str ends with one of the suffixes given.</p>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -655,14 +788,48 @@ _s.camelCase(&#39;fooBar&#39;)       &#47;&#47; =&gt; (&#39;fooBar&#39;)
     <p class='signature' id='include-instance'>
       - (void) <strong>include</strong>(str, other)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns true if str contains the given string or character.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.include(&quot;hello&quot;, &quot;lo&quot;)   &#47;&#47; =&gt; true
+_s.include(&quot;hello&quot;, &quot;ol&quot;)   &#47;&#47; =&gt; false
+_s.include(&quot;hello&quot;, &quot;hh&quot; )  &#47;&#47; =&gt; true
+
+</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
     <p class='signature' id='index-instance'>
       - (void) <strong>index</strong>(str, needle, offset)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <div class='note todo'>
+    <strong>TODO:</strong>
+    <h1>index(regexp)</h1>
+  </div>
+  <p>Returns the index of the first occurrence of the given substring or pattern
+(regexp) in str. Returns nil if not found. If the second parameter is
+present, it specifies the position in the string to begin the search.</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.index(&quot;hello&quot;, &#39;e&#39;)           &#47;&#47; =&gt; 1
+_s.index(&quot;hello&quot;, &#39;lo&#39;)          &#47;&#47; =&gt; 3
+_s.index(&quot;hello&quot;, &#39;a&#39;)           &#47;&#47; =&gt; null
+_s.index(&quot;hello&quot;, &#39;el&#39;)          &#47;&#47; =&gt; 1
+_s.index(&quot;hello&quot;, &#47;[aeiou]&#47;, -3) &#47;&#47; =&gt; 4</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -992,7 +1159,29 @@ _s.strip(&quot;\tgoodbye\r\n&quot;)   &#47;&#47; =&gt; &quot;goodbye&quot;
     <p class='signature' id='succ-instance'>
       - (void) <strong>succ</strong>(str)
     </p>
-    <div class='tags'>
+    <div class='docstring'>
+  <p>Returns the successor to str. The successor is calculated by incrementing
+characters starting from the rightmost alphanumeric (or the rightmost
+character if there are no alphanumerics) in the string. Incrementing a
+digit always results in another digit, and incrementing a letter results
+in another letter of the same case. Incrementing nonalphanumerics uses the
+underlying character set’s collating sequence.</p><p>If the increment generates a “carry,” the character to the left of it is
+incremented. This process repeats until there is no carry, adding an
+additional character if necessary.</p><p>@alias #next</p>
+  <div class='examples'>
+    <h3>Examples:</h3>
+    <h4>
+      
+    </h4>
+    <pre><code class='coffee'>_s.succ(&quot;abcd&quot;)        &#47;&#47; =&gt; &quot;abce&quot;
+_s.succ(&quot;THX1138&quot;)     &#47;&#47; =&gt; &quot;THX1139&quot;
+_s.succ(&quot;&lt;&lt;koala&gt;&gt;&quot;)   &#47;&#47; =&gt; &quot;&lt;&lt;koalb&gt;&gt;&quot;
+_s.succ(&quot;1999zzz&quot;)     &#47;&#47; =&gt; &quot;2000aaa&quot;
+_s.succ(&quot;ZZZ9999&quot;)     &#47;&#47; =&gt; &quot;AAAA0000&quot;
+_s.succ(&quot;***&quot;)         &#47;&#47; =&gt; &quot;**+&quot;</code></pre>
+  </div>
+</div>
+<div class='tags'>
 </div>
   </div>
   <div class='method_details'>
@@ -1085,7 +1274,7 @@ _s.swapcase(&quot;cYbEr_PuNk11&quot;)   &#47;&#47; =&gt; &quot;CyBeR_pUnK11&quot
     </div>
     <div id='footer'>
   Generated on
-  Wed Jun 19 2013 23:49:54 GMT+0700 (ICT)
+  Thu Jun 20 2013 16:09:13 GMT+0700 (ICT)
   by
   <a href='https://github.com/netzpirat/codo' title='CoffeeScript API documentation generator'>Codo</a>
   v1.5.6
